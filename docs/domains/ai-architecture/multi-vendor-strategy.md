@@ -1,3 +1,10 @@
+---
+tags:
+  - architecture
+  - vendor-strategy
+  - resilience
+---
+
 # Multi-Vendor Strategy
 
 *Risk & leverage — deliberate redundancy*

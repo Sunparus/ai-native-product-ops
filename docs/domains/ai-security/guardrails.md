@@ -1,3 +1,9 @@
+---
+tags:
+  - security
+  - governance
+---
+
 # Guardrails
 
 *Governance — constraining model behavior*

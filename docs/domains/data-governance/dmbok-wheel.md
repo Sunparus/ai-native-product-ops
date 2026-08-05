@@ -1,3 +1,9 @@
+---
+tags:
+  - governance
+  - data
+---
+
 # DAMA-DMBOK — The Wheel
 
 11 knowledge areas. Data Governance sits at the center; every other area connects through it.
@@ -19,7 +25,7 @@ flowchart TB
 
 ## Central hub
 
-**Data Governance** — authority, decision rights, and control over data assets. Not one spoke among ten — it's what makes the other ten enforceable rather than aspirational.
+**Data Governance** — authority, decision rights, and control over data assets. Every other knowledge area routes through this one; it's the layer that makes the other ten enforceable rather than aspirational.
 
 *AI-era extension:* where AI accountability lives in practice — who approved this model touching this data, and who is accountable if it's misused.
 
@@ -38,4 +44,4 @@ flowchart TB
 | **Metadata Management** | Managing data about data — catalogs, lineage, definitions. | The backbone of AI governance: sensitivity tags recorded here should drive routing/access decisions. |
 | **Data Quality** | Planning, implementation, and control activities to guarantee usable data. | Directly determines hallucination risk — poor input quality produces confidently-stated errors. |
 
-Next: [Operationalizing the framework →](operationalizing.md)
+Next: [Operationalizing the framework →](dmbok-operationalizing.md)

@@ -1,3 +1,9 @@
+---
+tags:
+  - sovereignty
+  - vendor-strategy
+---
+
 # Mistral AI
 
 *Case study — EU sovereign frontier lab*

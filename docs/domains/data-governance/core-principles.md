@@ -1,3 +1,10 @@
+---
+tags:
+  - governance
+  - data
+  - security
+---
+
 # Data Governance — Core Principles
 
 *Foundational — the discipline itself*
@@ -12,4 +19,4 @@ Data governance is the exercise of authority and control over data assets. Benea
 6. **Lifecycle management** — defined retention and deletion rules; data governed from creation to disposal, not just while in active use.
 7. **Purpose limitation** — data used only for the purpose it was collected or authorized for; the most common quiet failure point once AI systems start reusing data across use cases.
 
-**Source:** These principles are common across DAMA-DMBOK, ISO/IEC 38505 (governance of data), and ISO/IEC 42001 (AI management systems) — see [Legal & Regulatory](../legal-regulatory.md) for the standards themselves.
+**Source:** These principles are common across DAMA-DMBOK, ISO/IEC 38505 (governance of data), and ISO/IEC 42001 (AI management systems) — see [Legal & Regulatory](../../reference/legal-regulatory.md) for the standards themselves.

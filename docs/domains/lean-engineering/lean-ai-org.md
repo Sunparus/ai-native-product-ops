@@ -1,3 +1,10 @@
+---
+tags:
+  - lean
+  - culture
+  - ci
+---
+
 # Lean AI-Assisted Product Organization
 
 *Operating model — the archetype*

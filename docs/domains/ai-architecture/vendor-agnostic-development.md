@@ -1,3 +1,9 @@
+---
+tags:
+  - architecture
+  - vendor-strategy
+---
+
 # Vendor-Agnostic AI-Assisted Development
 
 *Architecture pattern — avoiding lock-in*

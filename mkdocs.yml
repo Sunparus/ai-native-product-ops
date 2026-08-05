@@ -18,6 +18,10 @@ theme:
     - content.code.copy
     - toc.follow
 
+plugins:
+  - search
+  - tags
+
 markdown_extensions:
   - admonition
   - tables
@@ -34,24 +38,31 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Architecture:
-      - Dependency Map: architecture/dependency-map.md
-      - Glossary: architecture/glossary.md
-  - Deep Dives:
-      - Overview: deep-dives/index.md
-      - Mistral AI: deep-dives/mistral-ai.md
-      - Sovereign Infrastructure: deep-dives/sovereign-infrastructure.md
-      - Enterprise Metadata Model: deep-dives/enterprise-metadata-model.md
-      - Data Governance Principles: deep-dives/data-governance-principles.md
-      - Guardrails: deep-dives/guardrails.md
-      - Vendor-Agnostic Development: deep-dives/vendor-agnostic-development.md
-      - Multi-Vendor Strategy: deep-dives/multi-vendor-strategy.md
-      - Efficient Model Routing: deep-dives/model-routing.md
-      - Lean AI-Assisted Org: deep-dives/lean-ai-org.md
-      - CI-by-Design: deep-dives/ci-by-design.md
-  - DAMA-DMBOK:
-      - The Wheel: dmbok/wheel.md
-      - Operationalizing: dmbok/operationalizing.md
-  - Legal & Regulatory: legal-regulatory.md
-  - Experts & Sources: experts.md
-  - Landscape: landscape.md
+  - AI Architecture:
+      - Overview: domains/ai-architecture/index.md
+      - Efficient Model Routing: domains/ai-architecture/model-routing.md
+      - Vendor-Agnostic Development: domains/ai-architecture/vendor-agnostic-development.md
+      - Multi-Vendor Strategy: domains/ai-architecture/multi-vendor-strategy.md
+  - Data Governance:
+      - Overview: domains/data-governance/index.md
+      - Core Principles: domains/data-governance/core-principles.md
+      - DAMA-DMBOK — The Wheel: domains/data-governance/dmbok-wheel.md
+      - Operationalizing DMBOK: domains/data-governance/dmbok-operationalizing.md
+      - Enterprise Metadata Model: domains/data-governance/enterprise-metadata-model.md
+  - AI Security:
+      - Overview: domains/ai-security/index.md
+      - Guardrails: domains/ai-security/guardrails.md
+  - Sovereignty & Infrastructure:
+      - Overview: domains/sovereignty-infrastructure/index.md
+      - Sovereign Infrastructure Buildout: domains/sovereignty-infrastructure/sovereign-infrastructure.md
+      - Mistral AI: domains/sovereignty-infrastructure/mistral-ai.md
+  - Lean & Engineering:
+      - Overview: domains/lean-engineering/index.md
+      - Lean AI-Assisted Org: domains/lean-engineering/lean-ai-org.md
+      - CI-by-Design: domains/lean-engineering/ci-by-design.md
+  - Reference:
+      - Glossary: reference/glossary.md
+      - Legal & Regulatory: reference/legal-regulatory.md
+      - Experts & Sources: reference/experts.md
+      - Landscape: reference/landscape.md
+      - Tags: reference/tags.md

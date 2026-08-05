@@ -1,3 +1,9 @@
+---
+tags:
+  - sovereignty
+  - security
+---
+
 # Sovereign Infrastructure Buildout
 
 *Trend — regional compute & legal independence*

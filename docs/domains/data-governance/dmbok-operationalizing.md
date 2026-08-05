@@ -1,3 +1,9 @@
+---
+tags:
+  - governance
+  - data
+---
+
 # Operationalizing DMBOK 3.0
 
 Five steps — not eleven equal knowledge areas to implement at once.

@@ -1,20 +1,25 @@
 # AI Architecture — Expertise Hub
 
-Personal learning foundation for enterprise AI architecture, product ops, and data governance. Built for conversational fluency with architects, data leaders, and legal counsel — not for shipping code.
+A structured reference covering AI system architecture, data governance, security, sovereignty, and the engineering practices around them. Organized by domain, cross-linked by tag, and versioned so every change has a diff and a rollback path.
 
-!!! note "How this hub is structured"
-    Each section is a standalone markdown file. Edit any one without touching the others — that's the point. Everything here is version-controlled with git: every change has a diff and a rollback path.
+## Domains
 
-## Sections
+- **[AI Architecture](domains/ai-architecture/index.md)** — the technical layers of an AI system, from data to application
+- **[Data Governance](domains/data-governance/index.md)** — authority and control over data, DAMA-DMBOK, metadata models
+- **[AI Security](domains/ai-security/index.md)** — guardrails and constraints on model behavior
+- **[Sovereignty & Infrastructure](domains/sovereignty-infrastructure/index.md)** — data residency, jurisdiction, and where AI systems actually run
+- **[Lean & Engineering Practice](domains/lean-engineering/index.md)** — operating models and CI practices for AI-assisted work
 
-- **[Dependency Map](architecture/dependency-map.md)** — the 6-layer AI system pipeline plus 4 cross-cutting concerns
-- **[Glossary](architecture/glossary.md)** — 37 precise terms, categorized
-- **[Deep Dives](deep-dives/index.md)** — 9 topic-level explainers (Mistral AI, sovereignty, guardrails, lean orgs, routing, etc.)
-- **[DAMA-DMBOK](dmbok/wheel.md)** — the 11 knowledge areas wheel + operationalization pathway
-- **[Legal & Regulatory](legal-regulatory.md)** — EU, US, global guidelines, industry standards
-- **[Experts & Sources](experts.md)** — 20 people/orgs across 6 groups
-- **[Landscape](landscape.md)** — open questions, trends, leading companies
+## Reference
 
-## Pure learning foundation
+- **[Glossary](reference/glossary.md)** — precise terms, categorized
+- **[Legal & Regulatory](reference/legal-regulatory.md)** — EU, US, global guidelines, industry standards
+- **[Experts & Sources](reference/experts.md)** — people and organizations worth following
+- **[Landscape](reference/landscape.md)** — open questions, trends, leading companies
+- **[Tags](reference/tags.md)** — every page indexed by the concerns it touches
 
-This is reference material — concepts, sources, and vocabulary. Use cases and business decisions are deliberately kept separate.
+## How it's organized
+
+Each domain follows the same shape: an overview, its own deep dives, and links out to whatever it shares with other domains. A concept that spans domains — guardrails, cost, resilience — gets one page and a tag, rather than a copy in each place it's relevant. New domains slot in the same way as the ones already here.
+
+This is reference material: concepts, sources, and vocabulary. Use cases and business decisions are kept separate on purpose.

@@ -1,3 +1,10 @@
+---
+tags:
+  - lean
+  - ci
+  - evaluation
+---
+
 # CI-Processes-by-Design for AI
 
 *Engineering practice — verification as infrastructure*

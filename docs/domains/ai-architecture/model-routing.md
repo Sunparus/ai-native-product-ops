@@ -1,3 +1,10 @@
+---
+tags:
+  - architecture
+  - inference
+  - cost
+---
+
 # Efficient Model Routing
 
 *Optimization — cost/latency/capability trade-off*
