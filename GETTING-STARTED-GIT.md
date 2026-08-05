@@ -13,7 +13,7 @@ git pull                 # get changes from GitHub
 
 ## One-time: connect this repo to GitHub
 ```bash
-git remote add origin https://github.com/YOUR-USERNAME/expertise-hub.git
+git remote add origin https://github.com/YOUR-USERNAME/ai-native-product-ops.git
 git branch -M main
 git push -u origin main
 ```
@@ -22,7 +22,7 @@ git push -u origin main
 ```bash
 mkdocs gh-deploy
 ```
-Gives you a live URL at `https://YOUR-USERNAME.github.io/expertise-hub/`.
+Gives you a live URL at `https://YOUR-USERNAME.github.io/ai-native-product-ops/`.
 
 ## Undo mistakes
 ```bash
