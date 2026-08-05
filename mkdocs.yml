@@ -1,0 +1,57 @@
+site_name: AI Architecture — Expertise Hub
+site_description: Personal learning foundation for enterprise AI architecture, product ops, and data governance.
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: amber
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.highlight
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Dependency Map: architecture/dependency-map.md
+      - Glossary: architecture/glossary.md
+  - Deep Dives:
+      - Overview: deep-dives/index.md
+      - Mistral AI: deep-dives/mistral-ai.md
+      - Sovereign Infrastructure: deep-dives/sovereign-infrastructure.md
+      - Enterprise Metadata Model: deep-dives/enterprise-metadata-model.md
+      - Data Governance Principles: deep-dives/data-governance-principles.md
+      - Guardrails: deep-dives/guardrails.md
+      - Vendor-Agnostic Development: deep-dives/vendor-agnostic-development.md
+      - Multi-Vendor Strategy: deep-dives/multi-vendor-strategy.md
+      - Efficient Model Routing: deep-dives/model-routing.md
+      - Lean AI-Assisted Org: deep-dives/lean-ai-org.md
+      - CI-by-Design: deep-dives/ci-by-design.md
+  - DAMA-DMBOK:
+      - The Wheel: dmbok/wheel.md
+      - Operationalizing: dmbok/operationalizing.md
+  - Legal & Regulatory: legal-regulatory.md
+  - Experts & Sources: experts.md
+  - Landscape: landscape.md

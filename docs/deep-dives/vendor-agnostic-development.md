@@ -1,0 +1,11 @@
+# Vendor-Agnostic AI-Assisted Development
+
+*Architecture pattern — avoiding lock-in*
+
+Building product and engineering workflows so application code calls "a model" through an abstraction layer, not a specific vendor's proprietary API/format — prompts, evals, and tool definitions stay portable across providers.
+
+- The abstraction cost is real: it forecloses some vendor-specific features (e.g. proprietary fine-tuning formats, agent frameworks) in exchange for switching flexibility.
+- Protocols like MCP reduce (not eliminate) lock-in at the tool-integration layer specifically.
+- Decide deliberately, per workflow, whether portability or best-in-class capability is the higher priority — treating it as a blanket policy is usually wrong.
+
+**Source:** No single canonical source — evaluate via your own architecture review against each vendor's actual API/data contracts.
