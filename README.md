@@ -1,4 +1,4 @@
-# AI Architecture — Expertise Hub
+# AI-Native Product Operations — Expertise Hub
 
 A git-versioned, markdown-based knowledge base. Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 

@@ -16,3 +16,4 @@ Where AI compute and models are hosted, under whose legal jurisdiction, and what
 
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — EU AI Act, Data Act, and the US regulatory picture
 - [Experts & Sources](../../reference/experts.md) — see the EU Sovereignty & Infrastructure group
+- [Case Studies](../../reference/case-studies.md) — the operational case for a self-hostable model in reserve

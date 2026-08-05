@@ -17,3 +17,5 @@ This domain is intentionally light so far and will expand — prompt injection d
 
 - [Data Governance](../data-governance/index.md) — access control and classification underpin most security controls
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — OWASP LLM Top 10, NIST AI RMF, ISO/IEC 42001
+- [Case Studies](../../reference/case-studies.md) — documented events, including sandbox-escape and containment failures
+- [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md)

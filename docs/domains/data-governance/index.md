@@ -19,3 +19,4 @@ Authority, control, and accountability over data assets — the discipline that 
 
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — GDPR, EU AI Act, ISO/IEC 38505, and related standards
 - [AI Security](../ai-security/index.md) — where governance and access control meet
+- [Playbook: DAMA-DMBOK Operationalization](../../playbooks/dmbok-operationalization.md)

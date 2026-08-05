@@ -1,5 +1,5 @@
-site_name: AI Architecture — Expertise Hub
-site_description: Personal learning foundation for enterprise AI architecture, product ops, and data governance.
+site_name: AI-Native Product Operations — Expertise Hub
+site_description: A structured reference for AI-native product operations — architecture, data governance, security, sovereignty, and engineering practice.
 theme:
   name: material
   palette:
@@ -60,9 +60,15 @@ nav:
       - Overview: domains/lean-engineering/index.md
       - Lean AI-Assisted Org: domains/lean-engineering/lean-ai-org.md
       - CI-by-Design: domains/lean-engineering/ci-by-design.md
+  - Playbooks:
+      - Overview: playbooks/index.md
+      - DMBOK Operationalization: playbooks/dmbok-operationalization.md
+      - CI-by-Design: playbooks/ci-by-design.md
+      - AI Eval Containment: playbooks/ai-eval-containment.md
   - Reference:
       - Glossary: reference/glossary.md
       - Legal & Regulatory: reference/legal-regulatory.md
+      - Case Studies: reference/case-studies.md
       - Experts & Sources: reference/experts.md
       - Landscape: reference/landscape.md
       - Tags: reference/tags.md

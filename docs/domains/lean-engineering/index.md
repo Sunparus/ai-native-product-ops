@@ -17,3 +17,4 @@ Operating models and engineering practices that keep AI-assisted work fast, chea
 
 - [AI Architecture](../ai-architecture/index.md) — the Evaluation & Monitoring cross-cutting concern
 - [Experts & Sources](../../reference/experts.md) — see the Lean & Resilient Engineering Orgs group
+- [Playbook: CI-by-Design](../../playbooks/ci-by-design.md)
