@@ -35,6 +35,9 @@
 | **Data Residency** | The physical/legal jurisdiction where data is stored — a compliance requirement distinct from where it is processed. |
 | **Data Lineage** | The traceable record of where data originated, what transformations it underwent, and everywhere it's been consumed. Column-level lineage (precise, per-field) is what audits and incident response actually need; table-level (coarse) is what most tools ship by default. |
 | **Data Sovereignty** | The principle that data is subject to the laws of the country it is collected or stored in — broader than residency, includes legal access rights. |
+| **Active Metadata** | Metadata that is continuously captured and pushed back into producing and consuming tools — schema-change alerts, glossary updates, quality flags — rather than sitting in a catalog updated on a manual review cycle. |
+| **Data Catalog** | A searchable inventory of an organization's data assets, combining technical metadata (schema, location) with business context (definitions, ownership, sensitivity). |
+| **DCAT** | The W3C Data Catalog Vocabulary — a standardized, interoperable schema for describing datasets and catalogs across systems, reducing lock-in to any single platform's proprietary metadata format. |
 
 ## Orchestration & Agents
 

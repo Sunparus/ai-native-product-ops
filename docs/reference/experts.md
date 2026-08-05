@@ -41,6 +41,12 @@
 | **Epoch AI** | Independent research on compute trends, cost curves, scaling | epochai.org |
 | **Hugging Face** | Open-model ecosystem, documentation, model cards | huggingface.co |
 
+## Data Governance & Metadata
+
+| Name | Role | Source |
+|---|---|---|
+| **Robert Seiner** | Data governance expert; creator of the Non-Invasive Data Governance approach — formalizing stewardship around people already doing the work, rather than top-down appointment | Book: *Non-Invasive Data Governance* / tdan.com |
+
 ## Lean & Resilient Engineering Orgs
 
 | Name | Role | Source |

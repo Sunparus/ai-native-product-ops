@@ -49,6 +49,7 @@ nav:
       - DAMA-DMBOK — The Wheel: domains/data-governance/dmbok-wheel.md
       - Operationalizing DMBOK: domains/data-governance/dmbok-operationalizing.md
       - Enterprise Metadata Model: domains/data-governance/enterprise-metadata-model.md
+      - Metadata Management — Modern Practice: domains/data-governance/metadata-management.md
   - AI Security:
       - Overview: domains/ai-security/index.md
       - Guardrails: domains/ai-security/guardrails.md
@@ -63,6 +64,7 @@ nav:
   - Playbooks:
       - Overview: playbooks/index.md
       - DMBOK Operationalization: playbooks/dmbok-operationalization.md
+      - Active Metadata Practice: playbooks/active-metadata-practice.md
       - CI-by-Design: playbooks/ci-by-design.md
       - AI Eval Containment: playbooks/ai-eval-containment.md
   - Reference:

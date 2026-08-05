@@ -16,4 +16,6 @@ A centrally maintained model of what data exists, where, who owns it, how sensit
 - For AI specifically: sensitivity tags in the metadata model should directly drive routing decisions (e.g. "restricted" data never leaves an EU-hosted model).
 - Adoption reality check: Gartner projects most data-governance initiatives fail by 2027 — not from a weak framework, but because governance stays documentation rather than becoming daily operating practice. See [DMBOK Operationalizing](dmbok-operationalizing.md).
 
+**See also:** [Metadata Management — Modern Practice](metadata-management.md) for current standards, category-leading tooling, and how leading engineering organizations built this practice.
+
 **Source:** DAMA International — DAMA-DMBOK (the standard reference, not a product). dama.org/learning-resources.

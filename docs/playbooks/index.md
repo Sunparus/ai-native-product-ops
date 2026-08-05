@@ -23,5 +23,6 @@ Not every concept page has a playbook yet, and that's intentional. A playbook on
 ## Available now
 
 - **[DAMA-DMBOK Operationalization](dmbok-operationalization.md)** — the 5-step path from framework to daily practice
+- **[Standing Up Active Metadata](active-metadata-practice.md)** — moving from a static catalog to continuously-updated metadata
 - **[CI-by-Design for AI](ci-by-design.md)** — building verification into the pipeline, not bolting it on after
 - **[AI Capability Evaluation — Containment](ai-eval-containment.md)** — extracted directly from the [sandbox containment case study](../reference/case-studies.md)

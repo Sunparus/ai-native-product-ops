@@ -14,6 +14,7 @@ Authority, control, and accountability over data assets — the discipline that 
 - **[DAMA-DMBOK — The Wheel](dmbok-wheel.md)** — the 11 knowledge areas
 - **[Operationalizing DMBOK](dmbok-operationalizing.md)** — a 5-step path from framework to daily practice
 - **[Enterprise Metadata Model](enterprise-metadata-model.md)** — what governs what AI can access
+- **[Metadata Management — Modern Practice](metadata-management.md)** — active metadata, standards, tooling, and validated industry use cases
 
 ## Related
 
