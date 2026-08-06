@@ -2,6 +2,8 @@
 
 A git-versioned, markdown-based knowledge base. Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
+Content is licensed [CC BY-NC 4.0](LICENSE.md) — read, share, and quote freely with attribution; no commercial use without permission.
+
 ## Why this replaced the single-file interactive artifact
 
 - **Resilience** — content lives in plain markdown files, one per topic. A mistake in one file can't break the rest of the site.
