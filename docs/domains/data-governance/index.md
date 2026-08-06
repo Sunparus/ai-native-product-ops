@@ -8,6 +8,15 @@ tags:
 
 Authority, control, and accountability over data assets — the discipline that makes every other layer of an AI system trustworthy.
 
+```mermaid
+flowchart TB
+    PRIN[Core Principles] --> GOV[DAMA-DMBOK Wheel — 11 Areas]
+    GOV --> OPS[Operationalizing DMBOK]
+    GOV --> META[Enterprise Metadata Model]
+    META --> ACTIVE[Metadata Management — Active Practice]
+    OPS -.enforces.-> META
+```
+
 ## In this domain
 
 - **[Core Principles](core-principles.md)** — the handful of principles that hold regardless of framework

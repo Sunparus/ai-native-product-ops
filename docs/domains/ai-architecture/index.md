@@ -7,15 +7,6 @@ tags:
 
 The technical layers of an AI system, from data to application, and the decisions that connect them.
 
-## In this domain
-
-- **The stack** — the 6-layer pipeline and 4 cross-cutting concerns (below)
-- **[Efficient Model Routing](model-routing.md)** — directing requests to the right model automatically
-- **[Vendor-Agnostic Development](vendor-agnostic-development.md)** — building without hard vendor lock-in
-- **[Multi-Vendor Strategy](multi-vendor-strategy.md)** — deliberate redundancy across providers
-
-## The stack
-
 ```mermaid
 flowchart TB
     subgraph Pipeline["Request Flow"]
@@ -31,6 +22,15 @@ flowchart TB
     E["⚡ Evaluation & Monitoring"] -.wraps.-> Pipeline
     R["⚡ Resilience & Redundancy"] -.wraps.-> Pipeline
 ```
+
+## In this domain
+
+- **The stack** — the 6-layer pipeline and 4 cross-cutting concerns (detail below)
+- **[Efficient Model Routing](model-routing.md)** — directing requests to the right model automatically
+- **[Vendor-Agnostic Development](vendor-agnostic-development.md)** — building without hard vendor lock-in
+- **[Multi-Vendor Strategy](multi-vendor-strategy.md)** — deliberate redundancy across providers
+
+## The stack — detail
 
 ### 01 · Data Layer
 Raw and structured data assets — documents, databases, logs, transactional records. Data quality, lineage, and access control set the ceiling for every layer above it.

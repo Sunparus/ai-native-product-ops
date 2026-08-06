@@ -7,6 +7,15 @@ tags:
 
 Constraining what a model can input, output, or act on — and the broader question of what can go wrong in an AI system and how to catch it early.
 
+```mermaid
+flowchart LR
+    MODEL[Model-Level Alignment] -.necessary, not sufficient.-> SYS[System-Level Guardrails]
+    SYS --> IN[Input Validation]
+    SYS --> OUT[Output Filtering]
+    SYS --> INJ[Prompt-Injection Defense]
+    SYS --> GATE[Action-Approval Gates]
+```
+
 ## In this domain
 
 - **[Guardrails](guardrails.md)** — model-level and system-level constraints on behavior

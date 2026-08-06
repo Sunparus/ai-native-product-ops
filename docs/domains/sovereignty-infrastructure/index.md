@@ -7,6 +7,15 @@ tags:
 
 Where AI compute and models are hosted, under whose legal jurisdiction, and what that means for data that can't leave a given region.
 
+```mermaid
+flowchart TB
+    RES[Data Residency — where it's stored] --> SOV[Data Sovereignty — whose law governs access]
+    SOV --> A[US Hyperscaler, EU Region]
+    SOV --> B[EU-Native — Mistral, Aleph Alpha]
+    SOV --> C[Self-Hosted Open-Weight]
+    A -.legally US-parented.-> RISK[Sovereignty risk remains]
+```
+
 ## In this domain
 
 - **[Sovereign Infrastructure Buildout](sovereign-infrastructure.md)** — the distinction between data residency and data sovereignty

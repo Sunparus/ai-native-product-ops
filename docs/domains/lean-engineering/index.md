@@ -8,6 +8,15 @@ tags:
 
 Operating models and engineering practices that keep AI-assisted work fast, cheap, and safe at the same time, rather than trading one for another.
 
+```mermaid
+flowchart LR
+    ORG[Lean Org Design] --> CI[CI-by-Design]
+    CI --> EVAL[Evaluation Pipelines]
+    CI --> BREAK[Circuit Breakers / Blast Radius]
+    EVAL --> METRICS[DORA Metrics]
+    BREAK --> METRICS
+```
+
 ## In this domain
 
 - **[Lean AI-Assisted Product Organization](lean-ai-org.md)** — the operating model archetype
