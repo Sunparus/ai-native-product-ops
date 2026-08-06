@@ -67,6 +67,16 @@ nav:
       - Active Metadata Practice: playbooks/active-metadata-practice.md
       - CI-by-Design: playbooks/ci-by-design.md
       - AI Eval Containment: playbooks/ai-eval-containment.md
+      - AI Product Alignment & Review:
+          - Overview: playbooks/ai-product-alignment/index.md
+          - Security & Resilience Non-Negotiables: playbooks/ai-product-alignment/security-resilience.md
+          - Human-in-the-Loop Threshold: playbooks/ai-product-alignment/human-in-the-loop.md
+          - "Stage 1 — Discovery & Framing": playbooks/ai-product-alignment/stage-1-discovery.md
+          - "Stage 2 — Data & Model Design": playbooks/ai-product-alignment/stage-2-data-model-design.md
+          - "Stage 3 — Build & Integration": playbooks/ai-product-alignment/stage-3-build-integration.md
+          - "Stage 4 — Evaluation & Governance Review": playbooks/ai-product-alignment/stage-4-governance-review.md
+          - "Stage 5 — Launch & Rollout": playbooks/ai-product-alignment/stage-5-launch-rollout.md
+          - "Stage 6 — Operate & Monitor": playbooks/ai-product-alignment/stage-6-operate-monitor.md
   - Reference:
       - Glossary: reference/glossary.md
       - Legal & Regulatory: reference/legal-regulatory.md

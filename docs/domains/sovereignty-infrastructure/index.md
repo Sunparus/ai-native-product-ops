@@ -28,3 +28,4 @@ flowchart TB
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — EU AI Act, Data Act, and the US regulatory picture
 - [Experts & Sources](../../reference/experts.md) — see the EU Sovereignty & Infrastructure group
 - [Case Studies](../../reference/case-studies.md) — the operational case for a self-hostable model in reserve
+- [Playbook: AI Product Alignment — Security & Resilience Non-Negotiables](../../playbooks/ai-product-alignment/security-resilience.md) — data residency and vendor exit strategy as review-gated controls

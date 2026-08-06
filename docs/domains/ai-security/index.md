@@ -28,3 +28,4 @@ This domain is intentionally light so far and will expand — prompt injection d
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — OWASP LLM Top 10, NIST AI RMF, ISO/IEC 42001
 - [Case Studies](../../reference/case-studies.md) — documented events, including sandbox-escape and containment failures
 - [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md)
+- [Playbook: AI Product Alignment — Security & Resilience Non-Negotiables](../../playbooks/ai-product-alignment/security-resilience.md)

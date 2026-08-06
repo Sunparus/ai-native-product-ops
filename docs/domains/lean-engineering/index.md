@@ -27,3 +27,4 @@ flowchart LR
 - [AI Architecture](../ai-architecture/index.md) — the Evaluation & Monitoring cross-cutting concern
 - [Experts & Sources](../../reference/experts.md) — see the Lean & Resilient Engineering Orgs group
 - [Playbook: CI-by-Design](../../playbooks/ci-by-design.md)
+- [Playbook: AI Product Alignment & Review](../../playbooks/ai-product-alignment/index.md) — the same handoff-gap discipline applied across a full product lifecycle

@@ -23,7 +23,12 @@ A domain gets its own folder only when it's substantial enough to need multiple 
 
 Only write one once a practice is concrete enough to instruct, not just explain. A playbook without real steps is just a concept page with extra formatting.
 
-**Required shape** (`docs/playbooks/<slug>.md`):
+**Two shapes, pick based on scope:**
+
+- **Single file** — one focused practice, one skill.md-shaped page. Use this by default.
+- **Series** (folder with an index + sub-pages) — a full lifecycle with multiple stakeholder-facing stages, where someone would realistically open one specific stage during a live meeting rather than scroll a long document. See `ai-product-alignment/` for the reference example: index page carries the shared front matter (purpose, roles glossary, concepts glossary, lifecycle diagram), each stage is its own page, and genuinely cross-cutting sections (Security & Resilience, Human-in-the-Loop) get their own page too so they can be tagged and cross-linked into the domains they connect to — don't bury cross-cutting content inside one stage's page just because it was first mentioned there.
+
+**Required shape** (single file, or each page within a series):
 
 ```
 ---
