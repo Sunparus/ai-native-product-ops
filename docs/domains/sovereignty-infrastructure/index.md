@@ -9,11 +9,13 @@ Where AI compute and models are hosted, under whose legal jurisdiction, and what
 
 ```mermaid
 flowchart TB
-    RES[Data Residency — where it's stored] --> SOV[Data Sovereignty — whose law governs access]
+    RES[Data Residency — WHERE it's stored]
+    SOV[Data Sovereignty — WHOSE law governs access]
+    RES -.distinct dimension from.-> SOV
     SOV --> A[US Hyperscaler, EU Region]
     SOV --> B[EU-Native — Mistral, Aleph Alpha]
     SOV --> C[Self-Hosted Open-Weight]
-    A -.legally US-parented.-> RISK[Sovereignty risk remains]
+    A -.legally US-parented.-> RISK((Sovereignty gap remains))
 ```
 
 ## In this domain

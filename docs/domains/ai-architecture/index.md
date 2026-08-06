@@ -9,7 +9,7 @@ The technical layers of an AI system, from data to application, and the decision
 
 ```mermaid
 flowchart TB
-    subgraph Pipeline["Request Flow"]
+    subgraph Pipeline["System Layers — bottom-up dependency, not live request order"]
         direction TB
         D[01 · Data Layer] --> C[02 · Context Layer]
         C --> M[03 · Model Layer]
