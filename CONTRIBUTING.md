@@ -13,7 +13,7 @@ Every page, at all times, should answer these questions positively. Status noted
 | 1 | Covers the most critical core domains and concepts for a modern AI-native enterprise with international exposure? | **Ongoing discipline** | Governed by the domain promotion rule (§1) — a topic gets a domain only with an independent, citable body of knowledge behind it |
 | 2 | Structure and content reflect top global expertise level? | **Ongoing discipline** | Every domain traces to a named external standard (DAMA-DMBOK, NIST AI RMF, DORA/Team Topologies, Chip Huyen's AI Engineering) — never an internally-invented hierarchy |
 | 3 | Narrative is excellent, lean, concise, high-signal, actionable to top-consultancy level? | **Enforced by template** | Top-5-issues tables, stage-gate "rubber stamp vs. real answer" pairs, Actionable Now sections — structure forces this, not just editing discipline |
-| 4 | ToV is professional but human and non-synthetic, in an authentic individual voice? | **Partially met — open item** | House rule: no "it's not X, it's Y" antithesis construction, no corporate/AI-cliché phrasing (caught and fixed twice already in domain schemas). What's *not* yet solved: this voice was drafted by Claude across the session, not sampled from the author's own long-form writing. If a specific writing sample exists to calibrate against, provide it — otherwise this hub's voice is a deliberate house style (direct, no fluff, no press-release tone), not literally the author's personal register |
+| 4 | ToV is professional but human and non-synthetic, in an authentic individual voice? | **Rule defined against 2 samples; existing content not yet recalibrated** | See **ToV Guide** below. Applies to all *new* content going forward. Retroactively recalibrating existing pages is a separate, unscoped pass, not done automatically by defining the rule |
 | 5 | Non-verbose, scannable, memorable, readable? | **Enforced by template** | Tables over paragraphs, bolded key terms, schema diagram before any prose |
 | 6 | Validated and fact-checked? | **House rule** | No claim ships without a checkable source. Case studies require multiple independent sources before writing (see §3). Statistics from vendor-adjacent research get explicitly hedged, not stated as fact (see Metadata Management page for the pattern) |
 | 7 | Well linked and traceable to source of truth? | **Enforced by template** | Every playbook and case study ends in a `## Source` / `## Sources` section; tags + Related sections cross-link concepts hub-wide |
@@ -25,6 +25,36 @@ Every page, at all times, should answer these questions positively. Status noted
 | 13 | Easy to navigate down *and* up from any page? | **Met** | Down: domain skeleton (schema → In this domain list). Up: breadcrumb path navigation now live (`navigation.path`), plus `Related` sections |
 | 14 | Easy to turn each page into a skill.md? | **True for Playbooks by design; not true for Domain pages, deliberately** | Domain pages explain *why* and stay prose — forcing skill.md shape onto a concept page was the mistake avoided early in this hub's build. Each domain instead points to its corresponding Playbook when one exists — that's the operationalizable version |
 | 15 | Is there a feedback mechanism — a reaction or a short text comment — for any reader? | **Not yet built** | Requires enabling GitHub Discussions (available, not yet turned on) plus a per-page "Discuss this page" link. A reaction-click widget would need an analytics backend this static, free setup doesn't have — Discussions is the realistic mechanism here |
+
+---
+
+## ToV Guide
+
+Calibrated against two real samples in different registers — a flowing conversational reply, and a punchy structured LinkedIn post. What holds across both matters more than either register alone.
+
+**Banned — the synthetic aphorism pattern:**
+> "X isn't really about A — it's about B."
+> "This isn't a framework, it's a mindset."
+
+Flat, declarative, closes the thought instead of opening it. Reads as manufactured cleverness. (Caught and fixed twice already in domain schemas — e.g. "Not one spoke among ten — it's what makes the others enforceable" got rewritten for exactly this reason.)
+
+**What's explicitly *not* banned — these are authentic, keep using them:**
+
+- Rhetorical questions as an opener: "Is the bullet always faster than the shield?"
+- "While many do X, they continue to: [gap list]" — a real pattern in the source material, and structurally close to how this hub already writes Watch-outs sections
+- "If A, it should also do B" — a forward parallel, not a corrective negation
+- Punchy, emoji-marked bullet lists when the content is genuinely a fast scan (threat examples, structured lists) — this voice is *not* uniformly hedged-and-flowing; it shifts register by context, and both registers are authentic
+
+**The one real distinction that matters:** the banned pattern specifically *negates one thing to assert another as truer*. Everything above does something else — poses a question, flags a gap, proposes a parallel, or just presents a fast list. None of it claims false certainty by knocking down a straw version of the alternative first.
+
+**Concrete markers to write toward:**
+
+- **Ground claims in named, specific sources — never vague.** Not "attacks are getting more sophisticated" but "a single email triggered zero-click exfiltration in Microsoft Copilot (CVE-2025-32711)." This instinct — cite the specific paper, the specific CVE, the specific number — is exactly why this hub grounds every domain in a named standard instead of an invented hierarchy. It's not a hub-specific rule, it's how this voice already thinks.
+- **Lead with humility even when the content is expert-level.** "I am not a security expert, it just struck me how broad the attack surface is" — precedes a genuinely rigorous 6-layer framework breakdown. Confidence in the material, not in the author's authority over it.
+- **Hedge causal claims that aren't proven.** "It seems that," "I assume that," "would be interesting to know whether this is measurable" — even in punchy mode, the hedge survives.
+- **Close with attribution and shared responsibility, not a solo mic-drop.** The P.S. crediting "the recent exchange with IT security & data experts" and reframing the takeaway as a shared, ongoing responsibility is a real closing pattern, not filler.
+- **Actionable, specific, implementable — never abstract advice.** "Set up a weekly job via GitHub Actions that pulls latest CVEs and maps them against your stack" beats "stay on top of security research." This is the same instinct behind every Playbook's `## Steps` section.
+- Light, occasional warmth (an emoji, a parenthetical aside) at genuine close points — not scattered throughout, not decorative.
 
 ---
 
