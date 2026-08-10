@@ -10,9 +10,9 @@ Fairness isn't a separate concern bolted onto security — NIST's AI RMF names i
 
 ## Grounded in
 
-- **NIST AI RMF** — fairness with harmful bias managed is one of seven named trustworthy-AI characteristics, not an optional add-on
-- **ISO/IEC TR 24027** — the technical standard specifically on bias in AI systems and AI-aided decision-making
-- **ACM FAccT** (Fairness, Accountability, and Transparency) — the primary academic venue for this research; useful as a pointer to current work, not a framework to implement directly
+- **[NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework)** — fairness with harmful bias managed is one of seven named trustworthy-AI characteristics, not an optional add-on
+- **[ISO/IEC TR 24027](https://www.iso.org/standard/77607.html)** — the technical standard specifically on bias in AI systems and AI-aided decision-making
+- **[ACM FAccT](https://facctconference.org/)** (Fairness, Accountability, and Transparency) — the primary academic venue for this research; useful as a pointer to current work, not a framework to implement directly
 
 ## Where bias actually enters an AI system
 

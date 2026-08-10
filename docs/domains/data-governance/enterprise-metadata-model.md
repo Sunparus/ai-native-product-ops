@@ -18,4 +18,4 @@ A centrally maintained model of what data exists, where, who owns it, how sensit
 
 **See also:** [Metadata Management — Modern Practice](metadata-management.md) for current standards, category-leading tooling, and how leading engineering organizations built this practice.
 
-**Source:** DAMA International — DAMA-DMBOK (the standard reference, not a product). dama.org/learning-resources.
+**Source:** [DAMA International — DAMA-DMBOK](https://www.dama.org/cpages/body-of-knowledge) (the standard reference, not a product).

@@ -12,6 +12,6 @@ Mechanisms that constrain what a model can input, output, or act on. Split into 
 
 - Categories: input validation, output content filtering, PII redaction, prompt-injection defense, action-approval thresholds for agents.
 - Model-level alignment is necessary but not sufficient — it can be bypassed; system-level guardrails are your enforceable control layer.
-- Reputable reference frameworks: NIST AI Risk Management Framework, OWASP Top 10 for LLM Applications.
+- Reputable reference frameworks: [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework), [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/), [MITRE ATLAS](https://atlas.mitre.org/).
 
-**Source:** OWASP GenAI Security Project — owasp.org/www-project-top-10-for-large-language-model-applications.
+**Source:** [OWASP GenAI Security Project — Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/).

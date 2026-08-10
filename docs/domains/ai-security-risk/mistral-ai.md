@@ -14,4 +14,4 @@ French lab (founded 2023, Paris) built by ex-Google DeepMind and Meta researcher
 - EU jurisdiction means contracts and data processing fall under EU law by default, not by carve-out.
 - Capability trails the largest US frontier labs on some benchmarks — the sovereignty-vs-capability trade-off is real and worth quantifying per use case, not assumed.
 
-**Source:** mistral.ai/news — read the model release posts directly, they're technical rather than promotional.
+**Source:** [mistral.ai/news](https://mistral.ai/news/) — read the model release posts directly, they're technical rather than promotional.
