@@ -1,5 +1,8 @@
 site_name: AI-Native Product Operations — Expertise Hub
 site_description: A structured reference for AI-native product operations — architecture, data governance, security, sovereignty, and engineering practice.
+repo_url: https://github.com/Sunparus/ai-native-product-ops
+repo_name: ai-native-product-ops
+edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
@@ -13,6 +16,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.path
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -21,6 +25,9 @@ theme:
 plugins:
   - search
   - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
 
 markdown_extensions:
   - admonition
