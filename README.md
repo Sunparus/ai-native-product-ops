@@ -42,29 +42,79 @@ That commit is your version history. `git log --oneline` shows every change ever
 
 ## Structure
 
+Full listing, generated directly from the repo — not hand-summarized:
+
 ```
 docs/
-  index.md                              Home
+  index.md                                              Home
+
   domains/
-    ai-ml-systems-engineering/          The stack, model routing, vendor strategy
-    evaluation-observability/           Eval design, pipelines, monitoring, feedback loops
-    data-governance/                    DAMA-DMBOK, metadata management, core principles
-    ai-security-risk/                   NIST AI RMF, OWASP, MITRE ATLAS, sovereignty, ethics & bias
-    delivery-operating-practice/        DORA, Team Topologies, CI-by-design
-    ai-adoption-maturity/               MIT CISR / Gartner / MITRE maturity models, lean org design
-  playbooks/                            Skill.md-shaped, procedural extracts from the domains
-    ai-product-alignment/               9-page full-lifecycle playbook series (Discovery -> Operate)
+    ai-ml-systems-engineering/
+      index.md                                          The stack, cross-cutting concerns
+      model-routing.md
+      vendor-agnostic-development.md
+      multi-vendor-strategy.md
+    evaluation-observability/
+      index.md
+    data-governance/
+      index.md
+      core-principles.md
+      dmbok-wheel.md
+      dmbok-operationalizing.md
+      enterprise-metadata-model.md
+      metadata-management.md
+    ai-security-risk/
+      index.md
+      guardrails.md
+      sovereign-infrastructure.md
+      mistral-ai.md
+      ethics-bias.md
+    delivery-operating-practice/
+      index.md
+      ci-by-design.md
+    ai-adoption-maturity/
+      index.md
+      lean-ai-org.md
+
+  playbooks/
+    index.md
+    dmbok-operationalization.md
+    active-metadata-practice.md
+    ci-by-design.md
+    ai-eval-containment.md
+    ai-product-alignment/
+      index.md
+      security-resilience.md
+      human-in-the-loop.md
+      stage-1-discovery.md
+      stage-2-data-model-design.md
+      stage-3-build-integration.md
+      stage-4-governance-review.md
+      stage-5-launch-rollout.md
+      stage-6-operate-monitor.md
+
   reference/
-    glossary.md                         Terms, categorized
-    legal-regulatory.md                 EU / US / Global / Industry standards, every entry linked
-    cost-finops.md                      Cross-cutting practice, deliberately not a domain
-    case-studies.md                     Verified, sourced cases with an actionable takeaway
-    experts.md                          People & organizations worth following
-    landscape/                          Open questions, trends, expertise leads -- one page per domain
-    tags.md                             Auto-generated cross-domain tag index
-mkdocs.yml                              Site config & navigation
-CONTRIBUTING.md                         Content templates, Quality Bar, ToV Guide, domain promotion rule
-LICENSE.md                              CC BY-NC 4.0
+    glossary.md
+    legal-regulatory.md
+    cost-finops.md
+    case-studies.md
+    experts.md
+    tags.md
+    landscape/
+      index.md
+      ai-ml-systems-engineering.md
+      evaluation-observability.md
+      data-governance.md
+      ai-security-risk.md
+      delivery-operating-practice.md
+      ai-adoption-maturity.md
+
+mkdocs.yml                    Site config & navigation
+CONTRIBUTING.md                Content templates, Quality Bar, ToV Guide, domain promotion rule
+GETTING-STARTED-GIT.md         Git/GitHub quick reference
+LICENSE.md                     CC BY-NC 4.0
 ```
+
+To regenerate this listing yourself and check it hasn't drifted: `find docs -name "*.md" | sort`.
 
 This tree is generated from the actual repo, not hand-maintained prose — if it ever looks stale again, regenerate it with `find docs -name "*.md" | sort` rather than trust memory.
