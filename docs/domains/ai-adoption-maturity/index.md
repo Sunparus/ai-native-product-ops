@@ -43,7 +43,7 @@ DORA and Team Topologies measure and structure *engineering delivery* — deploy
 
 **Case studies** — none directly filed here yet; the [AI Product Alignment playbook's Stage 5](../../playbooks/ai-product-alignment/stage-5-launch-rollout.md) already covers the adjacent change-management failure mode (no plan to train or communicate to affected humans).
 
-**Open questions** — see [Landscape](../../reference/landscape.md) for adjacent industry trends; none yet specific to adoption maturity — a gap worth filling as this domain grows.
+**Open questions** — see [Landscape — AI Adoption & Organizational Maturity](../../reference/landscape/ai-adoption-maturity.md): why maturity stalls for most organizations, per MIT CISR's research.
 
 ## Related
 

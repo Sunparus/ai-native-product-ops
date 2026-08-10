@@ -39,7 +39,7 @@ A second common failure: evaluation that only covers the happy path. See [Stage 
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case is also an evaluation failure — the capability eval itself lacked containment as part of its own design.
 
-**Open questions** — see [Landscape](../../reference/landscape.md): reliability at scale (can evaluation tooling close the hallucination gap for high-stakes automation).
+**Open questions** — see [Landscape — Evaluation & Observability](../../reference/landscape/evaluation-observability.md): reliability at scale (can evaluation tooling close the hallucination gap for high-stakes automation).
 
 ## Related
 

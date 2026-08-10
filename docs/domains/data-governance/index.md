@@ -31,7 +31,7 @@ flowchart TB
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case flags an internal boundary-enforcement gap that's a governance failure as much as a security one.
 
-**Open questions** — see [Landscape](../../reference/landscape.md) for adjacent industry trends.
+**Open questions** — see [Landscape — Data Governance](../../reference/landscape/data-governance.md) — an honest gap right now; the active metadata adoption trend is covered there instead.
 
 ## Related
 

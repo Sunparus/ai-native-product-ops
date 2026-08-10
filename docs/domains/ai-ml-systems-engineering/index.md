@@ -80,7 +80,7 @@ These run through all six layers rather than sitting on one. Two of the four now
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md) for events touching this domain's layers (orchestration, containment).
 
-**Open questions** — see [Landscape](../../reference/landscape.md): cost-performance curve, standardization vs. lock-in.
+**Open questions** — see [Landscape — AI/ML Systems Engineering](../../reference/landscape/ai-ml-systems-engineering.md): cost-performance curve, standardization vs. lock-in.
 
 ## Related
 

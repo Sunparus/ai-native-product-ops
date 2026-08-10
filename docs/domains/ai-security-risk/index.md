@@ -46,7 +46,7 @@ This isn't a one-time assessment — it's iterative across the system's life, wh
 
 **Case studies** — [Sandbox containment failure during an AI capability evaluation](../../reference/case-studies.md) — a direct illustration of Map/Measure/Manage breaking down when guardrails are deliberately reduced for testing.
 
-**Open questions** — see [Landscape](../../reference/landscape.md): sovereign capability gap, safe multi-agent orchestration.
+**Open questions** — see [Landscape — AI Security & Risk](../../reference/landscape/ai-security-risk.md): sovereign capability gap, safe multi-agent orchestration.
 
 ## Related
 

@@ -24,7 +24,7 @@ Procedural, skill.md-shaped guides derived from the domains above — the *how*,
 - **[Cost & FinOps](reference/cost-finops.md)** — a cross-cutting practice, not a domain, and the reasoning for why
 - **[Case Studies](reference/case-studies.md)** — documented, sourced cases — failures and successes — with an actionable takeaway
 - **[Experts & Sources](reference/experts.md)** — people and organizations worth following
-- **[Landscape](reference/landscape.md)** — open questions, trends, leading companies
+- **[Landscape](reference/landscape/index.md)** — open questions, trends, and expertise leads, sliced per domain
 - **[Tags](reference/tags.md)** — every page indexed by the concerns it touches
 
 ## How it's organized

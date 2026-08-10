@@ -31,7 +31,7 @@ flowchart LR
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case is a recovery/detection failure at the delivery-practice level as much as a security one.
 
-**Open questions** — see [Landscape](../../reference/landscape.md) for adjacent industry trends.
+**Open questions** — see [Landscape — Delivery & Operating Practice](../../reference/landscape/delivery-operating-practice.md) — an honest gap right now, not yet populated.
 
 ## Related
 
