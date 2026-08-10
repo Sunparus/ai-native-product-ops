@@ -74,3 +74,8 @@
 | **DORA Metrics** | Four measures of engineering performance — deployment frequency, lead time for changes, change failure rate, time to recover. The standard way to know if a CI-by-design process is actually working. |
 | **Circuit Breaker** | A pattern that automatically disables a failing dependency (e.g. a model or tool call) rather than letting failures cascade through the system. |
 | **Blast Radius** | The scope of impact if a component fails — a core resilience design question: how much of the system does one failure actually take down? |
+| **Eval Harness** | The automated infrastructure that runs a model or system against its evaluation set on a defined trigger — a code change, a schedule — rather than manually. |
+| **Drift Detection** | Monitoring for a change in production data or model performance relative to the distribution the system was built or evaluated against — the mechanism that catches quiet degradation before it's visible in outcomes. |
+| **Disparate Impact** | A measurably different outcome rate across groups produced by a system, even when no single input variable is explicitly discriminatory — the core thing bias testing checks for. |
+| **AI Maturity Model** | A staged framework (Gartner, MIT CISR, and MITRE each publish one) rating how deeply and effectively an organization uses AI, across dimensions like strategy, governance, data, skills, and measured value — not just tool adoption. |
+| **Chargeback Model** | A cost-allocation mechanism that attributes shared AI infrastructure spend back to the specific team or product consuming it, rather than treating it as a single undifferentiated line item. |

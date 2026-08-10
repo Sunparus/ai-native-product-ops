@@ -6,6 +6,9 @@ tags:
 
 # Metadata Management — Modern Practice
 
+!!! note "★ Focus Area"
+    This topic carries deeper coverage than its peers in Data Governance, reflecting active personal focus rather than the field's own relative weighting.
+
 The operational discipline behind the [Enterprise Metadata Model](enterprise-metadata-model.md): how metadata is actually captured, kept current, and put to use, based on current standards, market-leading tooling, and the origin stories of the teams that built this practice under real scale.
 
 ## The shift: passive to active metadata

@@ -2,11 +2,11 @@
 
 ## Top 5 Open Questions (2025–2030)
 
-1. **Cost-performance curve** — Will inference cost keep falling fast enough to sustain enterprise-scale adoption, or does it plateau?
-2. **Reliability at scale** — Can evaluation and verification tooling close the hallucination gap enough for high-stakes automation?
-3. **Sovereign capability gap** — Will EU/regional providers reach frontier-model capability, or does sovereignty require accepting a performance discount?
-4. **Safe multi-agent orchestration** — How do multi-agent systems fail predictably and stay auditable once they act autonomously in production?
-5. **Standardization vs. lock-in** — Will open protocols (e.g. MCP) create real interoperability, or become a new layer of vendor lock-in?
+1. **Cost-performance curve** *(Cost & FinOps, AI/ML Systems Engineering)* — Will inference cost keep falling fast enough to sustain enterprise-scale adoption, or does it plateau?
+2. **Reliability at scale** *(Evaluation & Observability)* — Can evaluation and verification tooling close the hallucination gap enough for high-stakes automation?
+3. **Sovereign capability gap** *(AI Security & Risk)* — Will EU/regional providers reach frontier-model capability, or does sovereignty require accepting a performance discount?
+4. **Safe multi-agent orchestration** *(AI/ML Systems Engineering, AI Security & Risk)* — How do multi-agent systems fail predictably and stay auditable once they act autonomously in production?
+5. **Standardization vs. lock-in** *(AI/ML Systems Engineering)* — Will open protocols (e.g. MCP) create real interoperability, or become a new layer of vendor lock-in?
 
 ## Top 5 Current Trends
 

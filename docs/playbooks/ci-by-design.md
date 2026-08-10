@@ -28,4 +28,4 @@ Standing up a delivery pipeline for AI-assisted features, or auditing an existin
 
 ## Source
 
-[Lean & Engineering — CI-by-Design (full explainer)](../domains/lean-engineering/ci-by-design.md)
+[Delivery & Operating Practice — CI-by-Design (full explainer)](../domains/delivery-operating-practice/ci-by-design.md)

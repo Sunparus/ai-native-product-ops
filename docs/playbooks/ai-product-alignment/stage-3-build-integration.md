@@ -31,7 +31,7 @@ tags:
 
 ## Related
 
-- [AI Architecture — Vendor-Agnostic Development](../../domains/ai-architecture/vendor-agnostic-development.md) — the abstraction-layer point above, in depth
+- [AI/ML Systems Engineering — Vendor-Agnostic Development](../../domains/ai-ml-systems-engineering/vendor-agnostic-development.md) — the abstraction-layer point above, in depth
 
 ---
 

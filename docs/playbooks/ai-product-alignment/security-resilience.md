@@ -34,7 +34,7 @@ Five controls, cross-cutting, not stage-specific. They get designed in at **[Bui
 
 ## Related
 
-- [AI Security — Guardrails](../../domains/ai-security/guardrails.md)
-- [Sovereignty & Infrastructure](../../domains/sovereignty-infrastructure/index.md) — the residency vs. sovereignty distinction referenced above
-- [Lean & Engineering — CI-by-Design](../../domains/lean-engineering/ci-by-design.md) — circuit breakers and blast radius, same concept applied at the pipeline level
+- [AI Security & Risk — Guardrails](../../domains/ai-security-risk/guardrails.md)
+- [AI Security & Risk — Sovereign Infrastructure Buildout](../../domains/ai-security-risk/sovereign-infrastructure.md) — the residency vs. sovereignty distinction referenced above
+- [Delivery & Operating Practice — CI-by-Design](../../domains/delivery-operating-practice/ci-by-design.md) — circuit breakers and blast radius, same concept applied at the pipeline level
 - Glossary: [Circuit Breaker](../../reference/glossary.md), [Blast Radius](../../reference/glossary.md), [Vendor Lock-in](../../reference/glossary.md)

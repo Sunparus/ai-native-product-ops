@@ -3,9 +3,9 @@ tags:
   - architecture
 ---
 
-# AI Architecture
+# AI/ML Systems Engineering
 
-The technical layers of an AI system, from data to application, and the decisions that connect them.
+The technical layers of an AI system, from data to application, and the decisions that connect them. Grounded in Chip Huyen's *AI Engineering* and *Designing Machine Learning Systems* — the most-referenced practitioner texts structuring this discipline.
 
 ```mermaid
 flowchart TB
@@ -19,7 +19,7 @@ flowchart TB
     end
     G["⚡ Security & Governance"] -.wraps.-> Pipeline
     F["⚡ Cost & FinOps"] -.wraps.-> Pipeline
-    E["⚡ Evaluation & Monitoring"] -.wraps.-> Pipeline
+    E["⚡ Evaluation & Observability"] -.wraps.-> Pipeline
     R["⚡ Resilience & Redundancy"] -.wraps.-> Pipeline
 ```
 
@@ -64,12 +64,26 @@ The product surface — UI, API, or workflow integration where output is consume
 
 ## Cross-cutting concerns
 
-These run through all six layers rather than sitting on one.
+These run through all six layers rather than sitting on one. Two of the four now have their own domain or dedicated page — linked here rather than re-explained.
 
-**Security & Governance** — data residency, access control, prompt-injection defense, encryption, audit trails. See the [AI Security](../ai-security/index.md) and [Data Governance](../data-governance/index.md) domains for depth.
+**Security & Governance** — data residency, access control, prompt-injection defense, encryption, audit trails. See [AI Security & Risk](../ai-security-risk/index.md) and [Data Governance](../data-governance/index.md).
 
-**Cost & FinOps** — token economics, compute amortization, chargeback models. Cost is a function of every layer's design choices, not a separate line item.
+**[Cost & FinOps](../../reference/cost-finops.md)** — token economics, compute amortization, chargeback models. Cost is a function of every layer's design choices, not a separate line item. Cross-cutting practice, not a standalone domain — see the linked page for why.
 
-**Evaluation & Monitoring** — benchmarks, evals, drift detection, hallucination tracking — the feedback loop that confirms the stack is actually working.
+**[Evaluation & Observability](../evaluation-observability/index.md)** — benchmarks, evals, drift detection, hallucination tracking. Elevated to its own domain; this page links out rather than duplicating it.
 
 **Resilience & Redundancy** — failover, multi-region/multi-vendor design, degradation strategy.
+
+## IRL Lens
+
+**Focus areas & deep dives** — none flagged as deep-focus here; this domain's content reflects field-standard weighting.
+
+**Case studies** — see [Case Studies](../../reference/case-studies.md) for events touching this domain's layers (orchestration, containment).
+
+**Open questions** — see [Landscape](../../reference/landscape.md): cost-performance curve, standardization vs. lock-in.
+
+## Related
+
+- [Evaluation & Observability](../evaluation-observability/index.md)
+- [AI Security & Risk](../ai-security-risk/index.md)
+- [Cost & FinOps](../../reference/cost-finops.md)

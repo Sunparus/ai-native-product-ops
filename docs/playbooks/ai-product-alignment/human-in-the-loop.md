@@ -26,4 +26,4 @@ Not every AI action should run unsupervised. Before build starts, name which act
 
 ## Related
 
-- [AI Security — Guardrails](../../domains/ai-security/guardrails.md) — action-approval gates as a system-level control
+- [AI Security & Risk — Guardrails](../../domains/ai-security-risk/guardrails.md) — action-approval gates as a system-level control
