@@ -15,3 +15,9 @@ Building product and engineering workflows so application code calls "a model" t
 - Decide deliberately, per workflow, whether portability or best-in-class capability is the higher priority — treating it as a blanket policy is usually wrong.
 
 **Source:** No single canonical source — evaluate via your own architecture review against each vendor's actual API/data contracts.
+
+## Related
+
+- [AI/ML Systems Engineering](index.md) — the Orchestration Layer where this abstraction typically lives
+- [Multi-Vendor Strategy](multi-vendor-strategy.md) — this pattern is what makes a multi-vendor strategy operationally practical, not just a contractual possibility
+- Glossary: [MCP (Model Context Protocol)](../../reference/glossary.md), [Vendor Lock-in](../../reference/glossary.md)
