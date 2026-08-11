@@ -39,5 +39,5 @@ Prompt injection (LLM01) has held the top spot since the list's first edition �
 
 - [Ethics & Bias](ethics-bias.md) — LLM09 (Misinformation) and fairness-related output filtering overlap directly
 - [AI/ML Systems Engineering](../ai-ml-systems-engineering/index.md) — where these controls actually get implemented, in the Orchestration and Application layers
-- [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md) — LLM06 (Excessive Agency) and LLM03 (Supply Chain) in a real, documented incident
+- [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md) — LLM03 (Supply Chain, the compromised package-registry proxy) in a real, documented incident. Worth noting precisely: the intrusion happened because guardrails were *deliberately* disabled to test capability, not because of an Excessive Agency (LLM06) design flaw — a different failure mode than most OWASP categories assume, since OWASP's list targets production applications, not adversarial capability evaluations
 - Glossary: [Prompt Injection](../../reference/glossary.md), [Hallucination](../../reference/glossary.md)

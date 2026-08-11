@@ -10,7 +10,8 @@ Engineering-delivery mechanics for AI-assisted work — deployment, verification
 
 ```mermaid
 flowchart LR
-    CI[CI-by-Design] --> EVAL[Evaluation Pipelines]
+    TT[Team Topologies] --> CI[CI-by-Design]
+    CI --> EVAL[Evaluation Pipelines]
     CI --> BREAK[Circuit Breakers / Blast Radius]
     EVAL --> METRICS[DORA Metrics]
     BREAK --> METRICS

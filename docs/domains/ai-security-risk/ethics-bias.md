@@ -28,5 +28,5 @@ Fairness isn't a separate concern bolted onto security — NIST's AI RMF names i
 
 ## Related
 
-- [Guardrails](guardrails.md) — system-level controls, including fairness-related output filtering
+- [Guardrails](guardrails.md) — system-level controls, including fairness-related output filtering, and LLM09 (Misinformation) — the OWASP category directly overlapping with happy-path eval blind spots
 - [AI Adoption & Organizational Maturity](../ai-adoption-maturity/index.md) — MITRE's AI Maturity Model names Ethical, Equitable, and Responsible Use as one of its six pillars
