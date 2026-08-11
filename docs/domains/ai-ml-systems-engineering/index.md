@@ -119,6 +119,7 @@ Domain-wide synthesis — each sub-page has its own specific version of this sec
 
 1. **Cost-performance curve** — Will inference cost keep falling fast enough to sustain enterprise-scale adoption, or does it plateau?
 2. **Standardization vs. lock-in** — Will open protocols (e.g. [MCP](https://modelcontextprotocol.io/)) create real interoperability, or become a new layer of vendor lock-in?
+3. **No AI-specific workload classification research found.** Vendor-portability decision-making currently has to borrow from general cloud-infrastructure research (switching cost, compliance, differentiation — see [Vendor-Agnostic Development](vendor-agnostic-development.md)) rather than a framework built for AI model selection specifically. Worth watching for whether one emerges as the field matures, rather than treating the borrowed framework as a permanent answer.
 
 ### Trends
 
