@@ -26,7 +26,7 @@ Techniques for directing each request to the most appropriate model automaticall
 - A learned router is itself a model that needs its own evaluation, monitoring, and retraining cadence — see [Evaluation & Observability](../evaluation-observability/index.md). Treating the router as a fire-and-forget component is how routing quality silently degrades.
 - Routing decisions need to be logged and auditable, especially in cascade setups — if a request escalates, you need to know why, not just that it did.
 
-**Source:** Academic references — "RouteLLM" (UC Berkeley) and "FrugalGPT" (Stanford), the foundational papers on this specific problem.
+**Source:** [RouteLLM](https://arxiv.org/abs/2406.18665) (Ong et al., UC Berkeley, 2024) and [FrugalGPT](https://arxiv.org/abs/2305.05176) (Chen, Zaharia, Zou — Stanford, 2023), the foundational papers on this specific problem. Notably, Matei Zaharia co-authored FrugalGPT — the same researcher named in this domain's Expertise Leads.
 
 ## Related
 

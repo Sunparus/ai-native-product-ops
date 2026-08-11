@@ -20,7 +20,7 @@ Fairness runs through the same NIST AI RMF functions as any other AI risk — Go
 - **Evaluation design** — an eval set that only covers the happy-path population won't surface disparate outcomes for underrepresented groups; this is why the [AI Product Alignment playbook's Stage 4](../../playbooks/ai-product-alignment/stage-4-governance-review.md) treats bias testing as mandatory above a defined risk tier, not optional-by-assumption
 - **Deployment context** — a model that's fair in the training distribution can still produce disparate impact once deployed against a different real-world population
 
-## Interrogate
+## Decision Areas
 
 - Is bias testing mandatory above a defined risk tier, or skipped by default because "there's no obviously sensitive attribute"?
 - Does the eval set explicitly include edge cases and known-underrepresented segments, or only the happy path?

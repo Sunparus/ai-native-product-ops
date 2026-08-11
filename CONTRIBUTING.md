@@ -60,6 +60,8 @@ Flat, declarative, closes the thought instead of opening it. Reads as manufactur
 
 ## 1. Adding a new domain
 
+**The control-plane / execution-plane boundary rule** — needed twice already (Data Layer's lineage-tracking overlap with Data Governance, and the Dataset Engineering vs. Data Quality question), so it's written down now instead of re-litigated a third time: **Data Governance owns who's accountable and what "good" means** — authority, standards, quality thresholds, lineage requirements as policy. **AI/ML Systems Engineering owns how data actually gets there** — the technique: pipelines, acquisition, augmentation, deduplication, curation. Same underlying subject, different plane. When a new topic seems to belong to both, ask which question it answers — "who decides and what's the standard" is Governance; "how do you actually do it" is Systems Engineering. Cross-link, don't duplicate.
+
 A domain gets its own folder only when it's substantial enough to need multiple pages. One-off content goes in an existing domain or Reference instead.
 
 **Checklist:**
@@ -139,6 +141,15 @@ This exact shape is intentional — it's skill.md-compatible, meaning it can be 
 Both failure and success cases belong here. If a documented case is genuinely actionable, consider whether it should also become a playbook (see the AI Eval Containment playbook — extracted directly from a case study).
 
 ---
+
+## The "prove it" rule for any "best practice" claim
+
+Any content that calls something a best practice, industry standard, or significant approach needs one of two things attached, not just the assertion:
+
+- **A named framework or standard** — if it's genuinely a field-wide convention, link the actual standard (an RFC, an ISO number, a named academic framework). This is what most of this hub's domain grounding already does.
+- **A case study or validating research** — if it's validated by industry leaders rather than codified as a formal standard, link a real case study (see `reference/case-studies.md`'s bar: independently verifiable, sourced, not a vendor's self-report) or named industry/consultancy research (a peer-reviewed paper, an analyst report, a named company's published post-mortem).
+
+An unsupported "this is best practice" is exactly the kind of claim the ToV Guide's grounding-in-named-sources instinct exists to catch. If neither a framework link nor a validating case study is available, say so honestly — "no independent validation found yet" — rather than assert it anyway.
 
 ## 4. Tags currently in use
 

@@ -26,3 +26,4 @@ Data governance is the exercise of authority and control over data assets. Benea
 - [DAMA-DMBOK — The Wheel](dmbok-wheel.md) — Data Governance as the central hub these principles underlie
 - [Enterprise Metadata Model](enterprise-metadata-model.md) — these principles applied to metadata specifically
 - [Playbook: DAMA-DMBOK Operationalization](../../playbooks/dmbok-operationalization.md)
+- [Dataset Engineering](../ai-ml-systems-engineering/dataset-engineering.md) — the technique layer these principles govern the standard for, not the technique itself

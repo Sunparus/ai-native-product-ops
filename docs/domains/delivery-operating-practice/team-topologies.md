@@ -27,7 +27,7 @@ The other half of this domain's grounding, and — until now — never actually 
 
 The common failure mode: every team tries to own its own AI infrastructure — model access, eval tooling, cost governance — because no platform team exists to own it as a shared service. This multiplies both cognitive load (every stream-aligned team now needs deep AI infrastructure knowledge, not just their product domain) and inconsistency (five teams build five different, incompatible versions of the same guardrails). A platform team offering AI capability as X-as-a-Service is the structural fix — the same logic as [CI-by-Design](ci-by-design.md)'s golden-path tooling, applied to team boundaries instead of pipelines.
 
-## Interrogate
+## Decision Areas
 
 - Is there a platform team who owns shared AI infrastructure as a service, or is every stream-aligned team quietly rebuilding it?
 - When two teams are in "collaboration" mode, is there an end date, or has temporary collaboration quietly become a permanent, high-overhead dependency?

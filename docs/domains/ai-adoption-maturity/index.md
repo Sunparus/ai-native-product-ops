@@ -50,7 +50,7 @@ The honest failure mode this table exists to surface: most organizations self-re
 
 DORA and Team Topologies measure and structure *engineering delivery* — deployment frequency, lead time, team boundaries. This domain measures something upstream and broader: whether the organization's *people, culture, and processes* are actually ready to absorb AI-assisted work, independent of whether the engineering pipeline is fast. A team can have excellent DORA metrics and still be in "Active" maturity — pilots that never scale — because the organizational readiness isn't there.
 
-## Interrogate
+## Decision Areas
 
 - Which maturity stage is this team or org honestly in — scored against concrete signals, not the best-case pillar?
 - Is the cultural/readiness gap named explicitly, or assumed to resolve itself once the technology works?

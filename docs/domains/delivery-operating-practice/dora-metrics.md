@@ -30,7 +30,7 @@ These split into two categories: **throughput** (Deployment Frequency, Lead Time
 - **2025** — a genuine inflection point: DORA's annual report skipped the traditional State of DevOps format entirely and became dedicated to AI-assisted software development. Key finding: AI adoption improves throughput but *increases* delivery instability — speed and safety decoupling again, specifically because of AI-assisted coding. The report also introduced an **AI Capabilities Model** and replaced the old tiered clustering with seven archetypes combining technical and human performance factors.
 - **2026, live debate** — a growing body of practitioner commentary argues the original four metrics get *misleading*, not just incomplete, once AI generates a large share of committed code — Deployment Frequency and Lead Time can look artificially strong while quality and team health quietly erode. This isn't settled consensus, but it's a live enough debate to flag rather than present the four-metric model as unchanged since 2018.
 
-## Interrogate
+## Decision Areas
 
 - Are you tracking the original four (or five) metrics as designed, or as vanity numbers disconnected from the throughput/stability pairing they were built to hold in tension?
 - If AI-assisted coding is a meaningful share of your commits, have you checked whether Deployment Frequency and Lead Time still mean what they used to — per DORA's own 2025 findings, this is no longer a safe assumption?

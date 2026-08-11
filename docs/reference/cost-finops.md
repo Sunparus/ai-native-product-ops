@@ -18,7 +18,7 @@ A cross-cutting practice, not a domain — deliberately. It lacks the independen
 - **[Multi-Vendor Strategy](../domains/ai-ml-systems-engineering/multi-vendor-strategy.md)** — cost arbitrage and negotiating leverage are one of the three named reasons for a deliberate multi-vendor approach
 - **[AI Security & Risk](../domains/ai-security-risk/index.md)** — vendor exit strategy (a Security & Resilience non-negotiable in the [AI Product Alignment playbook](../playbooks/ai-product-alignment/security-resilience.md)) is fundamentally a cost-exposure question dressed as a security control
 
-## Interrogate
+## Decision Areas
 
 - Cost per resolved task, not cost per token — the unit that actually maps to business value
 - Is there quota governance by team, or does spend only surface at the invoice, after the fact ([Stage 6 of the AI Product Alignment playbook](../playbooks/ai-product-alignment/stage-6-operate-monitor.md) names this exact failure mode)
