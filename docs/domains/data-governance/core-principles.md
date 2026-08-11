@@ -20,3 +20,9 @@ Data governance is the exercise of authority and control over data assets. Benea
 7. **Purpose limitation** — data used only for the purpose it was collected or authorized for; the most common quiet failure point once AI systems start reusing data across use cases.
 
 **Source:** These principles are common across DAMA-DMBOK, ISO/IEC 38505 (governance of data), and ISO/IEC 42001 (AI management systems) — see [Legal & Regulatory](../../reference/legal-regulatory.md) for the standards themselves.
+
+## Related
+
+- [DAMA-DMBOK — The Wheel](dmbok-wheel.md) — Data Governance as the central hub these principles underlie
+- [Enterprise Metadata Model](enterprise-metadata-model.md) — these principles applied to metadata specifically
+- [Playbook: DAMA-DMBOK Operationalization](../../playbooks/dmbok-operationalization.md)

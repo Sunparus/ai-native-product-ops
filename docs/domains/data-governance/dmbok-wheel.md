@@ -45,3 +45,9 @@ flowchart TB
 | **Data Quality** | Planning, implementation, and control activities to guarantee usable data. | Directly determines hallucination risk — poor input quality produces confidently-stated errors. |
 
 Next: [Operationalizing the framework →](dmbok-operationalizing.md)
+
+## Related
+
+- [Core Principles](core-principles.md) — the framework-agnostic foundation this wheel sits on top of
+- [Enterprise Metadata Model](enterprise-metadata-model.md) — Metadata Management, one of the 11 areas above, expanded
+- [Playbook: DAMA-DMBOK Operationalization](../../playbooks/dmbok-operationalization.md)
