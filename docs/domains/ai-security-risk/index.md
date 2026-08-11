@@ -38,7 +38,7 @@ NIST's AI RMF structures all AI risk work — including the three subsections ab
 - **Measure** — choosing metrics and methods, evaluating each trustworthiness characteristic (validity, safety, security, fairness, and others), tracking risk over time
 - **Manage** — operationalizing the response: controls, incident handling, drift monitoring
 
-This isn't a one-time assessment — it's iterative across the system's life, which is why it wraps every subsection in this domain rather than sitting as a separate checklist.
+This runs iteratively across the system's entire life, which is why it wraps every subsection in this domain rather than sitting as a one-time, separate checklist.
 
 ## IRL Lens
 
@@ -46,7 +46,7 @@ This isn't a one-time assessment — it's iterative across the system's life, wh
 
 **Case studies** — [Sandbox containment failure during an AI capability evaluation](../../reference/case-studies.md) — a direct illustration of Map/Measure/Manage breaking down when guardrails are deliberately reduced for testing.
 
-**Open questions** — see [Landscape — AI Security & Risk](../../reference/landscape/ai-security-risk.md): sovereign capability gap, safe multi-agent orchestration.
+**Open questions & trends** — see Landscape, below.
 
 ## Related
 
@@ -54,3 +54,25 @@ This isn't a one-time assessment — it's iterative across the system's life, wh
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — OWASP LLM Top 10, NIST AI RMF, ISO/IEC 42001
 - [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md)
 - [Playbook: AI Product Alignment — Security & Resilience Non-Negotiables](../../playbooks/ai-product-alignment/security-resilience.md)
+
+## Landscape
+
+### Open Questions
+
+1. **Sovereign capability gap** — Will EU/regional providers reach frontier-model capability, or does sovereignty require accepting a performance discount?
+2. **Safe multi-agent orchestration** — How do multi-agent systems fail predictably and stay auditable once they act autonomously in production?
+
+### Trends
+
+1. **Sovereign infrastructure buildout** — EU-hosted and open-weight offerings maturing as compliance-driven alternatives to US hyperscalers.
+
+### Expertise Leads
+
+| Who | Why them |
+|---|---|
+| **[Timnit Gebru](https://www.dair-institute.org/)** | Founder, DAIR — the most cited research voice specifically on AI safety, bias, and governance |
+| **[NIST](https://www.nist.gov/itl/ai-risk-management-framework)** | Publishes the AI Risk Management Framework — the shared reference structure this whole domain is built on |
+| **[MITRE](https://atlas.mitre.org/)** | Publishes ATLAS, the adversarial threat taxonomy for AI systems |
+| **[Arthur Mensch](https://mistral.ai/news/)** | Co-founder/CEO, Mistral AI — the reference case for EU-headquartered, open-weight, sovereignty-conscious model development |
+
+See [Experts & Sources](../../reference/experts.md) for the full directory this is drawn from.

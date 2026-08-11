@@ -36,5 +36,6 @@ The common failure mode: every team tries to own its own AI infrastructure — m
 ## Related
 
 - [CI-by-Design](ci-by-design.md) — golden-path tooling is the pipeline-level expression of the same platform-team logic
+- [DORA Metrics](dora-metrics.md) — what platform-team investment should actually move
 - [AI Adoption & Organizational Maturity](../ai-adoption-maturity/index.md) — team structure is one lever among several for organizational readiness
 - [Experts & Sources](../../reference/experts.md) — Matthew Skelton, co-author

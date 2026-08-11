@@ -6,7 +6,7 @@ tags:
 
 # Ethics & Bias
 
-Fairness isn't a separate concern bolted onto security — NIST's AI RMF names it as one of seven core trustworthy-AI characteristics, addressed through the same Govern/Map/Measure/Manage functions as any other AI risk. It gets its own page here because the practice is substantial enough to need one, not because it's a different discipline.
+Fairness runs through the same NIST AI RMF functions as any other AI risk — Govern, Map, Measure, Manage — rather than sitting outside them as a separate track. It gets its own page here because the practice is substantial enough to warrant one, the same reason Metadata Management gets its own page under Data Governance rather than staying a bullet point.
 
 ## Grounded in
 

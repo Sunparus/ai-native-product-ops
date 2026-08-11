@@ -31,10 +31,30 @@ flowchart TB
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case flags an internal boundary-enforcement gap that's a governance failure as much as a security one.
 
-**Open questions** — see [Landscape — Data Governance](../../reference/landscape/data-governance.md) — an honest gap right now; the active metadata adoption trend is covered there instead.
+**Open questions & trends** — see Landscape, below.
 
 ## Related
 
 - [Legal & Regulatory](../../reference/legal-regulatory.md) — GDPR, EU AI Act, ISO/IEC 38505, and related standards
 - [AI Security & Risk](../ai-security-risk/index.md) — where governance and access control meet
 - [Playbook: DAMA-DMBOK Operationalization](../../playbooks/dmbok-operationalization.md)
+
+## Landscape
+
+### Open Questions
+
+No domain-specific open question filed yet — a genuine gap, not an oversight. Worth filling as this domain's IRL Lens accumulates real cases.
+
+### Trends
+
+1. **Active metadata adoption** — A shift from static, manually-maintained catalogs to continuously-updated, bidirectionally-wired metadata practice. See [Metadata Management](metadata-management.md) for the passive-to-active distinction. Gartner's Magic Quadrant for Metadata Management Solutions returned in November 2025 after a five-year pause — itself a signal of how central the discipline has become; the report is analyst-paywalled, not linked here to avoid pointing at vendor-promotional summaries instead.
+
+### Expertise Leads
+
+| Who | Why them |
+|---|---|
+| **[Robert Seiner](https://tdan.com/)** | Creator of the Non-Invasive Data Governance approach — formalizing stewardship around people already doing the work, rather than top-down appointment |
+| **[DAMA International](https://www.dama.org/cpages/body-of-knowledge)** | Publishes DAMA-DMBOK, the reference framework this entire domain is structured around |
+| **[Gartner](https://www.gartner.com/en)** | Publishes the Magic Quadrant for Metadata Management Solutions — the standard analyst reference for vendor evaluation in this space. Report itself is paywalled; linked here to Gartner's own site rather than a vendor's promotional summary |
+
+See [Experts & Sources](../../reference/experts.md) for the full directory this is drawn from.

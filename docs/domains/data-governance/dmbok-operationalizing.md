@@ -17,7 +17,7 @@ flowchart LR
 ```
 
 ### 01 · Map capabilities, don't checklist
-Assess current maturity across the 11 areas as a capability map. DMBOK is not exhaustive documentation to complete — treat it as a diagnostic instrument.
+Assess current maturity across the 11 areas as a capability map, used to diagnose where to focus — not exhaustive documentation to complete for its own sake.
 
 ### 02 · Prioritize by business risk
 Not all 11 areas are equally urgent. Rank by current regulatory exposure, incident history, and what AI systems already touch — start there, not alphabetically.

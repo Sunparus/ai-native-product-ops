@@ -21,7 +21,7 @@ Every page, at all times, should answer these questions positively. Status noted
 | 9 | Are all terms and concepts explained? | **Ongoing discipline** | Every domain-specific term used should exist in the Reference Glossary — not yet audited end-to-end |
 | 10 | Are all major best frameworks presented? | **Ongoing discipline**, tracked via the domain promotion rule | Coverage completeness per domain, checked against each domain's named standard |
 | 11 | As objective and vendor-neutral as possible? | **House rule** | Vendors named factually; analyst "leader" status stated explicitly as a shortlist input, never an endorsement (see Metadata Management page for the pattern) |
-| 12 | Gaps, contradictions, and open industry issues flagged? | **Structural — via IRL Lens** | Each domain's IRL Lens section links to relevant Open Questions in Landscape; case studies flag what failed, not just what happened |
+| 12 | Gaps, contradictions, and open industry issues flagged? | **Structural — via each domain's Landscape section** | Every domain ends with its own Landscape (Open Questions / Trends / Expertise Leads), not a separate reference page; case studies flag what failed, not just what happened |
 | 13 | Easy to navigate down *and* up from any page? | **Met** | Down: domain skeleton (schema → In this domain list). Up: breadcrumb path navigation now live (`navigation.path`), plus `Related` sections |
 | 14 | Easy to turn each page into a skill.md? | **True for Playbooks by design; not true for Domain pages, deliberately** | Domain pages explain *why* and stay prose — forcing skill.md shape onto a concept page was the mistake avoided early in this hub's build. Each domain instead points to its corresponding Playbook when one exists — that's the operationalizable version |
 | 15 | Is there a feedback mechanism — a reaction or a short text comment — for any reader? | **Not yet built** | Requires enabling GitHub Discussions (available, not yet turned on) plus a per-page "Discuss this page" link. A reaction-click widget would need an analytics backend this static, free setup doesn't have — Discussions is the realistic mechanism here |
@@ -64,12 +64,15 @@ A domain gets its own folder only when it's substantial enough to need multiple 
 
 **Checklist:**
 - [ ] Folder: `docs/domains/<slug>/`
-- [ ] `index.md` starts with: title → 1-sentence definition → a Mermaid schema diagram (before any other content) → `## In this domain` (bullet list linking every page) → `## Related` (links to other domains/reference this one touches)
+- [ ] `index.md` order, fixed: title → 1-sentence definition → Mermaid schema diagram → `## In this domain` → body content → `## IRL Lens` (Focus areas & deep dives, Case studies) → `## Related` → `## Landscape` (Open Questions / Trends / Expertise Leads) as the literal last section — not a separate reference page
 - [ ] Every page in the folder has `tags:` front matter — reuse an existing tag before inventing one (see current list below)
 - [ ] Add the domain to `mkdocs.yml` nav, in the same position pattern as the others (Overview first, then pages in the order they appear on the index)
+- [ ] Every claim in Landscape (especially Trends and Open Questions) gets a real, verified, non-paywalled link where one exists. If the primary source is paywalled, link the organization's own site rather than a vendor's promotional summary of it — never leave a specific claim unlinked just because the ideal source is gated
 - [ ] Run `mkdocs build --strict` before committing — broken links fail the build, not silently
 
 **Schema diagram rule, learned the hard way:** if two concepts are *distinct parallel dimensions* (e.g. residency vs. sovereignty), don't draw a sequential arrow between them — that claims one causes or precedes the other. Check the diagram's arrows against your own prose before shipping; this was the actual defect found in the last QA pass, twice, in two different domains.
+
+**Content/diagram drift rule, also learned the hard way:** any time a page is added to a domain's "In this domain" list, check whether the schema diagram needs a matching update. A domain's diagram and its actual page list drifted apart within a single commit once already — the fix is a habit, not a one-time correction.
 
 ---
 

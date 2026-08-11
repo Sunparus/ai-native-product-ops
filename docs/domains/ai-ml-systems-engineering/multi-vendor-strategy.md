@@ -13,7 +13,7 @@ Using two or more model providers by design — for resilience, cost arbitrage, 
 
 - Benefit: no single point of failure, and credible exit options in vendor negotiations.
 - Cost: added orchestration complexity, duplicated evaluation/monitoring work, inconsistent behavior across providers.
-- The decision is not binary — segment by workload sensitivity and criticality rather than choosing one strategy company-wide.
+- Segment the decision by workload sensitivity and criticality, rather than choosing one strategy company-wide.
 
 **Source:** [a16z](https://a16z.com/) and [Epoch AI](https://epochai.org/) both publish periodic market-structure analyses relevant to vendor concentration risk.
 

@@ -20,5 +20,6 @@ Continuous integration extended to cover model behavior, not just code: every ch
 ## Related
 
 - [Team Topologies](team-topologies.md) — the platform-team pattern that makes golden-path tooling organizationally sustainable, not just technically correct
+- [DORA Metrics](dora-metrics.md) — the metrics referenced above, in depth, including how AI-assisted coding has genuinely complicated them since 2025
 - [Evaluation & Observability](../evaluation-observability/index.md) — the automated eval pipelines this practice depends on
 - [Playbook: CI-by-Design](../../playbooks/ci-by-design.md)

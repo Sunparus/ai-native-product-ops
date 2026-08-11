@@ -54,10 +54,30 @@ Collecting feedback (thumbs up/down, corrections) is not the same as having a fe
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case is also an evaluation failure — the capability eval itself lacked containment as part of its own design.
 
-**Open questions** — see [Landscape — Evaluation & Observability](../../reference/landscape/evaluation-observability.md): reliability at scale (can evaluation tooling close the hallucination gap for high-stakes automation).
+**Open questions & trends** — see Landscape, below.
 
 ## Related
 
 - [AI/ML Systems Engineering](../ai-ml-systems-engineering/index.md) — the systems this domain evaluates
 - [AI Security & Risk](../ai-security-risk/index.md) — NIST's Measure function overlaps directly with eval design
 - [Playbook: AI Product Alignment & Review](../../playbooks/ai-product-alignment/index.md) — Stages 2 and 4 operationalize this domain directly
+
+## Landscape
+
+### Open Questions
+
+1. **Reliability at scale** — Can evaluation and verification tooling close the hallucination gap enough for high-stakes automation?
+
+### Trends
+
+1. **System-level evaluation maturing into a production discipline** — Evaluation moving from academic benchmarks into LLMOps: CI-integrated eval pipelines (see [Automated Eval Pipelines](#automated-eval-pipelines) above), not just pre-launch checklists.
+
+### Expertise Leads
+
+| Who | Why them |
+|---|---|
+| **[Chip Huyen](https://huyenchip.com/books/)** | Devotes two full chapters of *AI Engineering* to evaluation methodology, ahead of most implementation topics — the clearest signal of how seriously the discipline should be taken |
+| **[Stanford CRFM](https://crfm.stanford.edu/helm/)** | HELM (Holistic Evaluation of Language Models) — a maintained, named benchmark framework, the closest thing this domain has to an institutional reference point |
+| **[Shreya Shankar](https://www.sh-reya.com/)** | Published research specifically on LLM evaluation pitfalls — where eval design goes wrong in practice |
+
+See [Experts & Sources](../../reference/experts.md) for the full directory this is drawn from.

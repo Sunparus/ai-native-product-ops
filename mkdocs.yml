@@ -69,6 +69,7 @@ nav:
       - Overview: domains/delivery-operating-practice/index.md
       - CI-by-Design: domains/delivery-operating-practice/ci-by-design.md
       - Team Topologies: domains/delivery-operating-practice/team-topologies.md
+      - DORA Metrics: domains/delivery-operating-practice/dora-metrics.md
   - AI Adoption & Organizational Maturity:
       - Overview: domains/ai-adoption-maturity/index.md
       - Lean AI-Assisted Org: domains/ai-adoption-maturity/lean-ai-org.md
@@ -94,12 +95,4 @@ nav:
       - Cost & FinOps: reference/cost-finops.md
       - Case Studies: reference/case-studies.md
       - Experts & Sources: reference/experts.md
-      - Landscape:
-          - Overview: reference/landscape/index.md
-          - AI/ML Systems Engineering: reference/landscape/ai-ml-systems-engineering.md
-          - Evaluation & Observability: reference/landscape/evaluation-observability.md
-          - Data Governance: reference/landscape/data-governance.md
-          - AI Security & Risk: reference/landscape/ai-security-risk.md
-          - Delivery & Operating Practice: reference/landscape/delivery-operating-practice.md
-          - AI Adoption & Organizational Maturity: reference/landscape/ai-adoption-maturity.md
       - Tags: reference/tags.md

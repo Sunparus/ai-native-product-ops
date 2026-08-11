@@ -80,10 +80,36 @@ These run through all six layers rather than sitting on one. Two of the four now
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md) for events touching this domain's layers (orchestration, containment).
 
-**Open questions** — see [Landscape — AI/ML Systems Engineering](../../reference/landscape/ai-ml-systems-engineering.md): cost-performance curve, standardization vs. lock-in.
+**Open questions & trends** — see Landscape, below.
 
 ## Related
 
 - [Evaluation & Observability](../evaluation-observability/index.md)
 - [AI Security & Risk](../ai-security-risk/index.md)
 - [Cost & FinOps](../../reference/cost-finops.md)
+
+## Landscape
+
+### Open Questions
+
+1. **Cost-performance curve** — Will inference cost keep falling fast enough to sustain enterprise-scale adoption, or does it plateau?
+2. **Standardization vs. lock-in** — Will open protocols (e.g. [MCP](https://modelcontextprotocol.io/)) create real interoperability, or become a new layer of vendor lock-in?
+
+### Trends
+
+1. **Agentic architectures** — Shift from single-shot prompting to multi-step, tool-using agents as the default design pattern.
+2. **Inference cost collapse** — Smaller, distilled, and open-weight models closing the gap with frontier models at a fraction of the cost.
+3. **Interoperability protocols** — Standards like [MCP](https://modelcontextprotocol.io/) reducing custom integration work between models, tools, and data sources.
+
+### Expertise Leads
+
+Who to check first for the best current solution in this domain — mix of individuals and organizations, not ranked.
+
+| Who | Why them |
+|---|---|
+| **[Chip Huyen](https://huyenchip.com/books/)** | Author of *AI Engineering* and *Designing Machine Learning Systems* — the most-referenced practitioner texts structuring this discipline |
+| **[Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy)** | First-principles explainer; former Tesla AI / OpenAI |
+| **[Jay Alammar](https://jalammar.github.io/)** | The clearest visual explanations of transformer architecture in the field |
+| **[NVIDIA](https://www.nvidia.com/en-us/data-center/products/tensorrt/)** | Owns the compute and inference-serving layer (GPUs, TensorRT, Triton) underneath nearly every other player's stack |
+
+See [Experts & Sources](../../reference/experts.md) for the full directory this is drawn from.
