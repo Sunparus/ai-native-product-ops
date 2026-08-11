@@ -19,6 +19,7 @@ flowchart LR
 ## In this domain
 
 - **[CI-Processes-by-Design](ci-by-design.md)** — verification and evaluation as infrastructure, not an afterthought
+- **[Team Topologies](team-topologies.md)** — team design patterns: four team types, three interaction modes, and why most AI infrastructure gets rebuilt five times over without this
 
 ## Grounded in
 

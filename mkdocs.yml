@@ -68,6 +68,7 @@ nav:
   - Delivery & Operating Practice:
       - Overview: domains/delivery-operating-practice/index.md
       - CI-by-Design: domains/delivery-operating-practice/ci-by-design.md
+      - Team Topologies: domains/delivery-operating-practice/team-topologies.md
   - AI Adoption & Organizational Maturity:
       - Overview: domains/ai-adoption-maturity/index.md
       - Lean AI-Assisted Org: domains/ai-adoption-maturity/lean-ai-org.md
