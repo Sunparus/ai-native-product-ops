@@ -2,6 +2,7 @@
 tags:
   - architecture
   - cost
+  - evaluation
 ---
 
 # Fine-Tuning & Model Adaptation
@@ -55,4 +56,5 @@ Chip Huyen, *AI Engineering* — fine-tuning gets a full chapter, positioned del
 - [AI/ML Systems Engineering](index.md) — the Model Layer this page expands on
 - [Prompt Engineering](prompt-engineering.md) — the cheaper lever to exhaust first
 - [RAG & Agent Architecture](rag-agent-architecture.md) — the other cheaper lever, for knowledge gaps specifically
+- [Dataset Engineering](dataset-engineering.md) — fine-tuning quality is bounded by the dataset behind it
 - [Cost & FinOps](../../reference/cost-finops.md) — fine-tuning's cost profile is fundamentally different from inference-time techniques

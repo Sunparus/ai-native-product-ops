@@ -43,3 +43,5 @@ Techniques for directing each request to the most appropriate model automaticall
 - [AI/ML Systems Engineering](index.md) — the Orchestration Layer this technique operates within
 - [Cost & FinOps](../../reference/cost-finops.md) — routing is one of the primary cost levers in the stack
 - [Multi-Vendor Strategy](multi-vendor-strategy.md) — routing across vendors, not just across models from one provider
+- [Inference Optimization](inference-optimization.md) — routing and inference optimization are complementary cost/latency levers, often tuned together
+- [RAG & Agent Architecture](rag-agent-architecture.md) — routing decisions inside a multi-step agent workflow

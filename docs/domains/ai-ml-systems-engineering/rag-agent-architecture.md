@@ -1,6 +1,7 @@
 ---
 tags:
   - architecture
+  - evaluation
 ---
 
 # RAG & Agent Architecture
@@ -45,6 +46,7 @@ Chip Huyen, *AI Engineering* — RAG and agents get a dedicated chapter; this pa
 
 - [AI/ML Systems Engineering](index.md) — the Context and Orchestration layers this page expands on
 - [Prompt Engineering](prompt-engineering.md) — the technique underneath every step in an agent loop
+- [Fine-Tuning & Model Adaptation](fine-tuning.md) — the next lever when RAG can't close the gap on its own
 - [Efficient Model Routing](model-routing.md) — routing decisions inside a multi-step agent workflow
 - [AI Security & Risk — Guardrails](../ai-security-risk/guardrails.md) — LLM06 Excessive Agency, the OWASP category this directly maps to
 - [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md) — a real, documented coordination-layer failure

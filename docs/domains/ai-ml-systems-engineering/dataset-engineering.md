@@ -2,6 +2,7 @@
 tags:
   - architecture
   - data
+  - evaluation
 ---
 
 # Dataset Engineering
@@ -39,4 +40,5 @@ Chip Huyen, *AI Engineering* — dataset engineering gets a dedicated chapter, p
 
 - [Data Governance — Core Principles](../data-governance/core-principles.md) — accountability and quality standards for the datasets this page describes building
 - [Evaluation & Observability](../evaluation-observability/index.md) — eval set construction is dataset engineering applied specifically to measurement
+- [Fine-Tuning & Model Adaptation](fine-tuning.md) — the reason most dataset engineering effort exists: fine-tuning is only as good as the data behind it
 - [AI/ML Systems Engineering](index.md) — the Data Layer this page expands on

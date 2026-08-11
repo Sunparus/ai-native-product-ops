@@ -37,5 +37,6 @@ Using two or more model providers by design — for resilience, cost arbitrage, 
 
 - [AI/ML Systems Engineering](index.md) — the Orchestration Layer where multi-vendor routing lives
 - [Vendor-Agnostic AI-Assisted Development](vendor-agnostic-development.md) — the abstraction layer that makes multi-vendor practical
+- [Efficient Model Routing](model-routing.md) — the mechanism that actually operationalizes a multi-vendor strategy request by request
 - [Cost & FinOps](../../reference/cost-finops.md) — cost arbitrage is one of the three named reasons for this strategy
 - [Playbook: AI Product Alignment — Security & Resilience Non-Negotiables](../../playbooks/ai-product-alignment/security-resilience.md) — vendor exit strategy as a review-gated control, not just a nice-to-have
