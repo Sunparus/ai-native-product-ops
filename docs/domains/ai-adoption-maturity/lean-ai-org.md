@@ -16,3 +16,9 @@ An organization structured so AI-assisted work stays fast, cheap, and safe simul
 - Traceability requirement: every AI-assisted output must be attributable to a request, a model version, and a data source — treat this as a build requirement, not an audit afterthought.
 
 **Source:** *Team Topologies* (Matthew Skelton & Manuel Pais) for org design; *Accelerate* (Forsgren, Humble, Kim) for the underlying performance research (DORA metrics).
+
+## Related
+
+- [AI Adoption & Organizational Maturity](index.md) — this archetype in the context of the broader maturity progression
+- [Team Topologies](../delivery-operating-practice/team-topologies.md) — the team-design framework this archetype applies
+- [Playbook: AI Product Alignment — Security & Resilience Non-Negotiables](../../playbooks/ai-product-alignment/security-resilience.md) — the structural, not procedural, principle applied to specific controls

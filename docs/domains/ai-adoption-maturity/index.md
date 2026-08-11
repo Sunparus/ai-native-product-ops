@@ -18,8 +18,27 @@ flowchart LR
 
 ## In this domain
 
-- **Maturity stages** — where an organization actually sits, not where it claims to sit (detail below)
+- **[Maturity Stages](#maturity-stages)** — where an organization actually sits, not where it claims to sit (detail below)
 - **[Lean AI-Assisted Product Organization](lean-ai-org.md)** — the org design archetype: small autonomous teams, structural (not procedural) cost and security controls
+
+## Maturity Stages
+
+The diagram above follows Gartner's five-stage model — the most widely cited version. Worth being precise about how the three grounding frameworks actually relate, since they don't map 1:1:
+
+- **Gartner (5 stages)** and **MIT CISR (4 stages)** measure the same underlying progression — MIT CISR's stages compress roughly to Gartner's Awareness+Active, Operational, Systemic, and Transformational. Different granularity, same axis.
+- **MITRE's model is structured differently** — six *pillars* (capability areas an organization must build across), not sequential stages. It's a different axis entirely: Gartner/MIT CISR answer "how far along is this organization," MITRE answers "which specific capabilities does it need to build." Both are useful; don't treat MITRE's pillars as another version of the same stage ladder.
+
+**Signals per stage, not just labels:**
+
+| Stage | What it actually looks like |
+|---|---|
+| **Awareness** | Individual teams experimenting ad hoc, no budget line, no shared infrastructure, success measured anecdotally |
+| **Active** | Funded pilots exist, but each is siloed — no shared platform, no consistent governance, most pilots never reach production |
+| **Operational** | AI is in production for specific workflows, with real monitoring and ownership — but still bounded to the teams that built it |
+| **Systemic** | AI is embedded across core processes, with shared platform infrastructure (see [Team Topologies](../delivery-operating-practice/team-topologies.md)) and consistent governance |
+| **Transformational** | The operating model itself assumes AI-native workflows by default — this isn't "using AI a lot," it's the org no longer having a meaningful "before AI" baseline to compare against |
+
+The honest failure mode this table exists to surface: most organizations self-report higher than their actual stage, because "Active" (funded pilots) *feels* like more progress than it is if none of those pilots have reached "Operational."
 
 ## Grounded in
 
