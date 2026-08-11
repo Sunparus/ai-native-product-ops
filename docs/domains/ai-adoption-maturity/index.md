@@ -77,7 +77,7 @@ DORA and Team Topologies measure and structure *engineering delivery* — deploy
 
 ### Trends
 
-1. **Financial performance tracks maturity stage, not AI spend.** Per the same MIT CISR research, the correlation is with maturity *stage* — how deeply AI is embedded into workflows and governance — not simply how much an organization has invested. Spend without stage progression doesn't show the same financial return.
+1. **Financial performance tracks maturity stage.** Per the same MIT CISR research, the correlation is with maturity *stage* — how deeply AI is embedded into workflows and governance. Spend alone, without stage progression, doesn't show the same financial return.
 
 ### Expertise Leads
 
