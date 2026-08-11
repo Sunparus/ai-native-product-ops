@@ -15,7 +15,15 @@ Using two or more model providers by design — for resilience, cost arbitrage, 
 - Cost: added orchestration complexity, duplicated evaluation/monitoring work, inconsistent behavior across providers.
 - Segment the decision by workload sensitivity and criticality, rather than choosing one strategy company-wide.
 
-**Source:** [a16z](https://a16z.com/) and [Epoch AI](https://epochai.org/) both publish periodic market-structure analyses relevant to vendor concentration risk.
+## Decision Areas
+
+- Is multi-vendor genuinely segmented by workload (sensitivity, criticality, cost profile), or is it two vendors used interchangeably with no real decision logic behind which gets which request?
+- Has the orchestration and evaluation overhead of running multiple vendors actually been costed, or assumed to be worth it without measurement?
+- If the primary vendor is unavailable right now, is failover to the second vendor tested and working, or a plan that's never been exercised?
+
+## Source
+
+[a16z's "How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025"](https://a16z.com/ai-enterprise-2025/) — surveyed 100 CIOs across 15 industries, found 81% of respondents now orchestrating three or more model families in production, up from 68% a year prior. A specific, current, verifiable finding, not a generic pointer to "periodic market analyses."
 
 ## Related
 

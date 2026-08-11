@@ -38,7 +38,7 @@ The diagram above follows Gartner's five-stage model — the most widely cited v
 | **Systemic** | AI is embedded across core processes, with shared platform infrastructure (see [Team Topologies](../delivery-operating-practice/team-topologies.md)) and consistent governance |
 | **Transformational** | The operating model itself assumes AI-native workflows by default. The signal to watch for: the org no longer has a meaningful "before AI" baseline left to compare against — AI usage has stopped being a measurable delta and become the default state |
 
-The honest failure mode this table exists to surface: most organizations self-report higher than their actual stage, because "Active" (funded pilots) *feels* like more progress than it is if none of those pilots have reached "Operational."
+The failure mode this table exists to surface: most organizations self-report higher than their actual stage, because "Active" (funded pilots) *feels* like more progress than it is if none of those pilots have reached "Operational."
 
 ## Grounded in
 

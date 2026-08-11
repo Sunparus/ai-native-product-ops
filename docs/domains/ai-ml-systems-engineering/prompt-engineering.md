@@ -24,7 +24,7 @@ Structuring instructions and examples given to a model to reliably shape its out
 ## Decision Areas
 
 - Is the prompt engineered against a real eval set, or tuned by eyeballing a handful of outputs? The latter produces prompts that look good in a demo and degrade in production — see [Evaluation & Observability](../evaluation-observability/index.md).
-- Where does prompt engineering stop being sufficient? The honest signal: when the same failure mode recurs across many different phrasings of the prompt, that's usually a capability gap prompting can't close — the point to consider [Fine-Tuning](fine-tuning.md) or [RAG](rag-agent-architecture.md) instead.
+- Where does prompt engineering stop being sufficient? The clearest signal: when the same failure mode recurs across many different phrasings of the prompt, that's usually a capability gap prompting can't close — the point to consider [Fine-Tuning](fine-tuning.md) or [RAG](rag-agent-architecture.md) instead.
 - Is the system prompt versioned and reviewed like code, or edited ad hoc in a chat window? Prompt changes are behavior changes — they belong in the same CI discipline as everything else, see [CI-by-Design](../delivery-operating-practice/ci-by-design.md).
 
 ## Source

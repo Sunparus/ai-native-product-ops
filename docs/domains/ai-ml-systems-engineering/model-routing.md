@@ -21,12 +21,14 @@ Techniques for directing each request to the most appropriate model automaticall
 - **Cost matters more than tail latency, and confidence scoring is available** — cascade routing. The cost savings are real, but budget for the escalation-latency tax on the hard cases; if too much traffic escalates, the cascade isn't saving anything.
 - **Traffic is high-volume and heterogeneous enough that rules can't keep up** — learned routing earns its complexity here. Not before.
 
-## Watch-outs
+## Decision Areas
 
 - A learned router is itself a model that needs its own evaluation, monitoring, and retraining cadence — see [Evaluation & Observability](../evaluation-observability/index.md). Treating the router as a fire-and-forget component is how routing quality silently degrades.
 - Routing decisions need to be logged and auditable, especially in cascade setups — if a request escalates, you need to know why, not just that it did.
 
-**Source:** [RouteLLM](https://arxiv.org/abs/2406.18665) (Ong et al., UC Berkeley, 2024) and [FrugalGPT](https://arxiv.org/abs/2305.05176) (Chen, Zaharia, Zou — Stanford, 2023), the foundational papers on this specific problem. Notably, Matei Zaharia co-authored FrugalGPT — the same researcher named in this domain's Expertise Leads.
+## Source
+
+[RouteLLM](https://arxiv.org/abs/2406.18665) (Ong et al., UC Berkeley, 2024) and [FrugalGPT](https://arxiv.org/abs/2305.05176) (Chen, Zaharia, Zou — Stanford, 2023), the foundational papers on this specific problem. FrugalGPT predates the June 2025 currency threshold; checked against newer routing papers (GraphRouter, BestRoute, and others published in 2025–2026) that still cite both as the standard baseline references, not as superseded work — the currency check passes, not silently assumed. Notably, Matei Zaharia co-authored FrugalGPT — the same researcher named in this domain's Expertise Leads.
 
 ## Related
 

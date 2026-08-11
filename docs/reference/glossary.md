@@ -47,7 +47,7 @@
 | **System Prompt** | A persistent instruction set applied before user input, defining the model's role, constraints, and behavior. |
 | **Agent** | A system that uses a model to autonomously plan and execute multi-step actions, often invoking tools. |
 | **Tool Use / Function Calling** | A model's ability to invoke external functions or APIs as part of generating a response. |
-| **MCP (Model Context Protocol)** | An open protocol standardizing how models connect to external tools and data sources, aimed at reducing custom integration work. |
+| **[MCP (Model Context Protocol)](https://modelcontextprotocol.io/)** | An open protocol standardizing how models connect to external tools and data sources, aimed at reducing custom integration work. |
 | **Model Router** | Logic that directs a given request to the most appropriate model based on cost, capability, or task type. |
 | **Chain-of-Thought** | Prompting or training a model to expose intermediate reasoning steps before a final answer, generally improving accuracy on complex tasks. |
 

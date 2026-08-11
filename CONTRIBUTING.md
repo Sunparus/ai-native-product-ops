@@ -32,6 +32,8 @@ Every page, at all times, should answer these questions positively. Status noted
 
 Calibrated against two real samples in different registers — a flowing conversational reply, and a punchy structured LinkedIn post. What holds across both matters more than either register alone.
 
+**Banned word: "honest" / "honestly."** Not part of the professional lexicon for this hub. Self-describing a statement as honest is exactly the kind of unearned credibility claim the ToV Guide otherwise exists to strip out — either the statement is accurate and stands on its own, or it isn't. State the gap, the limitation, or the correction plainly, without the adjective vouching for itself. ("Acknowledged gap," "stated limitation," or just the fact itself, with no framing word at all.)
+
 **Banned — the synthetic aphorism pattern:**
 > "X isn't really about A — it's about B."
 > "This isn't a framework, it's a mindset."
@@ -149,7 +151,18 @@ Any content that calls something a best practice, industry standard, or signific
 - **A named framework or standard** — if it's genuinely a field-wide convention, link the actual standard (an RFC, an ISO number, a named academic framework). This is what most of this hub's domain grounding already does.
 - **A case study or validating research** — if it's validated by industry leaders rather than codified as a formal standard, link a real case study (see `reference/case-studies.md`'s bar: independently verifiable, sourced, not a vendor's self-report) or named industry/consultancy research (a peer-reviewed paper, an analyst report, a named company's published post-mortem).
 
-An unsupported "this is best practice" is exactly the kind of claim the ToV Guide's grounding-in-named-sources instinct exists to catch. If neither a framework link nor a validating case study is available, say so honestly — "no independent validation found yet" — rather than assert it anyway.
+An unsupported "this is best practice" is exactly the kind of claim the ToV Guide's grounding-in-named-sources instinct exists to catch. If neither a framework link nor a validating case study is available, say so plainly — "no independent validation found yet" — rather than assert it anyway.
+
+## Source-currency stage-gate
+
+Any cited source last published or updated **before June 2025** gets an explicit currency check before it ships, not a silent pass: is this finding/technique still accurate, or has the field moved past it since?
+
+Two legitimate outcomes, both fine — the check itself is what's required, not a specific answer:
+
+- **Cite it as foundational/historical, on purpose.** Some sources are cited *because* they're the origin point (Sculley et al. 2015, ReAct, "Lost in the Middle") — their age is the point, not a defect. Say so explicitly rather than presenting a 2022 paper as if it described this week's state of the art.
+- **Add a currency caveat if the field has genuinely moved.** If newer work supersedes or qualifies the finding, say what and how — see the "Lost in the Middle" caveat on the Prompt Engineering page (some newer models show reduced sensitivity to the original effect) as the pattern to follow.
+
+What's not acceptable: citing a pre-June-2025 source as current practice without checking either way.
 
 ## 4. Tags currently in use
 
