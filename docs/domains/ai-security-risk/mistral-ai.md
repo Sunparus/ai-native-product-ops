@@ -15,3 +15,8 @@ French lab (founded 2023, Paris) built by ex-Google DeepMind and Meta researcher
 - Capability trails the largest US frontier labs on some benchmarks — the sovereignty-vs-capability trade-off is real and worth quantifying per use case, not assumed.
 
 **Source:** [mistral.ai/news](https://mistral.ai/news/) — read the model release posts directly, they're technical rather than promotional.
+
+## Related
+
+- [Sovereign Infrastructure Buildout](sovereign-infrastructure.md) — the residency-vs-sovereignty concept this case study illustrates
+- [AI Security & Risk](index.md)

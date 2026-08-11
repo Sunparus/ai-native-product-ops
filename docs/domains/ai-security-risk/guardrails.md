@@ -14,4 +14,30 @@ Mechanisms that constrain what a model can input, output, or act on. Split into 
 - Model-level alignment is necessary but not sufficient — it can be bypassed; system-level guardrails are your enforceable control layer.
 - Reputable reference frameworks: [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework), [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/), [MITRE ATLAS](https://atlas.mitre.org/).
 
+## OWASP Top 10 for LLM Applications (2025 v2.0)
+
+The actual named threat list guardrails exist to address — published November 2024, current as of this writing:
+
+| # | Risk | What it means |
+|---|---|---|
+| LLM01 | **Prompt Injection** | Crafted input overrides the model's original instructions — direct (in the user's own prompt) or indirect (hidden in a document, webpage, or email the model processes) |
+| LLM02 | **Sensitive Information Disclosure** | Secrets, PII, or confidential data leak through outputs or traces |
+| LLM03 | **Supply Chain** | Compromised models, datasets, libraries, or hosting providers |
+| LLM04 | **Data and Model Poisoning** | Malicious training, fine-tuning, or retrieval data shapes model behavior |
+| LLM05 | **Improper Output Handling** | Model output trusted and acted on downstream without validation |
+| LLM06 | **Excessive Agency** | An agent has more permissions or autonomy than the task actually requires |
+| LLM07 | **System Prompt Leakage** | Internal instructions or configuration exposed through the model's own responses |
+| LLM08 | **Vector and Embedding Weaknesses** | Poisoned or manipulated vector stores in RAG systems, or insufficient access control across tenant boundaries |
+| LLM09 | **Misinformation** | The model generates confident, plausible, factually wrong output — hallucination, sharpened to include the model's own contribution, not just user overreliance |
+| LLM10 | **Unbounded Consumption** | Resource exhaustion — cost or compute spend without limits, an expansion of the older "Model Denial of Service" category |
+
+Prompt injection (LLM01) has held the top spot since the list's first edition — worth treating as the default assumption for any system that processes untrusted input, not an edge case.
+
 **Source:** [OWASP GenAI Security Project — Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/).
+
+## Related
+
+- [Ethics & Bias](ethics-bias.md) — LLM09 (Misinformation) and fairness-related output filtering overlap directly
+- [AI/ML Systems Engineering](../ai-ml-systems-engineering/index.md) — where these controls actually get implemented, in the Orchestration and Application layers
+- [Playbook: AI Eval Containment](../../playbooks/ai-eval-containment.md) — LLM06 (Excessive Agency) and LLM03 (Supply Chain) in a real, documented incident
+- Glossary: [Prompt Injection](../../reference/glossary.md), [Hallucination](../../reference/glossary.md)

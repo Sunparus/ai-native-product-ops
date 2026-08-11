@@ -18,3 +18,10 @@ The broader movement to build AI compute, hosting, and model stacks under region
 - Independent EU alternatives: Mistral, Aleph Alpha, OVHcloud, Gaia-X (a federation initiative, not a single provider).
 
 **Source:** Compare vendor sovereignty claims against their actual corporate/legal structure, not their marketing language.
+
+## Related
+
+- [Mistral AI](mistral-ai.md) — the reference case study for this trend
+- [AI Security & Risk](index.md)
+- [Legal & Regulatory](../../reference/legal-regulatory.md) — EU AI Act, Data Act
+- Glossary: [Data Sovereignty](../../reference/glossary.md), [Data Residency](../../reference/glossary.md)
