@@ -1028,6 +1028,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guardrails
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1044,6 +1062,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#owasp-top-10-for-llm-applications-2025-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP Top 10 for LLM Applications (2025 v2.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1236,6 +1295,34 @@
     
   
     CI-by-Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-operating-practice/team-topologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team Topologies
   
 
     
@@ -2385,6 +2472,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#owasp-top-10-for-llm-applications-2025-v20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP Top 10 for LLM Applications (2025 v2.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2477,7 +2594,78 @@
 <li>Model-level alignment is necessary but not sufficient — it can be bypassed; system-level guardrails are your enforceable control layer.</li>
 <li>Reputable reference frameworks: <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a>, <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP Top 10 for LLM Applications</a>, <a href="https://atlas.mitre.org/">MITRE ATLAS</a>.</li>
 </ul>
+<h2 id="owasp-top-10-for-llm-applications-2025-v20">OWASP Top 10 for LLM Applications (2025 v2.0)<a class="headerlink" href="#owasp-top-10-for-llm-applications-2025-v20" title="Permanent link">&para;</a></h2>
+<p>The actual named threat list guardrails exist to address — published November 2024, current as of this writing:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Risk</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM01</td>
+<td><strong>Prompt Injection</strong></td>
+<td>Crafted input overrides the model's original instructions — direct (in the user's own prompt) or indirect (hidden in a document, webpage, or email the model processes)</td>
+</tr>
+<tr>
+<td>LLM02</td>
+<td><strong>Sensitive Information Disclosure</strong></td>
+<td>Secrets, PII, or confidential data leak through outputs or traces</td>
+</tr>
+<tr>
+<td>LLM03</td>
+<td><strong>Supply Chain</strong></td>
+<td>Compromised models, datasets, libraries, or hosting providers</td>
+</tr>
+<tr>
+<td>LLM04</td>
+<td><strong>Data and Model Poisoning</strong></td>
+<td>Malicious training, fine-tuning, or retrieval data shapes model behavior</td>
+</tr>
+<tr>
+<td>LLM05</td>
+<td><strong>Improper Output Handling</strong></td>
+<td>Model output trusted and acted on downstream without validation</td>
+</tr>
+<tr>
+<td>LLM06</td>
+<td><strong>Excessive Agency</strong></td>
+<td>An agent has more permissions or autonomy than the task actually requires</td>
+</tr>
+<tr>
+<td>LLM07</td>
+<td><strong>System Prompt Leakage</strong></td>
+<td>Internal instructions or configuration exposed through the model's own responses</td>
+</tr>
+<tr>
+<td>LLM08</td>
+<td><strong>Vector and Embedding Weaknesses</strong></td>
+<td>Poisoned or manipulated vector stores in RAG systems, or insufficient access control across tenant boundaries</td>
+</tr>
+<tr>
+<td>LLM09</td>
+<td><strong>Misinformation</strong></td>
+<td>The model generates confident, plausible, factually wrong output — hallucination, sharpened to include the model's own contribution, not just user overreliance</td>
+</tr>
+<tr>
+<td>LLM10</td>
+<td><strong>Unbounded Consumption</strong></td>
+<td>Resource exhaustion — cost or compute spend without limits, an expansion of the older "Model Denial of Service" category</td>
+</tr>
+</tbody>
+</table>
+<p>Prompt injection (LLM01) has held the top spot since the list's first edition — worth treating as the default assumption for any system that processes untrusted input, not an edge case.</p>
 <p><strong>Source:</strong> <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP GenAI Security Project — Top 10 for LLM Applications</a>.</p>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../ethics-bias/">Ethics &amp; Bias</a> — LLM09 (Misinformation) and fairness-related output filtering overlap directly</li>
+<li><a href="../../ai-ml-systems-engineering/">AI/ML Systems Engineering</a> — where these controls actually get implemented, in the Orchestration and Application layers</li>
+<li><a href="../../../playbooks/ai-eval-containment/">Playbook: AI Eval Containment</a> — LLM03 (Supply Chain, the compromised package-registry proxy) in a real, documented incident. Worth noting precisely: the intrusion happened because guardrails were <em>deliberately</em> disabled to test capability, not because of an Excessive Agency (LLM06) design flaw — a different failure mode than most OWASP categories assume, since OWASP's list targets production applications, not adversarial capability evaluations</li>
+<li>Glossary: <a href="../../../reference/glossary/">Prompt Injection</a>, <a href="../../../reference/glossary/">Hallucination</a></li>
+</ul>
 
 
 
@@ -2500,7 +2688,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 10, 2026 11:19:42 UTC">August 10, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2026 13:42:08 UTC">August 11, 2026</span>
   </span>
 
     
