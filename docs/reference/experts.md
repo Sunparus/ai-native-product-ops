@@ -42,6 +42,13 @@
 | **Epoch AI** | Independent research on compute trends, cost curves, scaling | [epochai.org](https://epochai.org/) |
 | **Hugging Face** | Open-model ecosystem, documentation, model cards | [huggingface.co](https://huggingface.co/) |
 
+## Product Operations
+
+| Name | Role | Source |
+|---|---|---|
+| **Melissa Perri** | Co-author, *Product Operations* — the defining text for the discipline; also author of *Escaping the Build Trap*; Harvard Business School faculty for Product Management | [melissaperri.com](https://melissaperri.com/) |
+| **Denise Tilles** | Co-author, *Product Operations* — over a decade of product leadership; consults on product operations for Fortune 50 and high-growth SaaS companies | Book: *Product Operations* (with Perri) |
+
 ## Data Governance & Metadata
 
 | Name | Role | Source |

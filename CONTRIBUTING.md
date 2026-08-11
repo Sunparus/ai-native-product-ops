@@ -153,6 +153,18 @@ Any content that calls something a best practice, industry standard, or signific
 
 An unsupported "this is best practice" is exactly the kind of claim the ToV Guide's grounding-in-named-sources instinct exists to catch. If neither a framework link nor a validating case study is available, say so plainly — "no independent validation found yet" — rather than assert it anyway.
 
+## Product Ops Lens — required on every domain content page
+
+Every technical concept page needs a `## Product Ops Lens` section, same standing as `Decision Areas` — not optional, not only for pages that feel like they need it. The audience for this hub includes product leads and product ops who need to align with architects/engineers on decisions, not just hold a conversation about them. Five fixed sub-points, each answered specifically for that page's actual content, never generic filler:
+
+- **Cross-team dependency** — what this choice constrains or enables for other product teams' input/output requirements
+- **Team topology implication** — does this need a platform/enabling team, or does it stay embedded in product teams
+- **OKR / roadmap implication** — what to plan for explicitly, not discover reactively
+- **Budget implication** — the cost lever, if there is one
+- **Who to loop in** — a named role, not a vague "the team"
+
+If a page genuinely has nothing here (rare), say so per sub-point rather than skip the section — "No direct cross-team dependency" is a real answer; a missing section reads as an oversight.
+
 ## Source-currency stage-gate
 
 Any cited source last published or updated **before June 2025** gets an explicit currency check before it ships, not a silent pass: is this finding/technique still accurate, or has the field moved past it since?

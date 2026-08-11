@@ -12,6 +12,7 @@ Every domain traces its hierarchy to a named external standard — never an inte
 - **[AI Security & Risk](domains/ai-security-risk/index.md)** — threats, sovereignty, ethics & bias, grounded in NIST AI RMF / OWASP / MITRE ATLAS
 - **[Delivery & Operating Practice](domains/delivery-operating-practice/index.md)** — engineering-delivery mechanics, DORA, Team Topologies
 - **[AI Adoption & Organizational Maturity](domains/ai-adoption-maturity/index.md)** — change management and workforce readiness, MIT CISR / Gartner / MITRE maturity models
+- **[Product Operations Practice](domains/product-operations-practice/index.md)** — the discipline itself: business/customer insight pillars and process practice, grounded in Perri & Tilles
 
 ## Playbooks
 

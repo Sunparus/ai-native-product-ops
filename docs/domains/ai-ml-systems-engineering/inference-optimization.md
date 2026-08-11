@@ -22,6 +22,14 @@ tags:
 - Is the serving stack's batching strategy actually visible and tunable, or an unexamined default from whatever framework was picked first?
 - Does quantization's accuracy cost get measured against the eval set before shipping, or assumed to be negligible?
 
+## Product Ops Lens
+
+- **Cross-team dependency:** Batching strategy and quantization choices directly set latency, which shapes what UX a product team can credibly promise — instant single-shot response, streaming, or async batch. A platform-side batching change can silently break a product team's latency assumptions if it isn't communicated upstream.
+- **Team topology implication:** This is platform-team territory by nature (see [Team Topologies](../delivery-operating-practice/team-topologies.md)) — product teams should consume inference as a service with a published latency/cost SLA, not each tune their own serving stack independently.
+- **OKR / roadmap implication:** If a roadmap commitment depends on sub-200ms response time, that's an infrastructure capacity dependency that belongs in planning conversations explicitly, not something discovered when the feature ships slow.
+- **Budget implication:** Quantization and batching are where "why does our AI feature cost 3x the competitor's" gets answered — or quietly avoided. A real FinOps conversation, not just an engineering one.
+- **Who to loop in:** AI/Platform Engineer owns the serving stack; loop in the Cost & FinOps counterpart when latency and cost trade-offs are being decided, not after they're already shipped.
+
 ## Source
 
 Chip Huyen, *AI Engineering* — inference optimization gets a dedicated chapter; [vLLM's own technical documentation](https://docs.vllm.ai/) is the current practical reference for continuous batching and KV-cache management specifically.

@@ -27,6 +27,14 @@ Structuring instructions and examples given to a model to reliably shape its out
 - Where does prompt engineering stop being sufficient? The clearest signal: when the same failure mode recurs across many different phrasings of the prompt, that's usually a capability gap prompting can't close — the point to consider [Fine-Tuning](fine-tuning.md) or [RAG](rag-agent-architecture.md) instead.
 - Is the system prompt versioned and reviewed like code, or edited ad hoc in a chat window? Prompt changes are behavior changes — they belong in the same CI discipline as everything else, see [CI-by-Design](../delivery-operating-practice/ci-by-design.md).
 
+## Product Ops Lens
+
+- **Cross-team dependency:** A shared or reused system prompt is often the actual behavior contract between a feature and the underlying model — if one team changes it, another team's feature can silently change behavior too.
+- **Team topology implication:** Prompt versioning and review should follow the same CI discipline as code (see [CI-by-Design](../delivery-operating-practice/ci-by-design.md)) — left ad hoc per team, quality drifts invisibly and nobody notices until a user does.
+- **OKR / roadmap implication:** "We'll just prompt-engineer our way to this capability" is a common roadmap assumption that's frequently wrong — check it against the "when prompting stops being sufficient" signal on this page before committing a roadmap item to it.
+- **Budget implication:** Prompt length (few-shot examples, verbose system prompts) is a direct, recurring per-request cost — often invisible until the bill arrives, not before.
+- **Who to loop in:** PM / Product Ops for the intended behavior, AI Engineer for implementation, whoever owns evaluation for whether it's actually working as intended.
+
 ## Source
 
 Chip Huyen, *AI Engineering* — the chapter this page was missing from this domain until now. ["Lost in the Middle"](https://arxiv.org/abs/2307.03172) (Liu et al., Stanford, 2023) for the context-position finding above.

@@ -88,6 +88,16 @@ These run through all six layers rather than sitting on one — what each concer
 
 Full explainers: [AI Security & Risk](../ai-security-risk/index.md) and [Data Governance](../data-governance/index.md) (Security & Governance) · [Cost & FinOps](../../reference/cost-finops.md) · [Evaluation & Observability](../evaluation-observability/index.md) · circuit breakers and blast radius are detailed in [CI-by-Design](../delivery-operating-practice/ci-by-design.md) (Resilience & Redundancy).
 
+## Product Ops Lens
+
+Domain-wide synthesis — each sub-page has its own specific version of this section; this is the roll-up.
+
+- **Cross-team dependency:** This stack is where "why is this feature slow, expensive, or inconsistent" questions actually get answered. Product ops needs enough fluency here to translate between what a product team wants and what the stack can deliver — and to catch when one team's model, routing, or context choice silently changes another team's constraints.
+- **Team topology implication:** Whether this stack is owned by embedded engineers per product team or a shared platform team is the single biggest structural decision this domain touches. Ownership tends to concentrate at the Model and Inference layers specifically — see [Team Topologies](../delivery-operating-practice/team-topologies.md).
+- **OKR / roadmap implication:** Any roadmap commitment that depends on a specific layer's capability — a new model, a new routing pattern, a fine-tune — needs that dependency named as a planning input, not discovered at sprint review.
+- **Budget implication:** This entire domain is the cost surface for AI-assisted product work — see [Cost & FinOps](../../reference/cost-finops.md). Every layer's design choice compounds into the number product ops eventually has to explain to finance.
+- **Who to loop in:** AI/ML Engineer for implementation feasibility, Architect for cross-layer tradeoffs, Cost & FinOps counterpart for budget impact — named more specifically per layer and per sub-page above.
+
 ## IRL Lens
 
 **Focus areas & deep dives** — *TBD*

@@ -78,6 +78,8 @@ nav:
   - AI Adoption & Organizational Maturity:
       - Overview: domains/ai-adoption-maturity/index.md
       - Lean AI-Assisted Org: domains/ai-adoption-maturity/lean-ai-org.md
+  - Product Operations Practice:
+      - Overview: domains/product-operations-practice/index.md
   - Playbooks:
       - Overview: playbooks/index.md
       - DMBOK Operationalization: playbooks/dmbok-operationalization.md

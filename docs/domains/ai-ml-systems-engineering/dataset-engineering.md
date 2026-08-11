@@ -23,6 +23,14 @@ This page covers technique: acquisition, augmentation, deduplication, curation. 
 - Has deduplication been checked specifically across the train/eval boundary, not just within each set individually? Leakage here silently inflates every eval result downstream.
 - Who owns the quality bar this dataset needs to meet — is that a documented standard from [Data Governance](../data-governance/core-principles.md), or an implicit assumption held by whoever built the pipeline?
 
+## Product Ops Lens
+
+- **Cross-team dependency:** A shared training or eval dataset used across product teams means one team's curation choices affect every model built on that data — ownership and a change process need to be explicit, not assumed.
+- **Team topology implication:** This is the clearest case in the domain for the control-plane/execution-plane boundary rule — dataset engineering technique lives here, but the quality standard it's held to is [Data Governance's](../data-governance/core-principles.md) call, and both need a seat when this work gets planned.
+- **OKR / roadmap implication:** "We need more training data" is often a roadmap blocker discovered too late — data acquisition and curation lead time belongs in planning explicitly, especially for eval sets, which get treated as an afterthought more often than they should.
+- **Budget implication:** Data acquisition and licensing carries a real, often underestimated cost. Synthetic augmentation looks free but carries the model-collapse risk described above — a quality cost, not a budget line, but just as real to plan for.
+- **Who to loop in:** Data Engineer for pipeline feasibility, Data Governance counterpart for the quality standard, PM for whether the eval set actually represents real usage.
+
 ## Source
 
 Chip Huyen, *AI Engineering* — dataset engineering gets a dedicated chapter, positioned as foundational infrastructure most teams underinvest in relative to model selection. [Shumailov et al.](https://arxiv.org/abs/2305.17493) for model collapse specifically.

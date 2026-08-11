@@ -26,6 +26,14 @@ Techniques for directing each request to the most appropriate model automaticall
 - A learned router is itself a model that needs its own evaluation, monitoring, and retraining cadence — see [Evaluation & Observability](../evaluation-observability/index.md). Treating the router as a fire-and-forget component is how routing quality silently degrades.
 - Routing decisions need to be logged and auditable, especially in cascade setups — if a request escalates, you need to know why, not just that it did.
 
+## Product Ops Lens
+
+- **Cross-team dependency:** Routing decisions determine response consistency across every team sharing the same underlying models — a routing-threshold change can silently shift quality or latency for a feature nobody intended to touch.
+- **Team topology implication:** Routing infrastructure is platform-team territory the moment more than one product team depends on it; a bespoke router per team multiplies maintenance cost for no real benefit.
+- **OKR / roadmap implication:** If a roadmap commitment assumes a specific model tier handles a task, that assumption needs to be explicit — routing can quietly downgrade quality to save cost unless the threshold is a named, agreed decision.
+- **Budget implication:** Routing is the single highest-leverage cost lever in this domain — a well-tuned cascade is often the largest cost reduction available without touching product scope at all.
+- **Who to loop in:** AI/ML Engineer owns routing logic; loop in the Cost & FinOps counterpart whenever a routing threshold trades quality for cost, not after the threshold is already live.
+
 ## Source
 
 [RouteLLM](https://arxiv.org/abs/2406.18665) (Ong et al., UC Berkeley, 2024) and [FrugalGPT](https://arxiv.org/abs/2305.05176) (Chen, Zaharia, Zou — Stanford, 2023), the foundational papers on this specific problem. FrugalGPT predates the June 2025 currency threshold; checked against newer routing papers (GraphRouter, BestRoute, and others published in 2025–2026) that still cite both as the standard baseline references, not as superseded work — the currency check passes, not silently assumed. Notably, Matei Zaharia co-authored FrugalGPT — the same researcher named in this domain's Expertise Leads.

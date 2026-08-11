@@ -20,6 +20,14 @@ Building product and engineering workflows so application code calls "a model" t
 - Which specific vendor-native features is the team giving up by abstracting — has that trade-off been named explicitly, or assumed to be free?
 - Does the abstraction cover evals and tool definitions too, or only the model-call interface? A portable prompt with a vendor-locked eval harness isn't actually portable.
 
+## Product Ops Lens
+
+- **Cross-team dependency:** If one product team locks into vendor-specific features, that constrains the whole organization's ability to negotiate or switch vendors later — one team's convenience becomes an enterprise-level lock-in risk.
+- **Team topology implication:** Abstraction-layer discipline is naturally architecture/platform-team territory; expecting every product team to independently maintain portability is unrealistic and produces inconsistent results.
+- **OKR / roadmap implication:** "Ship fast with vendor-specific features" and "stay portable" is a real, explicit tradeoff per feature — worth naming on the roadmap, not assumed away by default.
+- **Budget implication:** Portability has a real upfront cost (forgoing vendor-specific speed or capability features) traded against future negotiating leverage — a genuine budget conversation, not just an engineering preference.
+- **Who to loop in:** Architect owns the abstraction-layer decision; loop in whoever owns vendor contracts before a team builds something vendor-specific that would be costly to unwind later.
+
 ## Source
 
 No single canonical source — evaluate via your own architecture review against each vendor's actual API/data contracts.

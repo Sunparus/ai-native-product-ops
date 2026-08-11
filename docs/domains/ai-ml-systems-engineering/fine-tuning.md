@@ -38,6 +38,14 @@ Not "when prompting feels annoying" — the legitimate cases:
 - Is there enough labeled data to fine-tune well? A small, low-quality fine-tuning dataset often produces a worse model than a well-engineered prompt.
 - Is there a rollback path if the fine-tuned model regresses on a capability nobody thought to eval? See [Evaluation & Observability](../evaluation-observability/index.md) on eval sets that only cover the happy path.
 
+## Product Ops Lens
+
+- **Cross-team dependency:** A fine-tuned model is usually tied to one specific use case's data and behavior — reusing it across product teams without re-evaluation risks silently degrading a use case it was never tuned for.
+- **Team topology implication:** Fine-tuning infrastructure (training pipeline, eval discipline) is platform-team territory; deciding *when* to fine-tune is a joint product/architecture call, not an engineering-only decision.
+- **OKR / roadmap implication:** Fine-tuning is the longest-lead-time lever on the adaptation ladder — a roadmap commitment assuming a fine-tune will be ready by a date needs that lead time planned explicitly, not treated like a quick prompt change.
+- **Budget implication:** Full fine-tuning is a genuinely significant compute and data cost line — this is the point in the stack where AI cost stops being a rounding error and becomes a real budget conversation.
+- **Who to loop in:** Data Scientist for feasibility and data sufficiency, Cost & FinOps counterpart for the investment case, PM for whether the use case actually justifies this lever over the cheaper ones first.
+
 ## Source
 
 Chip Huyen, *AI Engineering* — fine-tuning gets a full chapter, positioned deliberately after prompting and RAG, not before them. [Ouyang et al.](https://arxiv.org/abs/2203.02155) for RLHF, [Rafailov et al.](https://arxiv.org/abs/2305.18290) for DPO.
