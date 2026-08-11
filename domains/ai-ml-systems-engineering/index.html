@@ -14,7 +14,7 @@
         <link rel="prev" href="../..">
       
       
-        <link rel="next" href="model-routing/">
+        <link rel="next" href="prompt-engineering/">
       
       
         
@@ -566,6 +566,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#grounded-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grounded in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-this-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,6 +757,146 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag-agent-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG & Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fine-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fine-Tuning & Model Adaptation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dataset-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inference-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inference Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2406,6 +2557,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#grounded-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grounded in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-this-domain" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2662,7 +2824,7 @@
 
 
 <h1 id="aiml-systems-engineering">AI/ML Systems Engineering<a class="headerlink" href="#aiml-systems-engineering" title="Permanent link">&para;</a></h1>
-<p>The technical layers of an AI system, from data to application, and the decisions that connect them. Grounded in Chip Huyen's <em>AI Engineering</em> and <em>Designing Machine Learning Systems</em> — the most-referenced practitioner texts structuring this discipline.</p>
+<p>The technical layers of an AI system, from data to application, and the decisions that connect them.</p>
 <pre class="mermaid"><code>flowchart TB
     subgraph Pipeline["System Layers — bottom-up dependency, not live request order"]
         direction TB
@@ -2676,47 +2838,111 @@
     F["⚡ Cost &amp; FinOps"] -.wraps.-&gt; Pipeline
     E["⚡ Evaluation &amp; Observability"] -.wraps.-&gt; Pipeline
     R["⚡ Resilience &amp; Redundancy"] -.wraps.-&gt; Pipeline</code></pre>
+<h2 id="grounded-in">Grounded in<a class="headerlink" href="#grounded-in" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Chip Huyen, <em>AI Engineering<em> and </em>Designing Machine Learning Systems</em></strong> — the most-referenced practitioner synthesis structuring this discipline</li>
+<li><strong><a href="https://mlsys.org/">MLSys</a></strong> (Conference on Machine Learning and Systems) — the actual peer-reviewed academic venue at the intersection of ML and systems; this is where the discipline institutionally lives, not just where it's written about</li>
+<li><strong><a href="https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems">"Hidden Technical Debt in Machine Learning Systems"</a></strong> (Sculley et al., Google, NeurIPS 2015) — the foundational peer-reviewed paper that formalized ML-systems thinking as a discipline (boundary erosion, entanglement, hidden feedback loops, the CACE principle), predating and underpinning most practitioner treatments since</li>
+</ul>
 <h2 id="in-this-domain">In this domain<a class="headerlink" href="#in-this-domain" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>The stack</strong> — the 6-layer pipeline and 4 cross-cutting concerns (detail below)</li>
+<li><strong><a href="prompt-engineering/">Prompt Engineering</a></strong> — the cheapest lever, usually the first one to pull</li>
+<li><strong><a href="rag-agent-architecture/">RAG &amp; Agent Architecture</a></strong> — closing knowledge gaps and coordinating multi-step work</li>
+<li><strong><a href="fine-tuning/">Fine-Tuning &amp; Model Adaptation</a></strong> — the most expensive lever, and the one reached for too early most often</li>
+<li><strong><a href="dataset-engineering/">Dataset Engineering</a></strong> — how training and eval datasets actually get built</li>
+<li><strong><a href="inference-optimization/">Inference Optimization</a></strong> — what "batching, quantization, GPU allocation" means in 2026</li>
 <li><strong><a href="model-routing/">Efficient Model Routing</a></strong> — directing requests to the right model automatically</li>
 <li><strong><a href="vendor-agnostic-development/">Vendor-Agnostic Development</a></strong> — building without hard vendor lock-in</li>
 <li><strong><a href="multi-vendor-strategy/">Multi-Vendor Strategy</a></strong> — deliberate redundancy across providers</li>
 </ul>
 <h2 id="the-stack-detail">The stack — detail<a class="headerlink" href="#the-stack-detail" title="Permanent link">&para;</a></h2>
 <h3 id="01-data-layer">01 · Data Layer<a class="headerlink" href="#01-data-layer" title="Permanent link">&para;</a></h3>
-<p>Raw and structured data assets — documents, databases, logs, transactional records. Data quality, lineage, and access control set the ceiling for every layer above it.</p>
-<p><strong>Interrogate:</strong> Duplication and staleness · Undefined ownership · No lineage tracking</p>
+<p>Raw and structured data assets — documents, databases, logs, transactional records. Data quality, lineage, and access control set the ceiling for every layer above it. See <a href="dataset-engineering/">Dataset Engineering</a> for how training/eval datasets specifically get built, and <a href="../data-governance/">Data Governance</a> for who's accountable for the standard.</p>
+<p><strong>Decision Areas:</strong> Duplication and staleness · Undefined ownership · No lineage tracking</p>
 <h3 id="02-context-layer">02 · Context Layer<a class="headerlink" href="#02-context-layer" title="Permanent link">&para;</a></h3>
-<p>Embeddings, vector stores, retrieval-augmented generation (RAG), and memory systems that bring relevant data into a model's context window at request time.</p>
-<p><strong>Interrogate:</strong> Retrieval precision vs. recall trade-offs · Chunking strategy · Context window cost</p>
+<p>Embeddings, vector stores, retrieval-augmented generation (RAG), and memory systems that bring relevant data into a model's context window at request time. See <a href="rag-agent-architecture/">RAG &amp; Agent Architecture</a> for the actual patterns.</p>
+<p><strong>Decision Areas:</strong> Retrieval precision vs. recall trade-offs · Chunking strategy · Context window cost</p>
 <h3 id="03-model-layer">03 · Model Layer<a class="headerlink" href="#03-model-layer" title="Permanent link">&para;</a></h3>
-<p>Foundation models (proprietary or open-weight), fine-tuned variants, and distilled versions — the component that performs reasoning, generation, and classification.</p>
-<p><strong>Interrogate:</strong> Build vs. buy vs. fine-tune · Open-weight vs. closed · Capability vs. cost ceiling</p>
+<p>Foundation models (proprietary or open-weight), fine-tuned variants, and distilled versions — the component that performs reasoning, generation, and classification. See <a href="prompt-engineering/">Prompt Engineering</a> and <a href="fine-tuning/">Fine-Tuning &amp; Model Adaptation</a> for the adaptation ladder, cheapest to most expensive.</p>
+<p><strong>Decision Areas:</strong> Build vs. buy vs. fine-tune · Open-weight vs. closed · Capability vs. cost ceiling</p>
 <h3 id="04-inference-layer">04 · Inference Layer<a class="headerlink" href="#04-inference-layer" title="Permanent link">&para;</a></h3>
-<p>The infrastructure that runs model calls in production — batching, quantization, GPU/TPU allocation, caching, latency management.</p>
-<p><strong>Interrogate:</strong> Latency SLAs · Cold-start cost · Throughput under peak load</p>
+<p>The infrastructure that runs model calls in production. See <a href="inference-optimization/">Inference Optimization</a> for current technique — this bullet list used to be the whole page; it's now a dedicated one.</p>
+<p><strong>Decision Areas:</strong> Latency SLAs · Cold-start cost · Throughput under peak load</p>
 <h3 id="05-orchestration-layer">05 · Orchestration Layer<a class="headerlink" href="#05-orchestration-layer" title="Permanent link">&para;</a></h3>
-<p>Logic that chains calls, routes between models, invokes tools/functions, and coordinates multi-step or multi-agent workflows.</p>
-<p><strong>Interrogate:</strong> Error propagation across steps · Auditability of agent decisions · Vendor lock-in via proprietary frameworks</p>
+<p>Logic that chains calls, routes between models, invokes tools/functions, and coordinates multi-step or multi-agent workflows. See <a href="rag-agent-architecture/">RAG &amp; Agent Architecture</a> and <a href="model-routing/">Efficient Model Routing</a>.</p>
+<p><strong>Decision Areas:</strong> Error propagation across steps · Auditability of agent decisions · Vendor lock-in via proprietary frameworks</p>
 <h3 id="06-application-layer">06 · Application Layer<a class="headerlink" href="#06-application-layer" title="Permanent link">&para;</a></h3>
 <p>The product surface — UI, API, or workflow integration where output is consumed and acted on.</p>
-<p><strong>Interrogate:</strong> Output legibility · Human-in-the-loop checkpoints · Failure UX</p>
+<p><strong>Decision Areas:</strong> Output legibility · Human-in-the-loop checkpoints · Failure UX</p>
 <h2 id="cross-cutting-concerns">Cross-cutting concerns<a class="headerlink" href="#cross-cutting-concerns" title="Permanent link">&para;</a></h2>
-<p>These run through all six layers rather than sitting on one. Two of the four now have their own domain or dedicated page — linked here rather than re-explained.</p>
-<p><strong>Security &amp; Governance</strong> — data residency, access control, prompt-injection defense, encryption, audit trails. See <a href="../ai-security-risk/">AI Security &amp; Risk</a> and <a href="../data-governance/">Data Governance</a>.</p>
-<p><strong><a href="../../reference/cost-finops/">Cost &amp; FinOps</a></strong> — token economics, compute amortization, chargeback models. Cost is a function of every layer's design choices, not a separate line item. Cross-cutting practice, not a standalone domain — see the linked page for why.</p>
-<p><strong><a href="../evaluation-observability/">Evaluation &amp; Observability</a></strong> — benchmarks, evals, drift detection, hallucination tracking. Elevated to its own domain; this page links out rather than duplicating it.</p>
-<p><strong>Resilience &amp; Redundancy</strong> — failover, multi-region/multi-vendor design, degradation strategy.</p>
+<p>These run through all six layers rather than sitting on one — what each concern actually means at each layer:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Security &amp; Governance</th>
+<th>Cost &amp; FinOps</th>
+<th>Evaluation &amp; Observability</th>
+<th>Resilience &amp; Redundancy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data</strong></td>
+<td>Access control, PII classification, residency</td>
+<td>Storage &amp; pipeline compute cost</td>
+<td>Quality checks, drift detection at source</td>
+<td>Backup, replication — no single data store as SPOF</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Retrieval access scoping</td>
+<td>Embedding/indexing compute, vector DB cost</td>
+<td>Retrieval precision/recall monitoring</td>
+<td>Vector store failover, stale-index fallback</td>
+</tr>
+<tr>
+<td><strong>Model</strong></td>
+<td>Provenance, licensing, supply-chain risk</td>
+<td>Training/fine-tune cost, licensing fees</td>
+<td>Eval suites, benchmark tracking, bias testing</td>
+<td>Pinned versions, rollback to prior model</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Prompt-injection defense, output filtering</td>
+<td>Cost per request, batching efficiency</td>
+<td>Latency/quality monitoring, hallucination tracking</td>
+<td>Circuit breakers, multi-region, graceful degradation</td>
+</tr>
+<tr>
+<td><strong>Orchestration</strong></td>
+<td>Tool-permission scoping, action-approval gates</td>
+<td>Orchestration complexity as a cost multiplier</td>
+<td>Step-level tracing, decision auditability</td>
+<td>Retry/timeout logic, blast-radius containment</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>Output consent, audit trail to end user</td>
+<td>Feature-level cost attribution</td>
+<td>User feedback loops, outcome tracking</td>
+<td>Fallback UX, kill switch</td>
+</tr>
+</tbody>
+</table>
+<p>Full explainers: <a href="../ai-security-risk/">AI Security &amp; Risk</a> and <a href="../data-governance/">Data Governance</a> (Security &amp; Governance) · <a href="../../reference/cost-finops/">Cost &amp; FinOps</a> · <a href="../evaluation-observability/">Evaluation &amp; Observability</a> · circuit breakers and blast radius are detailed in <a href="../delivery-operating-practice/ci-by-design/">CI-by-Design</a> (Resilience &amp; Redundancy).</p>
 <h2 id="irl-lens">IRL Lens<a class="headerlink" href="#irl-lens" title="Permanent link">&para;</a></h2>
-<p><strong>Focus areas &amp; deep dives</strong> — none flagged as deep-focus here; this domain's content reflects field-standard weighting.</p>
-<p><strong>Case studies</strong> — see <a href="../../reference/case-studies/">Case Studies</a> for events touching this domain's layers (orchestration, containment).</p>
+<p><strong>Focus areas &amp; deep dives</strong> — <em>TBD</em></p>
+<p><strong>Case studies</strong> — <em>TBD</em></p>
 <p><strong>Open questions &amp; trends</strong> — see Landscape, below.</p>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../evaluation-observability/">Evaluation &amp; Observability</a></li>
 <li><a href="../ai-security-risk/">AI Security &amp; Risk</a></li>
 <li><a href="../../reference/cost-finops/">Cost &amp; FinOps</a></li>
+<li><a href="../delivery-operating-practice/">Delivery &amp; Operating Practice</a> — circuit breakers, blast radius, the Resilience &amp; Redundancy detail</li>
 </ul>
 <h2 id="landscape">Landscape<a class="headerlink" href="#landscape" title="Permanent link">&para;</a></h2>
 <h3 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h3>
@@ -2745,12 +2971,20 @@
 <td>Author of <em>AI Engineering</em> and <em>Designing Machine Learning Systems</em> — the most-referenced practitioner texts structuring this discipline</td>
 </tr>
 <tr>
+<td><strong><a href="https://mlsys.org/">Matei Zaharia</a></strong></td>
+<td>Stanford-affiliated (moving to Berkeley), Databricks co-founder, MLSys steering committee — the working-researcher voice this list was missing alongside its educators and vendors</td>
+</tr>
+<tr>
 <td><strong><a href="https://www.youtube.com/@AndrejKarpathy">Andrej Karpathy</a></strong></td>
 <td>First-principles explainer; former Tesla AI / OpenAI</td>
 </tr>
 <tr>
-<td><strong><a href="https://jalammar.github.io/">Jay Alammar</a></strong></td>
-<td>The clearest visual explanations of transformer architecture in the field</td>
+<td><strong><a href="https://newsletter.languagemodels.co/">Jay Alammar</a></strong></td>
+<td>Visual explanations of transformer architecture — foundational, but note his active publishing moved to Substack in March 2025; his older <code>jalammar.github.io</code> posts are archived, not updated</td>
+</tr>
+<tr>
+<td><strong><a href="https://www.3blue1brown.com/lessons/gpt/">3Blue1Brown (Grant Sanderson)</a></strong></td>
+<td>The comparably fresh, actively-maintained visual explainer for how transformers/neural networks actually work — worth pairing with Alammar's foundational posts, not a replacement for them</td>
 </tr>
 <tr>
 <td><strong><a href="https://www.nvidia.com/en-us/data-center/products/tensorrt/">NVIDIA</a></strong></td>
@@ -2781,7 +3015,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2026 14:44:21 UTC">August 11, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2026 20:57:52 UTC">August 11, 2026</span>
   </span>
 
     
