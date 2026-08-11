@@ -30,9 +30,9 @@ flowchart LR
 
 ## IRL Lens
 
-**Focus areas & deep dives** — none flagged as deep-focus here; this domain's content reflects field-standard weighting.
+**Focus areas & deep dives** — *TBD*
 
-**Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case is a recovery/detection failure at the delivery-practice level as much as a security one.
+**Case studies** — *TBD*
 
 **Open questions & trends** — see Landscape, below.
 

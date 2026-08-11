@@ -58,7 +58,7 @@ DORA and Team Topologies measure and structure *engineering delivery* — deploy
 
 ## IRL Lens
 
-**Focus areas & deep dives** — none yet; this domain is newly elevated.
+**Focus areas & deep dives** — *TBD*
 
 **Case studies** — none directly filed here yet; the [AI Product Alignment playbook's Stage 5](../../playbooks/ai-product-alignment/stage-5-launch-rollout.md) already covers the adjacent change-management failure mode (no plan to train or communicate to affected humans).
 

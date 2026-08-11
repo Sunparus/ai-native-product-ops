@@ -76,9 +76,9 @@ These run through all six layers rather than sitting on one. Two of the four now
 
 ## IRL Lens
 
-**Focus areas & deep dives** — none flagged as deep-focus here; this domain's content reflects field-standard weighting.
+**Focus areas & deep dives** — *TBD*
 
-**Case studies** — see [Case Studies](../../reference/case-studies.md) for events touching this domain's layers (orchestration, containment).
+**Case studies** — *TBD*
 
 **Open questions & trends** — see Landscape, below.
 
@@ -109,7 +109,8 @@ Who to check first for the best current solution in this domain — mix of indiv
 |---|---|
 | **[Chip Huyen](https://huyenchip.com/books/)** | Author of *AI Engineering* and *Designing Machine Learning Systems* — the most-referenced practitioner texts structuring this discipline |
 | **[Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy)** | First-principles explainer; former Tesla AI / OpenAI |
-| **[Jay Alammar](https://jalammar.github.io/)** | The clearest visual explanations of transformer architecture in the field |
+| **[Jay Alammar](https://newsletter.languagemodels.co/)** | Visual explanations of transformer architecture — foundational, but note his active publishing moved to Substack in March 2025; his older `jalammar.github.io` posts are archived, not updated |
+| **[3Blue1Brown (Grant Sanderson)](https://www.3blue1brown.com/lessons/gpt/)** | The comparably fresh, actively-maintained visual explainer for how transformers/neural networks actually work — worth pairing with Alammar's foundational posts, not a replacement for them |
 | **[NVIDIA](https://www.nvidia.com/en-us/data-center/products/tensorrt/)** | Owns the compute and inference-serving layer (GPUs, TensorRT, Triton) underneath nearly every other player's stack |
 
 See [Experts & Sources](../../reference/experts.md) for the full directory this is drawn from.

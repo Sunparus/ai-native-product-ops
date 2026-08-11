@@ -50,7 +50,7 @@ Collecting feedback (thumbs up/down, corrections) is not the same as having a fe
 
 ## IRL Lens
 
-**Focus areas & deep dives** — none yet; this domain is newly elevated and will accumulate depth as specific evaluation practices get documented.
+**Focus areas & deep dives** — *TBD*
 
 **Case studies** — see [Case Studies](../../reference/case-studies.md): the sandbox containment case is also an evaluation failure — the capability eval itself lacked containment as part of its own design.
 

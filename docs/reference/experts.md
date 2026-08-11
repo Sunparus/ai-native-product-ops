@@ -9,7 +9,8 @@
 | **Andrej Karpathy** | Ex-Tesla/OpenAI; deep, first-principles explainers | [YouTube channel](https://www.youtube.com/@AndrejKarpathy) — search "Intro to Large Language Models" |
 | **Chip Huyen** | Author, ML/AI systems design | [huyenchip.com/books](https://huyenchip.com/books/) — *AI Engineering*, *Designing Machine Learning Systems* |
 | **Sebastian Raschka** | Researcher & educator, model internals | [Ahead of AI newsletter](https://magazine.sebastianraschka.com/) |
-| **Jay Alammar** | Visual explainer of transformer architecture | [jalammar.github.io](https://jalammar.github.io/) |
+| **Jay Alammar** | Visual explainer of transformer architecture. Foundational (still taught at Stanford/Harvard/MIT), but his archive site stopped being where he actively publishes in March 2025 — see the note under his link | [Substack](https://newsletter.languagemodels.co/) (active — start with "The Illustrated DeepSeek R-1") · [jalammar.github.io](https://jalammar.github.io/) (2018-era archive, still widely cited) · [Hands-On Large Language Models](https://www.llm-book.com) (O'Reilly, co-author) |
+| **3Blue1Brown (Grant Sanderson)** | Actively-maintained visual/animated explainer of transformers and neural networks — the fresher comparable to Alammar's foundational posts, pair the two rather than choosing one | [3blue1brown.com/lessons/gpt](https://www.3blue1brown.com/lessons/gpt/) |
 | **Fei-Fei Li** | Stanford HAI co-director; architect of ImageNet; founder/CEO, World Labs | [hai.stanford.edu](https://hai.stanford.edu/) · [World Labs](https://worldlabs.ai/) |
 | **Timnit Gebru** | Founder, DAIR — leading research voice on AI safety, bias & governance | [dair-institute.org](https://www.dair-institute.org/) |
 
