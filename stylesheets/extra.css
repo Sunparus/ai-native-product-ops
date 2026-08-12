@@ -111,12 +111,26 @@
 }
 
 /* ============================================================
+   Case-study dividers — a plain <hr> between entries reads as
+   a wall of text once entries share the same closing shape
+   (Source & confidence, every time). Make the break between
+   entries unmistakable at a glance, not just a thin gray line.
+   ============================================================ */
+.md-typeset hr {
+  border: none;
+  border-top: 2px solid var(--md-accent-fg-color--transparent);
+  margin: 2rem 0;
+}
+
+/* ============================================================
    Admonition tuning — Decision Areas / Product Ops Lens use the
    already-enabled admonition extension (question/tip types).
-   Slightly tighter default spacing so a page with several boxes
-   doesn't read as heavier than the prose around it.
+   Collapsible details (??? blocks) get the same rounded treatment,
+   used in case-studies.md to keep secondary detail out of the
+   default view without losing it.
    ============================================================ */
 .md-typeset .admonition,
 .md-typeset details {
   border-radius: 4px;
 }
+
