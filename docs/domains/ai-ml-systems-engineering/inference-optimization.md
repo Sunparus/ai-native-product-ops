@@ -39,3 +39,4 @@ Chip Huyen, *AI Engineering* — inference optimization gets a dedicated chapter
 - [AI/ML Systems Engineering](index.md) — the Inference Layer this page expands on
 - [Cost & FinOps](../../reference/cost-finops.md) — every technique here is fundamentally a cost/latency trade-off
 - [Efficient Model Routing](model-routing.md) — routing decisions happen alongside, not instead of, inference optimization
+- [Test-Time Compute & Reasoning Models](test-time-compute.md) — the directly opposing goal: deliberately spending more inference time for accuracy rather than minimizing it. Read both pages together, not in isolation

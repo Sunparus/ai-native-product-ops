@@ -33,6 +33,7 @@ flowchart TB
 
 - **The stack** — the 6-layer pipeline and 4 cross-cutting concerns (detail below)
 - **[Prompt Engineering](prompt-engineering.md)** — the cheapest lever, usually the first one to pull
+- **[Test-Time Compute & Reasoning Models](test-time-compute.md)** — the current dominant trend in the field: trading inference-time compute for accuracy, not just speed
 - **[RAG & Agent Architecture](rag-agent-architecture.md)** — closing knowledge gaps and coordinating multi-step work
 - **[Fine-Tuning & Model Adaptation](fine-tuning.md)** — the most expensive lever, and the one reached for too early most often
 - **[Dataset Engineering](dataset-engineering.md)** — how training and eval datasets actually get built
@@ -123,9 +124,10 @@ Domain-wide synthesis — each sub-page has its own specific version of this sec
 
 ### Trends
 
-1. **Agentic architectures** — Shift from single-shot prompting to multi-step, tool-using agents as the default design pattern.
-2. **Inference cost collapse** — Smaller, distilled, and open-weight models closing the gap with frontier models at a fraction of the cost.
-3. **Interoperability protocols** — Standards like [MCP](https://modelcontextprotocol.io/) reducing custom integration work between models, tools, and data sources.
+1. **Test-time compute and reasoning models** — the current dominant shift in the field: trading inference-time compute for accuracy rather than optimizing purely for speed. See [Test-Time Compute & Reasoning Models](test-time-compute.md).
+2. **Agentic architectures** — Shift from single-shot prompting to multi-step, tool-using agents as the default design pattern.
+3. **Inference cost collapse** — Smaller, distilled, and open-weight models closing the gap with frontier models at a fraction of the cost.
+4. **Interoperability protocols** — Standards like [MCP](https://modelcontextprotocol.io/) reducing custom integration work between models, tools, and data sources.
 
 ### Expertise Leads
 

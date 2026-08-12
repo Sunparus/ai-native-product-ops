@@ -62,6 +62,7 @@ nav:
   - AI/ML Systems Engineering:
       - Overview: domains/ai-ml-systems-engineering/index.md
       - Prompt Engineering: domains/ai-ml-systems-engineering/prompt-engineering.md
+      - Test-Time Compute & Reasoning Models: domains/ai-ml-systems-engineering/test-time-compute.md
       - RAG & Agent Architecture: domains/ai-ml-systems-engineering/rag-agent-architecture.md
       - Fine-Tuning & Model Adaptation: domains/ai-ml-systems-engineering/fine-tuning.md
       - Dataset Engineering: domains/ai-ml-systems-engineering/dataset-engineering.md

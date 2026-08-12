@@ -12,6 +12,9 @@
 | **Distillation** | Training a smaller model to mimic a larger one's outputs, trading some capability for lower cost and latency. |
 | **Open-weight vs. Closed Model** | Open-weight: downloadable model parameters, can self-host. Closed: accessed only via API, weights never leave the vendor. |
 | **RLHF** | Reinforcement Learning from Human Feedback — a training step that aligns model outputs with human preference judgments. |
+| **DPO** | Direct Preference Optimization — reformulates preference alignment as a simple classification loss, skipping RLHF's separate reward model and reinforcement-learning loop. The current default starting point for preference alignment in most open fine-tuning pipelines. |
+| **Test-Time Compute / Reasoning Models** | Spending extra inference-time compute — generating and evaluating intermediate reasoning steps before answering — to trade latency for accuracy on hard problems. The current dominant trend in AI engineering; see [Test-Time Compute & Reasoning Models](../domains/ai-ml-systems-engineering/test-time-compute.md). |
+| **Model Collapse** | Irreversible loss of a model's distributional diversity from training recursively on model-generated (synthetic) content across generations. |
 
 ## Inference & Serving
 
@@ -23,6 +26,9 @@
 | **Quantization** | Reducing numerical precision of model weights to shrink memory footprint and speed up inference, at a small accuracy cost. |
 | **Batching** | Grouping multiple inference requests to process together, improving throughput at the cost of per-request latency. |
 | **Throughput** | Number of requests or tokens a system can process per unit time — the capacity metric for serving infrastructure. |
+| **Continuous Batching** | Dynamically grouping requests as they arrive rather than waiting to fill a fixed batch — the current default in serving frameworks like vLLM, replacing older static batching. |
+| **Speculative Decoding** | A small, fast "draft" model proposes several tokens ahead, which the larger target model verifies in parallel rather than generating token-by-token — reduces latency with no quality loss when implemented correctly. |
+| **KV-Cache** | The key-value cache from attention layers, and the dominant memory cost during generation — how it's allocated, shared, and evicted is a first-class serving-infrastructure concern. |
 
 ## Data & Retrieval
 
@@ -31,6 +37,7 @@
 | **Embedding** | A numerical vector representation of text (or other data) that captures semantic meaning for similarity search. |
 | **Vector Database** | A database optimized to store embeddings and perform fast similarity search over them. |
 | **RAG (Retrieval-Augmented Generation)** | Retrieving relevant external data at query time and inserting it into the model's context, rather than relying solely on training data. |
+| **Hybrid Search** | Combining sparse retrieval (keyword/BM25) with dense vector similarity, rather than relying on embeddings alone — catches exact-match terms pure vector search misses. |
 | **Chunking** | Splitting documents into smaller segments before embedding, to fit retrieval granularity and context limits. |
 | **Data Residency** | The physical/legal jurisdiction where data is stored — a compliance requirement distinct from where it is processed. |
 | **Data Lineage** | The traceable record of where data originated, what transformations it underwent, and everywhere it's been consumed. Column-level lineage (precise, per-field) is what audits and incident response actually need; table-level (coarse) is what most tools ship by default. |
@@ -46,6 +53,7 @@
 | **Prompt Engineering** | Structuring instructions and examples given to a model to reliably shape its output. |
 | **System Prompt** | A persistent instruction set applied before user input, defining the model's role, constraints, and behavior. |
 | **Agent** | A system that uses a model to autonomously plan and execute multi-step actions, often invoking tools. |
+| **ReAct** | The foundational agent-loop pattern (Yao et al., 2022): the model interleaves reasoning traces with actions, observes the result, and decides the next step. Most modern agent patterns are a variation on this loop. |
 | **Tool Use / Function Calling** | A model's ability to invoke external functions or APIs as part of generating a response. |
 | **[MCP (Model Context Protocol)](https://modelcontextprotocol.io/)** | An open protocol standardizing how models connect to external tools and data sources, aimed at reducing custom integration work. |
 | **Model Router** | Logic that directs a given request to the most appropriate model based on cost, capability, or task type. |

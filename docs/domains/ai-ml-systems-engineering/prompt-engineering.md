@@ -45,4 +45,5 @@ Chip Huyen, *AI Engineering* — the chapter this page was missing from this dom
 - [AI/ML Systems Engineering](index.md) — the Model Layer this technique operates within
 - [Fine-Tuning & Model Adaptation](fine-tuning.md) — the next lever when prompting stops being enough
 - [RAG & Agent Architecture](rag-agent-architecture.md) — the other next lever, for knowledge gaps rather than behavior gaps
+- [Test-Time Compute & Reasoning Models](test-time-compute.md) — the field's terminology is shifting from "prompt engineering" toward "context engineering" as reasoning models handle more of the "how" themselves
 - [Evaluation & Observability](../evaluation-observability/index.md) — eval design is what tells you whether a prompt change actually helped

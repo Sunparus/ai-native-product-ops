@@ -13,7 +13,7 @@ Techniques for directing each request to the most appropriate model automaticall
 
 - **Rule-based routing** — classify task type, route by fixed policy. Simple, auditable, coarse.
 - **Cascade routing** — attempt a cheap/fast model first, escalate to a stronger model only on low-confidence output. Strong cost savings, adds latency on escalation.
-- **Learned routing** — a small classifier model predicts the best target model per query. Most efficient at scale, adds a new component to maintain and monitor.
+- **Learned routing** — a small classifier model predicts the best target model per query. Most efficient at scale, adds a new component to maintain and monitor. RouteLLM's own reported result (ICLR 2025): an 85% cost reduction on MT-Bench while retaining 95% of GPT-4-Turbo-equivalent quality — benchmark-specific, not a universal guarantee, but a real, checkable number rather than a directional claim.
 
 ## Which to use when
 
