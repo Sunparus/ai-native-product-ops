@@ -10,10 +10,10 @@ Five steps — not eleven equal knowledge areas to implement at once.
 
 ```mermaid
 flowchart LR
-    S1["01<br/>Map capabilities"] --> S2["02<br/>Prioritize by risk"]
-    S2 --> S3["03<br/>Name decision rights"]
-    S3 --> S4["04<br/>Build controls + evidence"]
-    S4 --> S5["05<br/>Establish routines & metrics"]
+    S1(["01<br/>Map capabilities"]) --> S2(["02<br/>Prioritize by risk"])
+    S2 --> S3(["03<br/>Name decision rights"])
+    S3 --> S4(["04<br/>Build controls + evidence"])
+    S4 --> S5(["05<br/>Establish routines & metrics"])
 ```
 
 ### 01 · Map capabilities, don't checklist

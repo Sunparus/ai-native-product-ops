@@ -10,7 +10,7 @@ tags:
 
 ```mermaid
 flowchart TB
-    GOV((("Data<br/>Governance")))
+    GOV(("Data<br/>Governance"))
     GOV --- ARCH[Data Architecture]
     GOV --- MODEL[Data Modeling & Design]
     GOV --- STORE[Data Storage & Operations]

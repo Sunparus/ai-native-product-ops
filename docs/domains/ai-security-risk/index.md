@@ -11,15 +11,15 @@ Managing what can go wrong in an AI system — from adversarial threats to juris
 
 ```mermaid
 flowchart TB
-    GOV["NIST AI RMF — Govern"] --> MAP["Map"]
-    MAP --> MEAS["Measure"]
-    MEAS --> MANAGE["Manage"]
+    GOV(["NIST AI RMF — Govern"]) --> MAP(["Map"])
+    MAP --> MEAS(["Measure"])
+    MEAS --> MANAGE(["Manage"])
     MANAGE -.iterates.-> GOV
 
-    THREAT[Threat Landscape<br/>OWASP LLM Top 10 · MITRE ATLAS] -.assessed within.-> MAP
-    SOV[Sovereignty & Data Residency] -.assessed within.-> MAP
-    ETH[Ethics & Bias] -.assessed within.-> MEAS
-    GUARD[Guardrails] -.enforced within.-> MANAGE
+    THREAT(["Threat Landscape<br/>OWASP LLM Top 10 · MITRE ATLAS"]) -.assessed within.-> MAP
+    SOV(["Sovereignty & Data Residency"]) -.assessed within.-> MAP
+    ETH(["Ethics & Bias"]) -.assessed within.-> MEAS
+    GUARD(["Guardrails"]) -.enforced within.-> MANAGE
 ```
 
 ## In this domain

@@ -10,10 +10,10 @@ How organizations actually move from AI pilots to AI embedded in daily work — 
 
 ```mermaid
 flowchart LR
-    A[Awareness<br/>ad hoc experiments] --> B[Active<br/>funded pilots]
-    B --> C[Operational<br/>production workflow]
-    C --> D[Systemic<br/>embedded across core processes]
-    D --> E[Transformational<br/>AI-native operating model]
+    A(["Awareness<br/>ad hoc experiments"]) --> B(["Active<br/>funded pilots"])
+    B --> C(["Operational<br/>production workflow"])
+    C --> D(["Systemic<br/>embedded across core processes"])
+    D --> E(["Transformational<br/>AI-native operating model"])
 ```
 
 ## In this domain

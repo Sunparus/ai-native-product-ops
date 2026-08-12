@@ -9,9 +9,9 @@ Whether an AI system is actually working — measured, not demoed. Elevated to i
 
 ```mermaid
 flowchart LR
-    DESIGN[Eval Design<br/>metrics + thresholds] --> PIPE[Automated Eval Pipeline<br/>CI-integrated]
-    PIPE --> PROD[Production Monitoring<br/>drift, quality sampling]
-    PROD --> LOOP[Feedback Loop]
+    DESIGN(["Eval Design<br/>metrics + thresholds"]) --> PIPE(["Automated Eval Pipeline<br/>CI-integrated"])
+    PIPE --> PROD(["Production Monitoring<br/>drift, quality sampling"])
+    PROD --> LOOP(["Feedback Loop"])
     LOOP -.informs.-> DESIGN
 ```
 

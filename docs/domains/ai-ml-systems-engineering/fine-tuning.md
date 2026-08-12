@@ -13,6 +13,13 @@ Previously a single phrase ("build vs. buy vs. fine-tune") inside the Model Laye
 
 ## The adaptation ladder, cheapest to most expensive
 
+```mermaid
+flowchart LR
+    P(["Prompt Engineering<br/>no training"]) --> R(["RAG<br/>no training,<br/>needs corpus"])
+    R --> L(["LoRA / PEFT<br/>partial training"])
+    L --> F(["Full Fine-Tuning<br/>all weights"])
+```
+
 1. **Prompt engineering** — no training, no data collection. See [Prompt Engineering](prompt-engineering.md).
 2. **RAG** — no training, but requires a retrieval corpus and infrastructure. See [RAG & Agent Architecture](rag-agent-architecture.md).
 3. **LoRA / parameter-efficient fine-tuning** — trains small additional weight matrices instead of the full model. Meaningfully cheaper than full fine-tuning in compute and data volume, and the model can be swapped back to base behavior by removing the adapter.

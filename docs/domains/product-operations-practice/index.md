@@ -10,10 +10,10 @@ The discipline of product operations itself — not the technical systems it ope
 
 ```mermaid
 flowchart TB
-    P1[Business Data & Insights] --> MODEL[Product Operations Model]
-    P2[Customer & Market Insights] --> MODEL
-    MODEL --> PRAC[Process & Practices]
-    PRAC -.bridges into.-> TECH["Technical Domains<br/>(via Product Ops Lens)"]
+    P1(["Business Data & Insights"]) --> MODEL(["Product Operations Model"])
+    P2(["Customer & Market Insights"]) --> MODEL
+    MODEL --> PRAC(["Process & Practices"])
+    PRAC -.bridges into.-> TECH(["Technical Domains<br/>(via Product Ops Lens)"])
 ```
 
 ## Grounded in

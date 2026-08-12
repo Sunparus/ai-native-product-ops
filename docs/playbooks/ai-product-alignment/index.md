@@ -29,16 +29,16 @@ At each stage:
 
 ```mermaid
 flowchart LR
-    S1[1 · Discovery & Framing] --> S2[2 · Data & Model Design]
-    S2 --> S3[3 · Build & Integration]
-    S3 --> S4[4 · Evaluation & Governance Review]
-    S4 --> S5[5 · Launch & Rollout]
-    S5 --> S6[6 · Operate & Monitor]
+    S1(["1 · Discovery & Framing"]) --> S2(["2 · Data & Model Design"])
+    S2 --> S3(["3 · Build & Integration"])
+    S3 --> S4(["4 · Evaluation & Governance Review"])
+    S4 --> S5(["5 · Launch & Rollout"])
+    S5 --> S6(["6 · Operate & Monitor"])
     S6 -.feeds back.-> S2
-    SEC["⚡ Security & Resilience — non-negotiables"] -.wraps.-> S3
+    SEC(["⚡ Security & Resilience — non-negotiables"]) -.wraps.-> S3
     SEC -.wraps.-> S4
     SEC -.wraps.-> S6
-    HIL["⚡ Human-in-the-Loop Threshold"] -.wraps.-> S2
+    HIL(["⚡ Human-in-the-Loop Threshold"]) -.wraps.-> S2
     HIL -.wraps.-> S3
     HIL -.wraps.-> S4
 ```

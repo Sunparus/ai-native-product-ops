@@ -1,0 +1,122 @@
+/* ============================================================
+   Orbit-derived palette for AI-Native Product Operations
+   Source: personal design guidelines (Orbit) — color, type,
+   and diagram rules adapted from a paginated/deck system to
+   a responsive documentation site. Not a 1:1 port; see
+   CONTRIBUTING.md for what transferred and what didn't.
+   ============================================================ */
+
+/* --- Light scheme ("default") — the primary reading mode ---
+   Ratio target from the guidelines: ~75% warm white / 15% charcoal
+   / 8% gray / 2% orange. Text-safe variants used for anything read,
+   not the raw decorative tones. */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #F6F3ED;              /* WARM_WHITE */
+  --md-default-fg-color: #1E1B18;              /* CHARCOAL — primary ink */
+  --md-default-fg-color--light: #68635A;       /* GRAY_TEXT, AA-safe */
+  --md-default-fg-color--lighter: #DAD4C8;     /* GRAY_LIGHT — hairlines only */
+  --md-default-fg-color--lightest: #EDE7DC;    /* CARD fill */
+
+  --md-primary-fg-color: #1E1B18;              /* CHARCOAL header bar */
+  --md-primary-bg-color: #F6F3ED;              /* WARM_WHITE text on header */
+
+  --md-accent-fg-color: #A23E1D;               /* ORANGE_INK — AA-safe accent for links/hover */
+  --md-accent-fg-color--transparent: rgba(162, 62, 29, 0.1);
+  --md-accent-bg-color: #F6F3ED;
+
+  --md-typeset-a-color: #A23E1D;               /* links use the text-safe orange */
+
+  --md-code-bg-color: #EDE7DC;                 /* CARD */
+  --md-code-fg-color: #1E1B18;
+
+  --md-footer-bg-color: #1E1B18;
+  --md-footer-fg-color: #F6F3ED;
+}
+
+/* --- Dark scheme ("slate") — treated as the guidelines' "inverted"
+   hero/closing-page mode, applied to the whole site when toggled,
+   since full-strength ORANGE only passes AA contrast on charcoal. */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1E1B18;              /* CHARCOAL */
+  --md-default-fg-color: #F6F3ED;              /* WARM_WHITE */
+  --md-default-fg-color--light: #B8AFA0;       /* DIM_ON_DARK */
+  --md-default-fg-color--lighter: #4A453D;
+  --md-default-fg-color--lightest: #2A2622;
+
+  --md-primary-fg-color: #1E1B18;
+  --md-primary-bg-color: #F6F3ED;
+
+  --md-accent-fg-color: #E85A2A;               /* full-strength ORANGE — passes AA on charcoal (4.84:1) */
+  --md-accent-fg-color--transparent: rgba(232, 90, 42, 0.15);
+
+  --md-typeset-a-color: #E85A2A;
+
+  --md-code-bg-color: #2A2622;
+  --md-code-fg-color: #F6F3ED;
+
+  --md-footer-bg-color: #1E1B18;
+  --md-footer-fg-color: #B8AFA0;
+}
+
+/* ============================================================
+   Typography — leading and scale discipline
+   Guideline: minimum 1.5x font size for all prose, defaulted in
+   code so it can't regress. Dense monospace reference blocks are
+   the accepted exception (code register, not long-form reading).
+   ============================================================ */
+.md-typeset p,
+.md-typeset li,
+.md-typeset td {
+  line-height: 1.6; /* exceeds the 1.5x floor */
+}
+
+.md-typeset pre,
+.md-typeset code {
+  line-height: 1.4; /* accepted tighter code-register convention */
+}
+
+/* ============================================================
+   Wide-table mobile handling
+   Honest engineering note: true per-cell "stacked card" reflow
+   for arbitrary Markdown tables isn't practical without custom
+   HTML per table (fragile, expensive to maintain across 60+
+   pages). Material already wraps tables in a horizontal-scroll
+   container by default; this makes that affordance visible and
+   deliberate — a fade hint that more content exists — rather
+   than a silent, easy-to-miss scroll.
+   ============================================================ */
+.md-typeset__scrollwrap {
+  position: relative;
+}
+
+.md-typeset__table {
+  position: relative;
+}
+
+.md-typeset__table table {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Subtle scroll-affordance shadow on the trailing edge of wide tables */
+.md-typeset__scrollwrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.06));
+}
+
+/* ============================================================
+   Admonition tuning — Decision Areas / Product Ops Lens use the
+   already-enabled admonition extension (question/tip types).
+   Slightly tighter default spacing so a page with several boxes
+   doesn't read as heavier than the prose around it.
+   ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 4px;
+}

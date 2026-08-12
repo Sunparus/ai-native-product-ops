@@ -11,16 +11,16 @@ The technical layers of an AI system, from data to application, and the decision
 flowchart TB
     subgraph Pipeline["System Layers — bottom-up dependency, not live request order"]
         direction TB
-        D[01 · Data Layer] --> C[02 · Context Layer]
-        C --> M[03 · Model Layer]
-        M --> I[04 · Inference Layer]
-        I --> O[05 · Orchestration Layer]
-        O --> A[06 · Application Layer]
+        D(["01 · Data Layer"]) --> C(["02 · Context Layer"])
+        C --> M(["03 · Model Layer"])
+        M --> I(["04 · Inference Layer"])
+        I --> O(["05 · Orchestration Layer"])
+        O --> A(["06 · Application Layer"])
     end
-    G["⚡ Security & Governance"] -.wraps.-> Pipeline
-    F["⚡ Cost & FinOps"] -.wraps.-> Pipeline
-    E["⚡ Evaluation & Observability"] -.wraps.-> Pipeline
-    R["⚡ Resilience & Redundancy"] -.wraps.-> Pipeline
+    G(["⚡ Security & Governance"]) -.wraps.-> Pipeline
+    F(["⚡ Cost & FinOps"]) -.wraps.-> Pipeline
+    E(["⚡ Evaluation & Observability"]) -.wraps.-> Pipeline
+    R(["⚡ Resilience & Redundancy"]) -.wraps.-> Pipeline
 ```
 
 ## Grounded in

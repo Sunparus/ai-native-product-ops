@@ -6,9 +6,20 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: indigo
-    accent: amber
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   font:
     text: IBM Plex Sans
     code: IBM Plex Mono
@@ -21,6 +32,9 @@ theme:
     - search.highlight
     - content.code.copy
     - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search

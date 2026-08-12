@@ -10,10 +10,10 @@ Authority, control, and accountability over data assets — the discipline that 
 
 ```mermaid
 flowchart TB
-    PRIN[Core Principles — foundation, framework-agnostic] -.underlies.-> GOV
-    GOV[DAMA-DMBOK Wheel — 11 Areas] --> META["Metadata Management — 1 of the 11 areas"]
-    META --> ACTIVE[Active Metadata Practice]
-    GOV --> OPS[Operationalizing DMBOK — the how]
+    PRIN(["Core Principles — foundation, framework-agnostic"]) -.underlies.-> GOV
+    GOV(["DAMA-DMBOK Wheel — 11 Areas"]) --> META(["Metadata Management — 1 of the 11 areas"])
+    META --> ACTIVE(["Active Metadata Practice"])
+    GOV --> OPS(["Operationalizing DMBOK — the how"])
     OPS -.applies across.-> META
 ```
 
