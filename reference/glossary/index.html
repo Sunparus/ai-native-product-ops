@@ -607,6 +607,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../domains/ai-ml-systems-engineering/test-time-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test-Time Compute & Reasoning Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../domains/ai-ml-systems-engineering/rag-agent-architecture/" class="md-nav__link">
         
   
@@ -2740,6 +2768,18 @@
 <td><strong>RLHF</strong></td>
 <td>Reinforcement Learning from Human Feedback — a training step that aligns model outputs with human preference judgments.</td>
 </tr>
+<tr>
+<td><strong>DPO</strong></td>
+<td>Direct Preference Optimization — reformulates preference alignment as a simple classification loss, skipping RLHF's separate reward model and reinforcement-learning loop. The current default starting point for preference alignment in most open fine-tuning pipelines.</td>
+</tr>
+<tr>
+<td><strong>Test-Time Compute / Reasoning Models</strong></td>
+<td>Spending extra inference-time compute — generating and evaluating intermediate reasoning steps before answering — to trade latency for accuracy on hard problems. The current dominant trend in AI engineering; see <a href="../../domains/ai-ml-systems-engineering/test-time-compute/">Test-Time Compute &amp; Reasoning Models</a>.</td>
+</tr>
+<tr>
+<td><strong>Model Collapse</strong></td>
+<td>Irreversible loss of a model's distributional diversity from training recursively on model-generated (synthetic) content across generations.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="inference-serving">Inference &amp; Serving<a class="headerlink" href="#inference-serving" title="Permanent link">&para;</a></h2>
@@ -2775,6 +2815,18 @@
 <td><strong>Throughput</strong></td>
 <td>Number of requests or tokens a system can process per unit time — the capacity metric for serving infrastructure.</td>
 </tr>
+<tr>
+<td><strong>Continuous Batching</strong></td>
+<td>Dynamically grouping requests as they arrive rather than waiting to fill a fixed batch — the current default in serving frameworks like vLLM, replacing older static batching.</td>
+</tr>
+<tr>
+<td><strong>Speculative Decoding</strong></td>
+<td>A small, fast "draft" model proposes several tokens ahead, which the larger target model verifies in parallel rather than generating token-by-token — reduces latency with no quality loss when implemented correctly.</td>
+</tr>
+<tr>
+<td><strong>KV-Cache</strong></td>
+<td>The key-value cache from attention layers, and the dominant memory cost during generation — how it's allocated, shared, and evicted is a first-class serving-infrastructure concern.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="data-retrieval">Data &amp; Retrieval<a class="headerlink" href="#data-retrieval" title="Permanent link">&para;</a></h2>
@@ -2797,6 +2849,10 @@
 <tr>
 <td><strong>RAG (Retrieval-Augmented Generation)</strong></td>
 <td>Retrieving relevant external data at query time and inserting it into the model's context, rather than relying solely on training data.</td>
+</tr>
+<tr>
+<td><strong>Hybrid Search</strong></td>
+<td>Combining sparse retrieval (keyword/BM25) with dense vector similarity, rather than relying on embeddings alone — catches exact-match terms pure vector search misses.</td>
 </tr>
 <tr>
 <td><strong>Chunking</strong></td>
@@ -2848,6 +2904,10 @@
 <tr>
 <td><strong>Agent</strong></td>
 <td>A system that uses a model to autonomously plan and execute multi-step actions, often invoking tools.</td>
+</tr>
+<tr>
+<td><strong>ReAct</strong></td>
+<td>The foundational agent-loop pattern (Yao et al., 2022): the model interleaves reasoning traces with actions, observes the result, and decides the next step. Most modern agent patterns are a variation on this loop.</td>
 </tr>
 <tr>
 <td><strong>Tool Use / Function Calling</strong></td>
@@ -2987,7 +3047,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 11, 2026 21:50:41 UTC">August 11, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 12, 2026 06:54:35 UTC">August 12, 2026</span>
   </span>
 
     
