@@ -136,12 +136,10 @@ Any tier can be used. Tier D alone needs to be labeled as a single, weighted dat
 
 **Search approach — signal over noise:** search the primary claim directly (company + specific research, not generic "case study" terms — those surface SEO farms first), then search specifically for independent analysis / discrepancy-checking coverage of that same claim, not just more restatements of it. For consultancy sources, go to the firm's own domain rather than a blog quoting them secondhand.
 
-**Required shape**, appended to `docs/reference/case-studies.md` — signal first, provenance last:
+**Required shape**, appended to `docs/reference/case-studies.md` — signal first, provenance last, secondary detail collapsed so entries don't read as a wall of text:
 
 ```
 ## Title — what happened, in a few words (Company, Month Year)
-
-**What happened:** 2-4 sentences, factual, paraphrased in your own words.
 
 **What moved:** The concrete, measurable result — the actual number, not an adjective.
 
@@ -149,8 +147,16 @@ Any tier can be used. Tier D alone needs to be labeled as a single, weighted dat
 
 **Where it may break:** The conditions under which this wouldn't generalize — don't skip this even when the result is impressive.
 
-**Source & confidence:** Tier, named author/org, the incentive stated plainly, and whether it's independently corroborated or a single claim standing alone. Lowest-emphasis section, last on purpose — context for the learning above, not the point of the entry.
+??? note "Read the full story"
+    2-4 sentences, factual, paraphrased in your own words — the narrative context, useful but secondary once the lesson above is stated.
+
+??? note "Source & confidence"
+    Tier, named author/org, the incentive stated plainly, and whether it's independently corroborated or a single claim standing alone.
+
+    - [Publication: headline](url)
 ```
+
+Both collapsed sections use `pymdownx.details` (already enabled) — no new dependency. Keep the always-visible block to the three highest-signal fields; anything that's context rather than the point of the entry goes in a `???` block.
 
 Both failure and success cases belong here. If a documented case is genuinely actionable, consider whether it should also become a playbook (see the AI Eval Containment playbook — extracted directly from a case study).
 
