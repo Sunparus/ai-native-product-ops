@@ -123,21 +123,33 @@ This exact shape is intentional — it's skill.md-compatible, meaning it can be 
 
 ## 3. Adding a case study
 
-**Bar for inclusion: independently verifiable, sourced, publicly reported.** Not "this seems like it probably happened" — actually check multiple independent sources before writing it in. Speculative or single-source reports get left out on purpose.
+**Source tiers, by epistemic weight — not a single admit/reject bar.** Excluding anything with an incentive attached throws out most of the freshest, most current signal in a fast-moving field. The fix is tiering plus mandatory interpretation, not exclusion:
 
-**Required shape**, appended to `docs/reference/case-studies.md`:
+| Tier | What | Strong for | Weak for | Named incentive risk |
+|---|---|---|---|---|
+| **A — Peer-reviewed research** | arXiv, ACL/NeurIPS/ICLR/MLSys | General mechanisms, causal claims | Whether it holds at real production scale | Publication pressure, benchmark gaming |
+| **B — Analyst/consultancy aggregate research** | Gartner, McKinsey, IDC, Menlo Ventures, a16z's research arm | Base rates across many companies | Causal mechanism, "why" | Paid inclusion, portfolio bias — name which |
+| **C — Named-company engineering data about their own systems** | A named engineer's post about their own architecture/cost/performance | Current, concrete, often the freshest real numbers available | Cherry-picked framing, no peer review | Lower than D — no customer to flatter, but still a PR incentive |
+| **D — Vendor marketing case studies about customers** | "Company X saw Y% using our product" | Almost nothing in isolation | Everything — cherry-picked customer, undisclosed methodology | Highest — direct sales incentive |
+
+Any tier can be used. Tier D alone needs to be labeled as a single, weighted data point, not presented as fact. Tier A+B or A+C corroborating the same pattern earns real confidence, worth noting.
+
+**Search approach — signal over noise:** search the primary claim directly (company + specific research, not generic "case study" terms — those surface SEO farms first), then search specifically for independent analysis / discrepancy-checking coverage of that same claim, not just more restatements of it. For consultancy sources, go to the firm's own domain rather than a blog quoting them secondhand.
+
+**Required shape**, appended to `docs/reference/case-studies.md` — signal first, provenance last:
 
 ```
 ## Title — what happened, in a few words (Company, Month Year)
 
-**What happened:** 2-4 sentences, factual, paraphrased in your own words (not copied from source articles).
+**What happened:** 2-4 sentences, factual, paraphrased in your own words.
 
-**Actionable now:**
-- Concrete, implementable point — not a restated summary
-- ...
+**What moved:** The concrete, measurable result — the actual number, not an adjective.
 
-**Sources:**
-- [Publication: headline](url)
+**Portable lesson:** The generalizable principle, decoupled from the specific vendor's product.
+
+**Where it may break:** The conditions under which this wouldn't generalize — don't skip this even when the result is impressive.
+
+**Source & confidence:** Tier, named author/org, the incentive stated plainly, and whether it's independently corroborated or a single claim standing alone. Lowest-emphasis section, last on purpose — context for the learning above, not the point of the entry.
 ```
 
 Both failure and success cases belong here. If a documented case is genuinely actionable, consider whether it should also become a playbook (see the AI Eval Containment playbook — extracted directly from a case study).

@@ -103,7 +103,7 @@ Domain-wide synthesis — each sub-page has its own specific version of this sec
 
 **Focus areas & deep dives** — *TBD*
 
-**Case studies** — *TBD*
+**Case studies** — see [Agent Swarm Cost Economics](../../reference/case-studies.md) — a concrete demonstration of the Model Routing domain's planner/worker cost principle, at 7.9x–22.8x magnitude.
 
 **Open questions & trends** — see Landscape, below.
 

@@ -45,3 +45,4 @@ Techniques for directing each request to the most appropriate model automaticall
 - [Multi-Vendor Strategy](multi-vendor-strategy.md) — routing across vendors, not just across models from one provider
 - [Inference Optimization](inference-optimization.md) — routing and inference optimization are complementary cost/latency levers, often tuned together
 - [RAG & Agent Architecture](rag-agent-architecture.md) — routing decisions inside a multi-step agent workflow
+- [Case Studies — Agent Swarm Cost Economics](../../reference/case-studies.md) — a concrete, extreme-case demonstration of this same planner/worker cost principle (7.9x–22.8x)
