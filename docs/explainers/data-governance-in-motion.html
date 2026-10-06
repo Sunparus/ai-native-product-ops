@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Eight animated scenes on data governance for AI systems, from principles and DAMA-DMBOK to permissions in vector indexes, each with a one-question check.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data Governance in Motion">
+<meta property="og:description" content="Eight animated scenes on data governance for AI systems, from principles and DAMA-DMBOK to permissions in vector indexes, each with a one-question check.">
+<meta property="og:url" content="https://sunparus.github.io/ai-native-product-ops/explainers/data-governance-in-motion.html">
+<meta property="og:image" content="https://sunparus.github.io/ai-native-product-ops/explainers/data-governance-in-motion.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231E1B18'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23E85A2A' stroke-width='3'/%3E%3C/svg%3E">
+<style>[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Data Governance in Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@1,500&display=swap">
+<style>
+/* Layout: a lecture "stage" (animated figure) + narration bar + checkpoint, then reference sections.
+   Brand: AINPO hub palette. Chalk-on-coal structure, one orange accent for what matters; red/green only for fail/pass. */
+:root{
+  --bg:#F6F3ED; --surface:#FBF9F5; --panel:#EDE7DC; --line:#DAD4C8; --grid:#EDE8DF;
+  --ink:#1E1B18; --dim:#68635A; --chalk:#3A352F; --accent:#A23E1D; --red:#B4134A; --green:#2F7A34;
+  --on-accent:#F6F3ED;
+  --f-display:"IBM Plex Serif", Georgia, serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1E1B18; --surface:#23201C; --panel:#2A2622; --line:#4A453D; --grid:#27231F;
+  --ink:#F6F3ED; --dim:#B8AFA0; --chalk:#E6DFD3; --accent:#E85A2A; --red:#FF7096; --green:#8CC98A;
+  --on-accent:#1E1B18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1E1B18; --surface:#23201C; --panel:#2A2622; --line:#4A453D; --grid:#27231F;
+  --ink:#F6F3ED; --dim:#B8AFA0; --chalk:#E6DFD3; --accent:#E85A2A; --red:#FF7096; --green:#8CC98A;
+  --on-accent:#1E1B18; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px;padding-block:32px 72px}
+.kicker{font:500 12px var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+h1{font:500 italic clamp(30px,5.4vw,46px)/1.08 var(--f-display);margin:0 0 10px;text-wrap:balance}
+.lede{color:var(--dim);max-width:64ch;margin:0 0 24px;font-size:17px}
+.rail{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
+.rail li{min-width:0}
+.rail button{font:13px var(--f-mono);color:var(--dim);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;min-height:34px;white-space:nowrap;text-align:left}
+.rail button:hover{color:var(--ink);border-color:var(--dim)}
+.rail button[aria-current="true"]{color:var(--on-accent);background:var(--accent);border-color:var(--accent)}
+button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.stage{position:relative;border:1px solid var(--line);border-radius:8px;background-color:var(--surface);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:40px 40px;overflow:hidden}
+.scroller{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.stage svg{display:block;width:100%;min-width:var(--zw,0px);height:auto;aspect-ratio:800/480}
+.scene-title{margin:0;padding:12px 16px 0;font:500 italic 19px var(--f-display);color:var(--ink)}
+.swipe{font:11px var(--f-mono);color:var(--dim);padding:0 16px 10px;letter-spacing:.06em}
+.stage{position:relative}
+.zoom{display:none;position:absolute;top:8px;right:8px;z-index:1;gap:4px}
+.zoom button{font:500 13px var(--f-mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;min-width:36px;min-height:34px;padding:0 9px;cursor:pointer}
+.zoom button:hover{border-color:var(--accent)}
+.zoom button:disabled{opacity:.4;cursor:default}
+@media (max-width:820px){.zoom{display:flex}.scene-title{padding-right:150px}}
+@media (max-width:680px){
+  .rail{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;margin-inline:-16px;padding:2px 16px 8px;scrollbar-width:none;
+    -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .rail::-webkit-scrollbar{display:none}
+  .rail li{flex:none;scroll-snap-align:start}
+  .lede{font-size:16px;margin-bottom:18px}
+  .wrap{padding-block:20px 56px}
+}
+
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start;margin-top:14px}
+.cap{min-width:0}
+.cap p.txt{margin:0;font-size:17px;max-width:70ch;min-height:5.4em}
+.meta{font:12px var(--f-mono);color:var(--dim);margin:0 0 4px;letter-spacing:.08em}
+.ctrl{display:flex;gap:6px}
+.ctrl button{font:500 14px var(--f-mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 14px;cursor:pointer;min-height:44px;min-width:48px}
+.ctrl button:hover{border-color:var(--accent)}
+.ctrl button:disabled{opacity:.4;cursor:default}
+.ctrl .primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.dots{display:flex;gap:5px;margin-top:10px}
+.dots i{width:20px;height:3px;background:var(--line);border-radius:2px}
+.dots i.on{background:var(--accent)}
+@media (max-width:680px){.bar{grid-template-columns:1fr}.ctrl{justify-content:stretch}.ctrl button{flex:1}.cap p.txt{font-size:16px;min-height:0}}
+
+.info,.quiz{margin-top:12px;border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--panel);font-size:15px}
+.info b,.quiz .lab{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
+.info .ext{color:var(--dim);margin-top:4px}
+.quiz .q{font-weight:600;margin:0 0 10px}
+.opts{display:grid;gap:6px}
+.opts button{text-align:left;font:15px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 12px;cursor:pointer;min-height:44px}
+.opts button:hover{border-color:var(--accent)}
+.opts button.right{border-color:var(--green);box-shadow:inset 3px 0 0 var(--green)}
+.opts button.wrong{border-color:var(--red);box-shadow:inset 3px 0 0 var(--red)}
+.why{margin:10px 0 0;color:var(--dim)}
+
+h2{font:500 italic 28px var(--f-display);margin:56px 0 6px;text-wrap:balance}
+.sub{color:var(--dim);margin:0 0 18px;max-width:66ch}
+.qs{display:grid;gap:12px}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--surface)}
+.card h3{font:600 16px/1.4 var(--f-body);margin:0 0 12px}
+.ans{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ans div{min-width:0;font-size:15px}
+.ans span{display:block;font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.rs span{color:var(--red)} .ra span{color:var(--green)}
+@media (max-width:680px){.ans{grid-template-columns:1fr;gap:10px}}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;white-space:nowrap}
+.src{columns:2 300px;column-gap:32px;padding-left:18px;margin:0;font-size:14.5px}
+.src li{margin-bottom:7px;break-inside:avoid}
+a{color:var(--accent);text-underline-offset:2px}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font:12px/1.7 var(--f-mono);color:var(--dim)}
+
+/* SVG vocabulary — every color from tokens */
+svg text{font-family:var(--f-body)}
+.lbl{fill:var(--ink);font-size:16px;font-weight:500}
+.lbl.s{font-size:14.5px}
+.mono{fill:var(--dim);font-family:var(--f-mono)!important;font-size:13px}
+.mono.s{font-size:12px}
+.cy{fill:var(--chalk)} .am{fill:var(--accent)} .rd{fill:var(--red)} .gr{fill:var(--green)} .ink{fill:var(--ink)} .bgt{fill:var(--on-accent)}
+.node{fill:var(--panel);stroke:var(--chalk);stroke-width:2}
+.box{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.tag{fill:var(--accent)}
+.ln{stroke:var(--dim);stroke-width:1.5;fill:none}
+.lc{stroke:var(--chalk);stroke-width:2.5;fill:none}
+.la{stroke:var(--accent);stroke-width:2;fill:none}
+.lr{stroke:var(--red);stroke-width:2.5;fill:none}
+.lg{stroke:var(--green);stroke-width:2.5;fill:none}
+.dash{stroke-dasharray:6 6}
+.f{opacity:0;transition:opacity .6s ease}
+.f.on{opacity:1}
+.dr{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1s ease}
+.dr.on{stroke-dashoffset:0}
+.hot{stroke:var(--accent)!important;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{stroke-width:5}}
+.dim{opacity:.25!important}
+.key .node,.key.node{stroke:var(--accent)} .key .lbl{fill:var(--accent)}
+.bad .box{stroke:var(--red)} .bad .lbl{fill:var(--red)}
+.good .box{stroke:var(--green)} .good .lbl{fill:var(--green)}
+.flow{stroke-dasharray:4 10;animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.stale{opacity:.35!important}
+.stale .node{stroke-dasharray:5 5}
+.fade{opacity:.12!important;transition:opacity .8s}
+.pick{cursor:pointer}
+.pick .hit{fill:transparent;pointer-events:all}
+.pick:hover .node,.pick:hover .box{stroke-width:3.5}
+.route.on{animation:route 2.4s cubic-bezier(.6,0,.3,1) .3s forwards}
+@keyframes route{0%{transform:translate(0,0)}30%{transform:translate(75px,0)}55%{transform:translate(125px,0)}78%{transform:translate(125px,-64px)}100%{transform:translate(147px,-64px)}}
+@media (prefers-reduced-motion:reduce){
+  .f,.dr{transition:none}.hot,.flow{animation:none}
+  .route.on{animation:none;transform:translate(147px,-64px)}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">AI-Native Product Ops · Data Governance</p>
+  <h1>Data Governance in Motion</h1>
+  <p class="lede">Eight short animated scenes on the core ideas of data governance for AI systems and how they depend on each other. Each scene ends with a one-question check. Use Next, or the arrow keys.</p>
+
+  <ul class="rail" id="rail" aria-label="Scenes"></ul>
+
+  <section class="stage" aria-label="Animated figure">
+    <div class="zoom" role="group" aria-label="Zoom figure">
+      <button id="zOut" aria-label="Zoom out">−</button><button id="zFit" aria-label="Fit to screen">Fit</button><button id="zIn" aria-label="Zoom in">+</button>
+    </div>
+    <p class="scene-title" id="stitle"></p>
+    <p class="swipe" id="swipe" hidden>Zoomed in · the figure follows each step, swipe to look around ↔</p>
+    <div class="scroller"><div id="fig"></div></div>
+  </section>
+
+  <div class="bar">
+    <div class="cap" aria-live="polite">
+      <p class="meta" id="meta"></p>
+      <p class="txt" id="cap"></p>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="ctrl">
+      <button id="prev" aria-label="Previous step">←</button>
+      <button id="play">Play</button>
+      <button id="next" class="primary">Next →</button>
+    </div>
+  </div>
+  <div class="info" id="info" hidden></div>
+  <div class="quiz" id="quiz" hidden></div>
+
+  <h2>Ask in the room</h2>
+  <p class="sub">Five questions that show whether governance runs in daily work or only on paper. The answers are illustrative and show what each kind of answer sounds like.</p>
+  <div class="qs">
+    <div class="card"><h3>Who approves an AI use case reusing this dataset?</h3>
+      <div class="ans"><div class="rs"><span>Rubber stamp</span>"Data governance handles that."</div>
+      <div class="ra"><span>Real answer</span>"The domain's data owner signs off per use case after a purpose-compatibility check. The privacy team is consulted, and the approval is logged against the dataset."</div></div></div>
+    <div class="card"><h3>How does a sensitivity tag change what the AI system does?</h3>
+      <div class="ans"><div class="rs"><span>Rubber stamp</span>"We classify all our data."</div>
+      <div class="ra"><span>Real answer</span>"Router, retrieval and tool calls all ask one policy engine that reads the tags. Untagged data is denied by default, and we test that in CI."</div></div></div>
+    <div class="card"><h3>Do access rights survive into the vector index?</h3>
+      <div class="ans"><div class="rs"><span>Rubber stamp</span>"The index is internal, so it's fine."</div>
+      <div class="ra"><span>Real answer</span>"Each chunk inherits its source's classification and access list. Retrieval filters by the asker's groups before ranking."</div></div></div>
+    <div class="card"><h3>Can we explain one specific AI decision six months later?</h3>
+      <div class="ans"><div class="rs"><span>Rubber stamp</span>"We have lineage in the catalog."</div>
+      <div class="ra"><span>Real answer</span>"Yes. Column-level lineage up to retrieval, plus a per-response trace of retrieved chunks, model version and prompt version."</div></div></div>
+    <div class="card"><h3>Which business outcome or risk is this governance program tied to?</h3>
+      <div class="ans"><div class="rs"><span>Rubber stamp</span>"Good data hygiene."</div>
+      <div class="ra"><span>Real answer</span>"Getting the eligibility model approved for launch. We track owner coverage, the share of its inputs classified, and the age of open quality alerts."</div></div></div>
+  </div>
+
+  <h2>Legal anchors (EU)</h2>
+  <p class="sub">Where the scenes meet binding law. This is orientation, not legal advice.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Anchor</th><th>What it requires</th><th>Applies</th></tr></thead>
+    <tbody>
+      <tr><td>GDPR Art. 5</td><td>Principles for personal data, including purpose limitation (no incompatible further use, test in Art. 6(4)), data minimisation and storage limitation.</td><td>In force</td></tr>
+      <tr><td>GDPR Art. 22</td><td>Limits on solely automated decisions with legal or similarly significant effects. The CJEU held that a score can itself be such a decision where it plays a determining role (C-634/21, 2023), and that people are owed an explanation of the procedure and principles actually applied (C-203/22, 2025).</td><td>In force</td></tr>
+      <tr><td>AI Act Art. 10, 12, 13</td><td>For high-risk AI (Annex III, e.g. credit, hiring, essential services): governance of training, validation and test data, including bias examination, plus logging and transparency to deployers.</td><td>Annex III from 2 Dec 2027 (Digital Omnibus)</td></tr>
+      <tr><td>GDPR Chapter V</td><td>Transfers outside the EU need an adequacy decision or safeguards such as SCCs. The EU–US Data Privacy Framework was upheld by the General Court (T-553/23, 3 Sep 2025); an appeal is pending at the CJEU.</td><td>In force</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Sources</h2>
+  <ul class="src">
+    <li><a href="https://sunparus.github.io/ai-native-product-ops/domains/data-governance/">AI-Native Product Ops hub: Data Governance domain</a></li>
+    <li><a href="https://www.damadmbok.org/faq">DAMA: DMBOK 3 project FAQ (publication targeted 2027)</a></li>
+    <li><a href="https://www.dama.org/cpages/body-of-knowledge">DAMA International: DAMA-DMBOK</a></li>
+    <li><a href="https://www.gartner.com/en/newsroom/press-releases/2024-02-28-gartner-predicts-80-percent-of-data-and-analytics-governance-initiatives-will-fail-by-2027-due-to-a-lack-of-a-real-or-manufactured-crisis-">Gartner (2024): 80% of D&amp;A governance initiatives will fail by 2027</a></li>
+    <li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">GDPR, Regulation (EU) 2016/679</a></li>
+    <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">AI Act, Regulation (EU) 2024/1689</a></li>
+    <li><a href="https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes">Orrick (Jul 2026): Digital Omnibus finalizes AI Act changes</a></li>
+    <li><a href="https://www.twobirds.com/en/insights/2023/global/key-takeaways-from-the-schufa-case-of-the-cjeu">Bird &amp; Bird: CJEU SCHUFA, C-634/21</a></li>
+    <li><a href="https://www.arthurcox.com/knowledge/how-much-information-needs-to-be-provided-to-data-subjects-about-automated-decisions/">Arthur Cox: CJEU Dun &amp; Bradstreet Austria, C-203/22</a></li>
+    <li><a href="https://curia.europa.eu/site/upload/docs/application/pdf/2025-09/cp250106en.pdf">CURIA: Latombe v Commission, T-553/23</a></li>
+    <li><a href="https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM08_VectorAndEmbeddingWeaknesses.md">OWASP LLM08:2025 Vector and Embedding Weaknesses</a></li>
+    <li><a href="https://lfaidata.foundation/projects/openlineage/">OpenLineage, LF AI &amp; Data</a></li>
+    <li><a href="https://bitol.io/">Bitol: Open Data Contract Standard</a></li>
+    <li><a href="https://www.w3.org/TR/vocab-dcat-3/">W3C: Data Catalog Vocabulary (DCAT) 3</a></li>
+  </ul>
+
+  <footer>
+    Version 6 · last reviewed 6 Oct 2026 · AI-assisted review through data engineering, AI architecture and AI legal lenses · built from the open
+    <a href="https://github.com/Sunparus/ai-native-product-ops">AI-Native Product Ops hub</a>. Not legal advice.
+  </footer>
+</div>
+
+<script>
+(function(){
+/* ---------- Scene 02: principles as a mechanism ---------- */
+const PR=[
+ ["ACC","Accountability","named approver",1],["PUR","Purpose limitation","compatible reuse",1],["MIN","Data minimisation","only what's needed",1],["LP","Least privilege","scoped access",1],
+ ["AUD","Auditability","reuse is recorded",1],["INS","Inspectability","inspectable flows",0],["QS","Quality standard","explicit thresholds",0],["LC","Lifecycle","copies get retention",1]];
+const PRI={
+ ACC:["Accountability","One named owner per data domain, never a shared or implied responsibility."],
+ PUR:["Purpose limitation","No further use incompatible with the purpose of collection. GDPR Art. 5(1)(b); compatibility test in Art. 6(4). A new AI use may need its own legal basis."],
+ MIN:["Data minimisation","Only the data adequate and necessary for the purpose. GDPR Art. 5(1)(c). Applies to RAG context and training sets."],
+ LP:["Least privilege","Access granted by need, tiered by sensitivity, and revoked when no longer needed."],
+ AUD:["Auditability","Every access and use logged, so who did what, when, with which data can be reconstructed."],
+ INS:["Inspectability","Flows, model access and decisions can be inspected in practice, not only on paper. Distinct from GDPR transparency owed to data subjects (Arts. 12–14)."],
+ QS:["Quality standard","Accuracy, completeness, timeliness, validity, consistency and uniqueness, measured against explicit thresholds."],
+ LC:["Lifecycle","Retention and deletion rules per data class, from creation to disposal. Statutory retention periods and erasure requests are reconciled explicitly."]};
+function principles(){
+  let s=`
+  <g><rect x="40" y="62" width="220" height="104" rx="8" class="box"/>
+   <text class="mono s" x="58" y="88">dataset</text>
+   <text class="ink" x="58" y="112" style="font:500 15px var(--f-mono)">customer_records</text>
+   <text class="mono am" x="58" y="134">collected for: billing</text>
+   <text class="mono" x="58" y="153">12 columns</text></g>
+  <g data-s="1"><rect x="540" y="62" width="220" height="104" rx="8" class="box"/>
+   <text class="mono s" x="558" y="88">new AI use case</text>
+   <text class="lbl s" x="558" y="112">personalized offers</text>
+   <text class="mono" x="558" y="134">needs: 3 columns</text></g>
+  <path class="lr dr" pathLength="1" d="M262 114 L538 114" data-s="1" data-e="3"/>
+  <text class="mono rd" x="400" y="104" text-anchor="middle" data-s="1" data-e="3">copy all 12 columns</text>
+  <path class="lg dr" pathLength="1" d="M262 114 L538 114" data-s="3"/>
+  <g data-s="3"><polygon points="400,92 422,114 400,136 378,114" class="node" style="stroke:var(--green)"/>
+   <text class="mono gr" x="400" y="160" text-anchor="middle">governance gate</text></g>`;
+  PR.forEach(([k,n,t,breaks],i)=>{
+    const x=24+(i%4)*190, y=216+Math.floor(i/4)*76;
+    s+=`<g class="pick" tabindex="0" role="button" aria-label="${n}" data-k="${k}" ${breaks?'data-a="2" data-ae="3" data-cls="bad"':''}>
+      <g ${breaks?'data-a="3" data-cls="good"':''}>
+      <rect x="${x}" y="${y}" width="172" height="58" rx="6" class="box"/>
+      <text class="lbl s" x="${x+14}" y="${y+25}">${n}</text>
+      <text class="mono s" x="${x+14}" y="${y+44}">${t}</text></g></g>`;
+  });
+  s+=`<text class="mono rd" x="400" y="398" text-anchor="middle" data-s="2" data-e="3">6 of 8 fail: no approver · purpose not assessed · 12 columns · broad access</text>
+  <text class="mono rd" x="400" y="418" text-anchor="middle" data-s="2" data-e="3">no record of the reuse · no retention rule for the copy</text>
+  <text class="mono gr" x="400" y="398" text-anchor="middle" data-s="3">owner sign-off · compatibility assessed · 3 columns · scoped access</text>
+  <text class="mono gr" x="400" y="418" text-anchor="middle" data-s="3">reuse logged · 12-month retention on the copy</text>
+  <text class="mono" x="400" y="458" text-anchor="middle" data-s="4">tap a principle for its definition</text>`;
+  return s;
+}
+
+/* ---------- Scene 03: DMBOK wheel ---------- */
+const W={
+ HUB:["Data Governance","Authority, decision rights and control over data assets.","Who approved this model touching this data, and who is accountable if it is misused."],
+ ARCH:["Data Architecture","Overall structure of data assets and how they relate to business strategy.","Defines where AI context and vector layers sit relative to systems of record."],
+ MODEL:["Data Modeling & Design","Analysis and design of data structures across the enterprise.","Extends to embedding schemas and the context and prompt structures AI systems use."],
+ STORE:["Data Storage & Operations","Design, implementation and support of stored data.","Vector databases, model checkpoints and inference caches become first-class assets."],
+ SEC:["Data Security","Privacy, confidentiality and appropriate access to data.","Model access control and guardrails. Prompts, outputs and traces become new sensitive data stores."],
+ INT:["Integration & Interoperability","Movement and consolidation of data within and between systems.","Governs RAG pipelines, tool-call data flows and agent-to-system integration points."],
+ CONTENT:["Documents & Content Mgmt","Managing unstructured data: documents, files and records.","Direct input to RAG. Its quality caps retrieval quality."],
+ MASTER:["Reference & Master Data","Managing shared critical data: customer, product and core reference records.","The source of truth AI outputs are grounded against."],
+ BI:["Warehousing & BI","Reporting and analytics through structured, integrated data.","Increasingly queried directly by agents, so access patterns need rethinking."],
+ META:["Metadata Management","Data about data: catalogs, lineage, definitions.","The backbone of AI governance. Sensitivity tags here should drive routing and retrieval."],
+ QUAL:["Data Quality","Activities that keep data fit for use.","Quality caps how reliable grounded answers can be. Models still hallucinate on clean data."]};
+const WN=[["ARCH","Architecture"],["MODEL","Modeling & Design"],["STORE","Storage & Ops"],["SEC","Security"],["INT","Integration"],["CONTENT","Documents & Content"],["MASTER","Reference & Master"],["BI","Warehousing & BI"],["META","Metadata"],["QUAL","Data Quality"]];
+const KEY=["SEC","META","QUAL"];
+function wheel(){
+  let s="",n="";
+  WN.forEach(([k,l],i)=>{
+    const a=(-90+36*i)*Math.PI/180, x=+(400+280*Math.cos(a)).toFixed(1), y=+(240+182*Math.sin(a)).toFixed(1);
+    const ly=y<240?y-20:y+32, key=KEY.includes(k);
+    s+=`<line class="ln dr" pathLength="1" x1="400" y1="240" x2="${x}" y2="${y}" data-s="1" style="transition-delay:${i*70}ms"/>`;
+    s+=`<line class="lc flow" x1="400" y1="240" x2="${x}" y2="${y}" data-s="2" data-e="3"/>`;
+    n+=`<g class="pick" tabindex="0" role="button" aria-label="${W[k][0]}" data-k="${k}" data-s="1" data-a="3" data-cls="${key?'key':'dim'}" style="transition-delay:${i*70}ms">
+      <circle class="hit" cx="${x}" cy="${y}" r="30"/>
+      <circle class="node" cx="${x}" cy="${y}" r="11"/>
+      <text class="lbl s" x="${x}" y="${ly}" text-anchor="middle">${l}</text></g>`;
+  });
+  return s+n+`<g class="pick" tabindex="0" role="button" aria-label="Data Governance" data-k="HUB">
+    <circle class="node" cx="400" cy="240" r="64" style="stroke-width:2.5"/>
+    <text class="lbl" x="400" y="236" text-anchor="middle">Data</text>
+    <text class="lbl" x="400" y="256" text-anchor="middle">Governance</text></g>`;
+}
+
+/* ---------- Scenes ---------- */
+const scenes=[
+{t:"The question governance answers",
+svg:`
+<g data-s="0">
+ <text class="mono s" x="785" y="186" text-anchor="end">asked by: the person · a regulator</text>
+ <rect x="640" y="205" width="145" height="90" rx="10" class="box" style="stroke:var(--accent)"/>
+ <text class="mono" x="712" y="233" text-anchor="middle">AI assistant</text>
+ <text class="lbl s" x="712" y="256" text-anchor="middle">Application</text>
+ <text class="rd" x="712" y="281" text-anchor="middle" style="font:600 19px var(--f-mono)">declined</text>
+</g>
+${[[640,576,0],[524,456,250],[404,336,500],[284,216,750],[164,96,1000]].map(([a,b,d])=>`<line class="ln dr" pathLength="1" x1="${a}" y1="250" x2="${b}" y2="250" data-s="1" style="transition-delay:${d}ms"/>`).join("")}
+${[[550,"model",0],[430,"retrieval",250],[310,"warehouse",500],[190,"pipeline",750],[70,"source system",1000]].map(([x,l,d])=>`
+<g data-s="1" style="transition-delay:${d}ms"><circle class="node" cx="${x}" cy="250" r="26"/>
+<text class="mono" x="${x}" y="300" text-anchor="middle">${l}</text></g>`).join("")}
+${[608,490,370,250,130].map(x=>`<text class="am" x="${x}" y="240" text-anchor="middle" style="font:600 20px var(--f-mono)" data-s="1" data-e="3">?</text>`).join("")}
+${[608,490,370,250,130].map((x,i)=>`<text class="gr" x="${x}" y="240" text-anchor="middle" style="font:600 18px var(--f-mono);transition-delay:${i*120}ms" data-s="3">✓</text>`).join("")}
+<g data-s="2">
+ <text class="lbl" x="170" y="96" text-anchor="middle">Who decided?</text><text class="mono cy" x="170" y="118" text-anchor="middle">authority</text>
+ <text class="lbl" x="400" y="96" text-anchor="middle">What controls it?</text><text class="mono cy" x="400" y="118" text-anchor="middle">control</text>
+ <text class="lbl" x="630" y="96" text-anchor="middle">Who is accountable?</text><text class="mono cy" x="630" y="118" text-anchor="middle">accountability</text>
+</g>
+<g data-s="3">
+ <line class="lc" x1="70" y1="342" x2="426" y2="342"/>
+ <line class="la" x1="434" y1="342" x2="712" y2="342" style="stroke-width:2.5"/>
+ <text class="mono cy" x="248" y="368" text-anchor="middle">data lineage</text>
+ <text class="mono s" x="248" y="386" text-anchor="middle">source → retrieval</text>
+ <text class="mono am" x="573" y="368" text-anchor="middle">AI inference trace</text>
+ <text class="mono s" x="573" y="386" text-anchor="middle">chunks · model · prompt version</text>
+</g>
+<g data-s="4">
+ <text class="mono ink" x="400" y="430" text-anchor="middle">solely automated decision → GDPR Art. 22 + information on the logic involved</text>
+ <text class="mono ink" x="400" y="452" text-anchor="middle">high-risk use (credit, hiring…) → AI Act Art. 10 data governance, from 2 Dec 2027</text>
+</g>`,
+caps:["An AI assistant declines an application. Two parties now ask the same question, the affected person and a regulator: why, and based on which data?",
+"Trace it back: model, retrieval, warehouse, pipeline, source system. Every hop is a place where the trail can go cold.",
+"Data governance answers three questions about every hop. Who decided, what controls it, and who is accountable: authority, control and accountability over data assets.",
+"With governance in place, each hop has an owner, a log entry and a classification. Two records answer the question: data lineage up to retrieval, and a per-response inference trace from retrieval to the answer.",
+"This is where governance meets the law. If the decision was solely automated, the person can rely on GDPR Art. 22 and is owed meaningful information about the logic involved. If the use is high-risk under the AI Act, Art. 10 requires governed training, validation and test data from 2 Dec 2027."],
+quiz:["Which record explains the retrieval → answer hop?",["Data lineage in the catalog","A per-response inference trace","The business glossary"],1,"Lineage tools usually stop at warehouse or feature level. Only a per-response trace (retrieved chunks, model version, prompt version) explains one specific answer."]},
+
+{t:"Eight principles, seen when they break",
+svg:principles(),
+caps:["Principles are easiest to see when they break. A customer dataset was collected for one purpose, billing. The eight principles below are a synthesis across DAMA-DMBOK and ISO/IEC 38505; for personal data, the binding version is GDPR Art. 5.",
+"A team wants to reuse it for a new AI use case, personalized offers. The fastest path is to copy all 12 columns into the model pipeline.",
+"Run the principles against that copy and six fail at once. There is no approver, the new purpose was never assessed, all 12 columns move where 3 are needed, access is broad, the reuse leaves no record, and the copy has no retention rule.",
+"The governed path adds one gate. The owner signs off, the new purpose is assessed for compatibility or gets its own legal basis, only 3 columns move, access is scoped, and the reuse is logged with a retention period.",
+"Purpose limitation is the most common quiet failure once AI starts reusing data across use cases. Tap any principle to see its definition."],
+quiz:["Billing data is reused for an AI marketing model. What is assessed first?",["Least-privilege access for the data science team","Whether the new purpose is compatible, or needs its own legal basis","Data quality thresholds"],1,"Under GDPR Art. 5(1)(b) and 6(4), further use must be compatible with the original purpose. Access and quality questions come after the reuse itself is allowed."]},
+
+{t:"DAMA-DMBOK: the wheel",
+svg:wheel(),
+caps:["DAMA-DMBOK is the reference framework behind the domain. The current edition, DMBOK2, has 11 knowledge areas with Data Governance at the center. DMBOK 3 is in drafting, with publication targeted for 2027.",
+"Ten areas surround the hub. Tap any of them, or the hub, to see its definition and what changes once AI is involved.",
+"Every area routes through the hub. Governance supplies the decision rights that make the other ten enforceable rather than aspirational.",
+"For AI systems, three areas are load-bearing: Metadata Management, Data Quality and Data Security. The other seven matter, but short-term under-investment there is less likely to block you.",
+"Why these three: metadata carries the tags that drive routing and retrieval, quality caps how reliable grounded answers can be, and security now covers model access plus prompts, outputs and traces."],
+quiz:["Which three knowledge areas are load-bearing for AI systems?",["Architecture, Modeling, Warehousing & BI","Metadata, Data Quality, Data Security","Integration, Storage, Documents & Content"],1,"Metadata decides what an AI system may touch, quality caps answer reliability, and security covers models and their logs."]},
+
+{t:"From framework to practice",
+svg:`
+<line class="ln dr" pathLength="1" x1="130" y1="220" x2="220" y2="220" data-s="1"/>
+<line class="ln dr" pathLength="1" x1="280" y1="220" x2="370" y2="220" data-s="2"/>
+<line class="ln dr" pathLength="1" x1="430" y1="220" x2="520" y2="220" data-s="2" style="transition-delay:300ms"/>
+<line class="ln dr" pathLength="1" x1="580" y1="220" x2="670" y2="220" data-s="3"/>
+${[[100,"01","Map","capabilities",0,0,""],[250,"02","Prioritize by","risk & outcome",1,0,'data-a="1" data-cls="key"'],[400,"03","Name decision","rights",2,0,'data-a="4" data-cls="stale"'],[550,"04","Controls +","evidence",2,300,'data-a="4" data-cls="stale"'],[700,"05","Routines &","metrics",3,0,'data-a="4" data-cls="dim"']].map(([x,n,a,b,s,d,extra])=>`
+<g data-s="${s}" style="transition-delay:${d}ms"><g ${extra}><circle class="node" cx="${x}" cy="220" r="30"/>
+<text class="cy" x="${x}" y="226" text-anchor="middle" style="font:500 16px var(--f-mono)">${n}</text>
+<text class="lbl s" x="${x}" y="276" text-anchor="middle">${a}</text>
+<text class="lbl s" x="${x}" y="295" text-anchor="middle">${b}</text></g></g>`).join("")}
+<text class="mono s" x="550" y="316" text-anchor="middle" data-s="2">logs · approvals · data contracts</text>
+<g data-s="3" data-a="4" data-cls="fade">
+ <path class="lc" d="M700 188 C 640 70, 160 70, 100 186"/>
+ <path class="lc" d="M92 172 L100 188 L110 174"/>
+ <text class="mono cy" x="400" y="96" text-anchor="middle">re-check against daily work</text>
+</g>
+<text class="mono rd" x="475" y="152" text-anchor="middle" data-s="4">without 05: owners move on, evidence goes stale</text>
+<g data-s="1">
+ ${Array.from({length:10},(_,i)=>`<rect x="${233+i*34}" y="360" width="26" height="26" rx="3" style="fill:${i<8?'var(--red)':'var(--chalk)'}"/>`).join("")}
+ <text class="mono" x="400" y="416" text-anchor="middle">Gartner (2024): 80% of D&amp;A governance initiatives predicted to fail</text>
+ <text class="mono" x="400" y="434" text-anchor="middle">by 2027, for lack of a real or manufactured crisis</text>
+</g>
+<text class="mono s" x="400" y="468" text-anchor="middle">five-step sequence: hub synthesis built on DMBOK2</text>`,
+caps:["Five steps turn the framework into daily practice, so you never tackle all eleven areas at once. 01 Map capabilities: a maturity diagnosis across the 11 areas, not documentation to complete.",
+"02 Prioritize by business risk and outcome. Gartner predicts 80% of data and analytics governance initiatives will fail by 2027 for lack of a real or manufactured crisis. Programs that don't enable prioritized business outcomes fail, so step 02 names that crisis or outcome.",
+"03 Name decision rights: who approves, who is accountable, who is consulted, per data domain. 04 Build controls with evidence: logs, approvals, classifications, and data contracts checked in CI, not policy text.",
+"05 Establish routines and metrics: a recurring review cadence plus measurable outcomes. It closes the loop back to 01.",
+"Without 05 the decay is gradual: owners change roles, evidence goes stale, and the program turns back into documentation. Gartner names the missing crisis; in the hub's reading, the missing routine is how programs that started well still fade."],
+quiz:["Per Gartner, why will most D&A governance initiatives fail?",["The framework is too weak","No real or manufactured crisis forces prioritization","Catalog tools are too expensive"],1,"Gartner's 2024 prediction ties failure to the lack of a crisis that forces prioritization, and to programs not enabling prioritized business outcomes."]},
+
+{t:"The metadata model decides what AI may touch",
+svg:`
+${[["Catalog","what exists, where"],["Business glossary","what it means"],["Lineage","where it came from"],["Sensitivity classification","how sensitive"],["Stewardship","who owns it"]].map(([a,b],i)=>`
+<g data-s="0" style="transition-delay:${i*160}ms"><g ${i===3?'data-a="1" data-cls="key"':''}>
+<rect x="24" y="${78+i*64}" width="290" height="52" rx="6" class="box node" style="${i===3?'':'stroke:var(--line)'}"/>
+<text class="lbl s" x="42" y="${100+i*64}">${a}</text><text class="mono s" x="42" y="${119+i*64}">${b}</text></g></g>`).join("")}
+<text class="mono" x="169" y="60" text-anchor="middle">the map of the map</text>
+<g data-s="1">
+ <rect x="360" y="210" width="150" height="58" rx="6" class="box" style="stroke:var(--chalk)"/>
+ <text class="ink" x="435" y="232" text-anchor="middle" style="font:500 14px var(--f-mono)">income_monthly</text>
+ <rect x="385" y="241" width="100" height="18" rx="3" class="tag"/>
+ <text class="bgt" x="435" y="254" text-anchor="middle" style="font:600 11px var(--f-mono);letter-spacing:.08em">RESTRICTED</text>
+ <path class="la dash" d="M314 298 C 350 298, 360 262, 383 252"/>
+</g>
+<g data-s="2">
+ <line class="ln" x1="510" y1="239" x2="554" y2="239"/>
+ <polygon points="590,203 626,239 590,275 554,239" class="node"/>
+ <text class="mono s" x="590" y="243" text-anchor="middle">router</text>
+ <rect x="526" y="46" width="128" height="52" rx="6" class="box" style="stroke:var(--accent)"/>
+ <text class="lbl s" x="590" y="68" text-anchor="middle">policy engine</text>
+ <text class="mono s" x="590" y="86" text-anchor="middle">deny by default</text>
+ <line class="la dash" x1="590" y1="98" x2="590" y2="203"/>
+ <text class="mono s" x="666" y="66">also asked by</text>
+ <text class="mono s" x="666" y="82">retrieval, tools</text>
+ <path class="ln" d="M626 239 L648 239 L648 175 L668 175"/>
+ <path class="ln" d="M648 239 L648 305 L668 305"/>
+ <rect x="668" y="150" width="120" height="50" rx="6" class="box"/>
+ <text class="lbl s" x="728" y="171" text-anchor="middle">EU-hosted</text><text class="lbl s" x="728" y="189" text-anchor="middle">model</text>
+ <rect x="668" y="280" width="120" height="50" rx="6" class="box"/>
+ <text class="lbl s" x="728" y="301" text-anchor="middle">non-EU API</text><text class="lbl s" x="728" y="319" text-anchor="middle">model</text>
+ <text class="mono s" x="435" y="196" text-anchor="middle">no tag → treated as RESTRICTED</text>
+</g>
+<g data-s="3">
+ <path class="lg" d="M626 239 L648 239 L648 175 L668 175"/>
+ <text class="rd" x="648" y="280" text-anchor="middle" style="font:600 20px var(--f-mono)">✕</text>
+ <text class="mono am" x="560" y="420" text-anchor="middle">example company policy, not a GDPR requirement</text>
+ <text class="mono s" x="560" y="440" text-anchor="middle">EU hosting by a non-EU provider = residency, not sovereignty</text>
+</g>
+<rect x="515" y="231" width="16" height="16" rx="3" class="tag route" data-s="3"/>`,
+caps:["The enterprise metadata model is the map of the map: what data exists, where, who owns it, how sensitive it is, and how it relates to other data. It has five components.",
+"Take one data field, monthly income. Its sensitivity classification travels with it as a tag: RESTRICTED.",
+"An AI request needs that record. The router does not decide alone: it asks one policy engine, the same one retrieval and tool calls ask. Anything untagged is treated as restricted.",
+"Here the policy sends restricted data only to the EU-hosted model. That is an example company policy, not a GDPR rule: GDPR permits transfers under adequacy decisions or SCCs. EU hosting by a non-EU provider gives data residency, which is not the same as sovereignty.",
+"Without the metadata model, no residency, security or cost policy can be enforced consistently, because every rule needs a tag to read."],
+quiz:["\"Restricted data stays on an EU-hosted model.\" Where does that rule come from?",["GDPR requires EU storage","A company policy, enforced by reading metadata","The AI Act"],1,"GDPR Chapter V allows transfers via adequacy decisions (e.g. the EU–US Data Privacy Framework) or SCCs. EU-only processing is a risk-appetite choice that metadata makes enforceable."]},
+
+{t:"Do permissions survive the vector index?",
+svg:`
+<g><rect x="24" y="180" width="150" height="108" rx="8" class="box"/>
+ <text class="mono s" x="40" y="204">document</text>
+ <text class="lbl s" x="40" y="228">Pay review 2026</text>
+ <rect x="40" y="242" width="118" height="20" rx="3" class="tag"/>
+ <text class="bgt" x="99" y="256" text-anchor="middle" style="font:600 10.5px var(--f-mono);letter-spacing:.06em">CONFIDENTIAL · HR</text>
+ <text class="mono s" x="40" y="280">read: HR only</text></g>
+<path class="ln dr" pathLength="1" d="M176 234 L216 234" data-s="1"/>
+<text class="mono s" x="196" y="166" text-anchor="middle" data-s="1">chunk</text>
+${[172,206,240,274].map((y,i)=>`<rect x="222" y="${y}" width="28" height="26" rx="4" class="box" data-s="1" data-e="3" style="transition-delay:${i*120}ms"/>
+<rect x="222" y="${y}" width="28" height="26" rx="4" class="tag" data-s="3" style="transition-delay:${i*120}ms"/>`).join("")}
+<path class="ln dr" pathLength="1" d="M252 234 L318 234" data-s="1"/>
+<text class="mono s" x="285" y="166" text-anchor="middle" data-s="1">embed</text>
+<g data-s="1"><rect x="320" y="128" width="170" height="214" rx="8" class="box"/>
+ <text class="mono s" x="405" y="150" text-anchor="middle">vector index</text>
+ ${[[350,185],[386,185],[422,185],[458,185],[350,225],[422,225],[386,265],[458,265],[386,305],[422,305],[458,305],[350,265]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="8" class="node"/>`).join("")}
+</g>
+${[[386,225],[458,225],[350,305],[422,265]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="8" class="box" data-s="1" data-e="3"/><circle cx="${x}" cy="${y}" r="8" class="tag" data-s="3"/>`).join("")}
+<text class="mono s" x="405" y="364" text-anchor="middle" data-s="1" data-e="3">tags and access list left behind</text>
+<text class="mono s am" x="405" y="364" text-anchor="middle" data-s="3">every chunk inherits tag + access list</text>
+<g data-s="2">
+ <rect x="660" y="96" width="128" height="54" rx="6" class="box"/>
+ <text class="lbl s" x="724" y="118" text-anchor="middle">employee</text>
+ <text class="mono s" x="724" y="137" text-anchor="middle">groups: all-staff</text>
+ <path class="ln dash" d="M724 150 L724 186 L652 220"/>
+ <rect x="532" y="208" width="128" height="54" rx="6" class="box node"/>
+ <text class="lbl s" x="596" y="232" text-anchor="middle">retrieval</text>
+</g>
+<text class="mono s" x="596" y="250" text-anchor="middle" data-s="2" data-e="3">by similarity</text>
+<text class="mono s am" x="596" y="250" text-anchor="middle" data-s="3">filter by groups</text>
+<g data-s="2" data-e="3">
+ <path class="lr" d="M466 225 C 500 225, 510 235, 540 235"/>
+ <path class="lr" d="M652 245 L700 300"/>
+ <rect x="652" y="300" width="136" height="56" rx="6" class="box" style="stroke:var(--red)"/>
+ <text class="mono rd" x="720" y="324" text-anchor="middle">quotes pay data</text>
+ <text class="mono rd" x="720" y="343" text-anchor="middle">✕ data leak</text>
+ <text class="mono rd" x="560" y="112" text-anchor="middle">OWASP LLM08:2025</text>
+</g>
+<g data-s="3">
+ <path class="lg" d="M466 185 C 500 185, 510 225, 540 228"/>
+ <path class="lg" d="M652 245 L700 300"/>
+ <rect x="652" y="300" width="136" height="56" rx="6" class="box" style="stroke:var(--green)"/>
+ <text class="mono gr" x="720" y="324" text-anchor="middle">permitted</text>
+ <text class="mono gr" x="720" y="343" text-anchor="middle">sources only ✓</text>
+</g>
+<g data-s="4">
+ <rect x="320" y="394" width="468" height="58" rx="6" class="box" style="stroke:var(--accent)"/>
+ <text class="lbl s" x="338" y="418">prompt · output · trace logs = a new data asset</text>
+ <text class="mono s" x="338" y="438">classify · set retention · restrict access</text>
+</g>`,
+caps:["Retrieval-augmented generation (RAG) creates a new copy of your data: the vector index. Start with one confidential document that only HR may read.",
+"The pipeline splits it into chunks and embeds them. In many first implementations, the classification and access list stay behind on the source document.",
+"An employee without HR access asks a question. Retrieval ranks by similarity, not by permission, so a confidential chunk ends up in the answer. OWASP lists this as LLM08:2025, vector and embedding weaknesses.",
+"Governed: every chunk inherits its source's tag and access list, and retrieval filters by the asker's groups before ranking. Governance sets the rule; the RAG pipeline enforces it, using the same policy engine as scene 05.",
+"Prompts, outputs and traces are new data assets, often containing personal data. Like any other store, they need a classification, a retention period and access control."],
+quiz:["What stops a confidential chunk from reaching an unauthorized user?",["A stronger system prompt","Chunks inherit tags and access lists, and retrieval filters by permission","Better embedding models"],1,"Prompts are not access control. Permissions must travel with every chunk and be enforced at retrieval time."]},
+
+{t:"Passive vs. active metadata",
+svg:`
+<line class="ln dash" x1="400" y1="36" x2="400" y2="460"/>
+<text class="mono" x="200" y="52" text-anchor="middle" style="letter-spacing:.14em">PASSIVE</text>
+<text class="mono cy" x="600" y="52" text-anchor="middle" style="letter-spacing:.14em">ACTIVE</text>
+${[120,520].map(x=>`<rect x="${x}" y="72" width="160" height="50" rx="6" class="box node" data-a="1"/>
+<text class="lbl s" x="${x+80}" y="102" text-anchor="middle">transform model</text>
+<text class="mono am" x="${x+80}" y="144" text-anchor="middle" data-s="1">income → income_net</text>`).join("")}
+<g>
+ <rect x="110" y="196" width="180" height="76" rx="6" class="box"/>
+ <text class="lbl s" x="128" y="220">Catalog</text>
+ <text class="mono s" x="128" y="240">schema: income</text>
+ <text class="mono s" x="128" y="258">reviewed: last quarter</text>
+</g>
+<text class="mono" x="200" y="296" text-anchor="middle" data-s="2" data-e="3">unchanged</text>
+<text class="mono s cy" x="600" y="172" text-anchor="middle" data-s="2">lineage events (OpenLineage)</text>
+${[[470,0],[600,150],[730,300]].map(([x,d])=>`<path class="la dr" pathLength="1" data-s="2" d="M600 180 L${x} 205" style="transition-delay:${d}ms"/>`).join("")}
+<g data-s="2">
+ ${[420,550,680].map(x=>`<rect x="${x}" y="205" width="100" height="44" rx="5" class="box" style="stroke:var(--accent)"/>
+  <text class="mono s ink" x="${x+50}" y="223" text-anchor="middle">dashboard</text><text class="mono s am" x="${x+50}" y="240" text-anchor="middle">⚠ impacted</text>`).join("")}
+ <text class="mono s cy" x="600" y="272" text-anchor="middle">owners notified</text>
+ <rect x="450" y="290" width="130" height="44" rx="5" class="box"/>
+ <text class="mono s ink" x="515" y="308" text-anchor="middle">glossary</text><text class="mono s am" x="515" y="325" text-anchor="middle">entry flagged</text>
+ <rect x="620" y="290" width="130" height="44" rx="5" class="box"/>
+ <text class="mono s ink" x="685" y="308" text-anchor="middle">quality</text><text class="mono s am" x="685" y="325" text-anchor="middle">alert raised</text>
+ <text class="mono s" x="600" y="360" text-anchor="middle">near real time, when wired to pipeline events</text>
+</g>
+<g data-s="3">
+ <text class="mono" x="200" y="318" text-anchor="middle">weeks later…</text>
+ ${["✕ report breaks","✕ AI gives a confident wrong answer","✕ audit finds the gap"].map((t,i)=>`<text class="mono rd" x="200" y="${350+i*26}" text-anchor="middle" style="font-size:13.5px">${t}</text>`).join("")}
+</g>
+<g data-s="4">
+ <rect x="440" y="392" width="320" height="58" rx="6" class="box" style="stroke:var(--green)"/>
+ <text class="mono gr" x="600" y="416" text-anchor="middle">data contract checked in CI:</text>
+ <text class="mono gr" x="600" y="436" text-anchor="middle">breaking rename blocked before merge</text>
+</g>`,
+caps:["Same change, two metadata practices. Passive metadata sits in a catalog refreshed on a manual review cycle. Active metadata is captured continuously and pushed back into the tools that produce and consume data.",
+"A data engineer renames a column in a transformation model: income becomes income_net.",
+"Active: lineage events (OpenLineage is an open standard for them) identify every downstream asset the rename breaks. Owners are notified, glossary entries flagged and a quality alert raised. Metadata reports the impact; it does not repair the dashboards. Passive: the catalog still shows last quarter's schema.",
+"Passive, weeks later: a report breaks, an AI system gives a confidently wrong answer, or an audit finds the gap. The change was routine; the map was out of date.",
+"Stronger still, a data contract checked in CI blocks the breaking rename before merge. For catalog portability, check W3C DCAT 3 support. Large engineering teams built tools for this at scale: LinkedIn's DataHub, Lyft's Amundsen, Netflix's Metacat and Uber's Databook."],
+quiz:["A column rename breaks three dashboards. What does active metadata do?",["Repairs the dashboards automatically","Surfaces the impact and notifies the owners","Nothing until the next review cycle"],1,"Metadata reports impact. A repair needs a migration; preventing the break needs a data contract enforced before merge."]},
+
+{t:"Governance prerequisites, as one chain",
+svg:`
+<text class="mono" x="400" y="110" text-anchor="middle">every link is load-bearing</text>
+${[[85,"Principles","the rules"],[245,"Decision rights","named owners"],[405,"Metadata model","the map"],[565,"Active metadata","a current map"],[720,"Governed AI","defensible inputs"]].map(([x,a,b],i)=>`
+<g data-s="0" style="transition-delay:${i*250}ms"><rect x="${x-70}" y="160" width="140" height="66" rx="6" class="box node" style="${i===4?'stroke:var(--green)':''}"/>
+<text class="lbl s" x="${x}" y="188" text-anchor="middle">${a}</text><text class="mono s" x="${x}" y="208" text-anchor="middle">${b}</text></g>`).join("")}
+${[[155,175],[315,335],[475,495],[635,650]].map(([a,b],i)=>`<path class="lc dr" pathLength="1" d="M${a} 193 L${b} 193" style="transition-delay:${200+i*250}ms" data-s="0"/>`).join("")}
+${[[85,"no owner","to ask"],[245,"policy on","paper only"],[405,"nothing to","enforce against"],[565,"stale map,","silent drift"],[720,"leaks, no","explanation"]].map(([x,a,b],i)=>`
+<g data-s="1" style="transition-delay:${i*200}ms"><line class="lr dash" x1="${x}" y1="232" x2="${x}" y2="278"/>
+<text class="mono s rd" x="${x}" y="300" text-anchor="middle">${a}</text><text class="mono s rd" x="${x}" y="318" text-anchor="middle">${b}</text></g>`).join("")}
+<text class="mono s" x="400" y="352" text-anchor="middle" data-s="1">↑ what you get when that link is missing</text>
+<g data-s="2">
+ <rect x="230" y="392" width="340" height="52" rx="6" class="box" style="stroke:var(--chalk)"/>
+ <text class="lbl s" x="400" y="414" text-anchor="middle">+ Evaluation &amp; Observability</text>
+ <text class="mono s" x="400" y="432" text-anchor="middle">separate domain, needed for trustworthy outputs</text>
+</g>`,
+caps:["The domain as one chain. Principles set the rules, decision rights name who applies them, the metadata model makes them machine-readable, and active practice keeps the map current. The result is AI that uses data defensibly.",
+"Break any link and the failure is predictable. Use the chain to find where a struggling AI initiative actually breaks.",
+"Governance covers the inputs. Trustworthy outputs also need evaluation and observability, which the hub treats as a separate domain."],
+quiz:["Governance is in place end to end. Is the AI output now trustworthy?",["Yes, governance is sufficient","Not yet: evaluation and observability are also required","Only if the model is open-weight"],1,"Governance makes inputs defensible. Whether outputs are correct is measured by evaluation and observed in production."]}
+];
+
+/* ---------- Player ---------- */
+const $=id=>document.getElementById(id);
+const fig=$("fig"), cap=$("cap"), meta=$("meta"), dots=$("dots"), info=$("info"), quiz=$("quiz"), rail=$("rail");
+let si=0, st=0, timer=null, zi=0;
+const ZW=[0,640,820,1040];
+function setZoom(i){
+  zi=Math.max(0,Math.min(ZW.length-1,i));
+  document.querySelector(".stage").style.setProperty("--zw",ZW[zi]+"px");
+  $("zOut").disabled=zi===0; $("zFit").disabled=zi===0; $("zIn").disabled=zi===ZW.length-1;
+  $("swipe").hidden=zi===0;
+  requestAnimationFrame(pan);
+}
+$("zOut").onclick=()=>setZoom(zi-1); $("zIn").onclick=()=>setZoom(zi+1); $("zFit").onclick=()=>setZoom(0);
+scenes.forEach((s,i)=>{
+  const li=document.createElement("li"), b=document.createElement("button");
+  b.textContent=String(i+1).padStart(2,"0")+" "+s.t; b.onclick=()=>{stop();go(i,0)};
+  li.appendChild(b); rail.appendChild(li);
+});
+
+function go(i,step){
+  si=i; st=step;
+  const s=scenes[si];
+  fig.innerHTML=`<svg viewBox="0 0 800 480" role="img" aria-label="${s.t}">${s.svg}</svg>`;
+  fig.querySelectorAll("[data-s]").forEach(el=>{ if(!el.classList.contains("dr")) el.classList.add("f"); });
+  $("stitle").textContent=String(si+1).padStart(2,"0")+" · "+s.t;
+  info.hidden=true;
+  rail.querySelectorAll("button").forEach((b,k)=>b.setAttribute("aria-current",k===si));
+  const act=rail.children[si]; if(act&&rail.scrollWidth>rail.clientWidth){ rail.scrollTo({left:act.offsetLeft-rail.offsetLeft-16,behavior:"smooth"}); }
+    apply(true);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>apply()));
+}
+function apply(textOnly){
+  const s=scenes[si], last=st===s.caps.length-1;
+  meta.textContent=`SCENE ${si+1}/${scenes.length} · STEP ${st+1}/${s.caps.length}`;
+  cap.textContent=s.caps[st];
+  dots.innerHTML=s.caps.map((_,k)=>`<i class="${k<=st?'on':''}"></i>`).join("");
+  $("prev").disabled=si===0&&st===0;
+  $("next").textContent=(si===scenes.length-1&&last)?"Restart ↺":"Next →";
+  renderQuiz(last);
+  if(textOnly===true) return;
+  fig.querySelectorAll("[data-s]").forEach(el=>{
+    el.classList.toggle("on", st>=+el.dataset.s && (el.dataset.e===undefined || st<+el.dataset.e));
+  });
+  fig.querySelectorAll("[data-a]").forEach(el=>{
+    el.classList.toggle(el.dataset.cls||"hot", st>=+el.dataset.a && (el.dataset.ae===undefined || st<+el.dataset.ae));
+  });
+  pan();
+}
+/* Camera: on narrow screens the figure is wider than the stage; follow what this step introduces. */
+function pan(){
+  const sc=document.querySelector(".scroller"), svg=fig.querySelector("svg");
+  if(!sc||!svg||sc.scrollWidth<=sc.clientWidth+4) return;
+  const pick=sel=>[...fig.querySelectorAll(sel)];
+  let els=pick(`[data-s="${st}"],[data-a="${st}"]`);
+  if(!els.length) els=[...svg.children].filter(el=>!el.classList.contains("f")||el.classList.contains("on"));
+  let x0=Infinity,x1=-Infinity;
+  els.forEach(el=>{ try{const b=el.getBBox(); if(b.width||b.height){x0=Math.min(x0,b.x);x1=Math.max(x1,b.x+b.width);}}catch(e){} });
+  if(!isFinite(x0)) return;
+  const k=svg.clientWidth/800, cx=(x0+x1)/2*k;
+  sc.scrollTo({left:Math.max(0,Math.min(cx-sc.clientWidth/2, sc.scrollWidth-sc.clientWidth)),behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}
+function renderQuiz(show){
+  const q=scenes[si].quiz;
+  if(!show||!q){quiz.hidden=true;return}
+  if(quiz.dataset.scene==String(si)&&!quiz.hidden) return;
+  quiz.dataset.scene=si;
+  quiz.innerHTML=`<span class="lab">Check yourself</span><p class="q">${q[0]}</p><div class="opts">${q[1].map((o,k)=>`<button data-o="${k}">${o}</button>`).join("")}</div><p class="why" hidden></p>`;
+  quiz.hidden=false;
+  quiz.querySelectorAll(".opts button").forEach(b=>b.onclick=()=>{
+    const k=+b.dataset.o;
+    quiz.querySelectorAll(".opts button").forEach(x=>{x.classList.remove("right","wrong")});
+    b.classList.add(k===q[2]?"right":"wrong");
+    quiz.querySelector(`[data-o="${q[2]}"]`).classList.add("right");
+    const w=quiz.querySelector(".why"); w.textContent=(k===q[2]?"Correct. ":"Not quite. ")+q[3]; w.hidden=false;
+  });
+}
+function next(){
+  const n=scenes[si].caps.length;
+  if(st<n-1){st++;apply()}
+  else if(si<scenes.length-1){quiz.dataset.scene="";go(si+1,0)}
+  else {stop();quiz.dataset.scene="";go(0,0)}
+}
+function prev(){
+  if(st>0){st--;apply()}
+  else if(si>0){quiz.dataset.scene="";go(si-1,scenes[si-1].caps.length-1)}
+}
+function stop(){ if(timer){clearInterval(timer);timer=null;$("play").textContent="Play"} }
+$("next").onclick=()=>{stop();next()};
+$("prev").onclick=()=>{stop();prev()};
+$("play").onclick=()=>{
+  if(timer){stop();return}
+  $("play").textContent="Pause"; next();
+  timer=setInterval(()=>{ if(si===scenes.length-1&&st===scenes[si].caps.length-1){stop();return} next(); },7000);
+};
+document.addEventListener("keydown",e=>{
+  const p=e.target.closest&&e.target.closest(".pick");
+  if(p&&(e.key==="Enter"||e.key===" ")){e.preventDefault();showInfo(p.dataset.k);return}
+  if(e.target.closest&&e.target.closest("button"))return;
+  if(e.key==="ArrowRight"){stop();next()}
+  if(e.key==="ArrowLeft"){stop();prev()}
+});
+function showInfo(k){
+  const w=W[k]||PRI[k]; if(!w) return;
+  info.innerHTML=`<b>${w[0]}</b>${w[1]}${w[2]?`<div class="ext">With AI: ${w[2]}</div>`:""}`;
+  info.hidden=false;
+}
+fig.addEventListener("click",e=>{ const p=e.target.closest(".pick"); if(p) showInfo(p.dataset.k); });
+go(0,0);
+setZoom(0);
+})();
+</script>
+
+</body>
+</html>
